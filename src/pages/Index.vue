@@ -3,7 +3,7 @@
 
 <div class="flex mb-4">
 	<div class="w-1/3">
-<div class="max-w-sm rounded overflow-hidden shadow-lg">
+<div class="max-w-sm rounded overflow-hidden shadow-lg m-auto">
   <img class="w-full" src="../../static/avatar.jpg" alt="Avatar" />
   <div class="px-6 py-4">
     <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
@@ -19,7 +19,7 @@
 </div>
 	</div>
 	<div class="w-1/3">
-<div class="max-w-sm rounded overflow-hidden shadow-lg">
+<div class="max-w-sm rounded overflow-hidden shadow-lg ml-auto mr-auto">
   <img class="w-full" src="../../static/avatar.jpg" alt="Avatar" />
   <div class="px-6 py-4">
     <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
