@@ -1,8 +1,7 @@
 <template>
   <div class="content-wrapper bg-background-primary font-sans text-copy-primary leading-normal flex flex-col min-h-screen" :class="theme">
     <header class="border-t-14 border-green-700">
-      <div class="container mb--2 h-10" style="background: url(../../avatar.jpg) center center/cover no-repeat">
-      </div>
+      <div class="top-bg"></div>
       <nav class="container mx-auto flex flex-wrap justify-between items-center py-8">
         <div>
           <g-link v-if="theme === 'theme-light'" to="/"><g-image src="../../static/logo.svg" class="w-40" alt="logo" /></g-link>
