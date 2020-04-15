@@ -34,6 +34,9 @@
             <g-link v-else to="/#contact" class="text-copy-primary hover:text-gray-600">Contact</g-link>
           </li>
           <li class="mr-8 mb-6 lg:mb-0">
+            <g-link to="/new" class="text-copy-primary hover:text-gray-600">New</g-link>
+          </li>
+          <li class="mr-8 mb-6 lg:mb-0">
             <g-link to="/docs" class="text-copy-primary hover:text-gray-600">Docs</g-link>
           </li>
           <li>
