@@ -117,5 +117,7 @@ nav .active {
 .top-bg{
 	background: url(../../static/avatar.jpg) center center/cover no-repeat;
 	height: 30vh;
-	margin-bottom: -10vh;
+	margin-bottom: -106px;
+	min-height: 106px;
+	opacity: .5;
 }
