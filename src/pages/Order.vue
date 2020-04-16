@@ -97,7 +97,7 @@
 <script>
 export default {
   metaInfo: {
-    title: 'New'
+    title: 'Order'
   }
 }
 </script>

@@ -19,6 +19,14 @@ module.exports = {
   siteUrl: 'https://gridsome-portfolio-starter.netlify.com',
   plugins: [
     {
+      use: 'gridsome-source-google-sheets',
+      options: {
+        sheetId: '1949CQdCU2fEOTqWeKqX4zbn-mSdxr2QddmkCZ0ZiNKQ', 
+        apiKey: 'AIzaSyAYeB60EuUK0K5LhfNWQVY9ouFGtEh_ZJA',
+        // type: 'TYPE_NAME', //Optional - default is googleSheet. Used for graphql queries.
+      }
+    },
+    {
       use: '@gridsome/vue-remark',
       options: {
         typeName: 'Documentation', // Required
