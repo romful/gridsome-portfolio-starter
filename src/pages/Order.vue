@@ -1,6 +1,5 @@
 <template>
   <Layout>
-{{ $page.allGoogleSheet.edges }}
 <div class="container mx-auto bg-blue-100">
 	<h1 class="text-center">booking available up to 1 hour before the requested service</h1>
 	<div class="flex flex-wrap mb-4">
@@ -14,8 +13,8 @@
 		        Up to 7 people
 		      </p>
 		      <div class="flex">
-		        <div class="w-1/2 text-700">Price : 175 &euro;</div>
-		        <div class="w-1/2 text-green-700 text-right">Available</div>
+		        <div class="w-1/2 text-bold">Price : 175 &euro;</div>
+		        <div class="w-1/2 text-bold text-green-700 text-right">Available</div>
 		      </div>
 		    </div>
 		  </div>
