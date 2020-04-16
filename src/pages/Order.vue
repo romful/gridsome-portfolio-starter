@@ -1,10 +1,9 @@
 <template>
   <Layout>
-!!!
+
   <div>
-    {{ $page.allGoogleSheet.edges.node }}
+    {{ $page.allGoogleSheet.edges.node.Title }}
   </div>
-???
 
 
 
