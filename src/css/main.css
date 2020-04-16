@@ -121,3 +121,6 @@ nav .active {
 	min-height: 106px;
 	opacity: .5;
 }
+.top-bg + nav{
+	position: relative;
+}
