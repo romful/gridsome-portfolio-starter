@@ -1,11 +1,17 @@
 <template>
   <Layout>
+!!!
+  <div>
+    {{ $page.allGoogleSheet.edges[0].node.Title }}
+  </div>
 
   <div>
     {{ $page.allGoogleSheet.edges[0].node.Title }}
   </div>
 
-
+<div v-for="page in $page.allGoogleSheet.edges">
+  {{ page.node.Title }}
+</div>
 
 
 <div class="container mx-auto">
@@ -110,7 +116,7 @@ export default {
 </script>
 
 <page-query>
-  query MyData {
+  query {
     allGoogleSheet {
       edges {
         node {
