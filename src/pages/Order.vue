@@ -2,7 +2,7 @@
   <Layout>
 !!!
   <div>
-    {{ $page.allGoogleSheet.node.title }}
+    {{ $page.allGoogleSheet.node.Title }}
   </div>
 ???
 
