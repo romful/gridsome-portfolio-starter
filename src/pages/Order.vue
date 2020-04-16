@@ -1,6 +1,17 @@
 <template>
   <Layout>
 
+  <div>
+    {{ $page.allGoogleSheet.node.id }}
+  </div>
+  <div>
+    {{ $page.allGoogleSheet.node.title }}
+  </div>
+
+
+
+
+
 <div class="container mx-auto">
 	<div class="flex mb-4">
 		<div class="w-1/3 px-2">
@@ -102,3 +113,14 @@ export default {
 }
 </script>
 
+<page-query>
+  query MyData {
+    allGoogleSheet {
+      edges {
+        node {
+          Title
+        }
+      }
+    }
+  }
+</page-query>
