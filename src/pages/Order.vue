@@ -3,7 +3,7 @@
 
 <div v-for="page in $page.allGoogleSheet.edges">
   {{ page.node.Title }}<br />
-  {{ page.node["Up to X pax"] }}<br />
+<!--  {{ page.node["Up to X pax"] }}<br />-->
 </div>
 
 
@@ -114,7 +114,7 @@ export default {
       edges {
         node {
           Title
-          "Up to X pax"
+          Up to X pax
         }
       }
     }
