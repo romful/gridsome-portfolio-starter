@@ -15,7 +15,7 @@
 		      </p>
 		      <div class="flex">
 		        <div class="w-1/2 text-700">Price : 175 &euro;</div>
-		        <div class="w-1/2 text-green-700 text-right">Available</div>
+		        <div class="w-1/2 text-green-700 text-right">Available!</div>
 		      </div>
 		    </div>
 		  </div>
@@ -73,11 +73,10 @@ export default {
 
 <page-query>
   query {
-    allGoogleSheet {
+    Services {
       edges {
         node {
           Title
-          Up_to_X_pax
         }
       }
     }
