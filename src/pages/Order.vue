@@ -1,7 +1,6 @@
 <template>
   <Layout>
 {{ $page.allGoogleSheet.edges }}
-!!!
 <div class="container mx-auto">
 	<h1 class="text-center">booking available up to 1 hour before the requested service</h1>
 	<div class="flex flex-wrap mb-4">
@@ -77,7 +76,7 @@ export default {
     allGoogleSheet {
       edges {
         node {
-          Title
+          *
         }
       }
     }
