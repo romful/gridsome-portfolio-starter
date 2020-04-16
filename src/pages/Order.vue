@@ -1,13 +1,13 @@
 <template>
   <Layout>
 {{ $page.allGoogleSheet.edges }}
-<div class="container mx-auto">
+<div class="container mx-auto bg-blue-100">
 	<h1 class="text-center">booking available up to 1 hour before the requested service</h1>
 	<div class="flex flex-wrap mb-4">
 		<div class="w-1/3 px-2" v-for="edge in $page.allGoogleSheet.edges">
-		  <div class="max-w-sm rounded overflow-hidden shadow-md mx-auto">
-		    <img class="w-full" src="../../static/avatar.jpg" alt="Avatar" />
-		    <div class="px-6 py-4">
+		  <div class="max-w-sm overflow-hiddenmx-auto">
+		    <img class="w-full rounded" src="../../static/avatar.jpg" />
+		    <div class="px-6 py-4 mx-6 rounded bg-white-100">
 		      <div class="font-bold text-xl mb-2">{{ edge.node.Title }}</div>
 		      <p class="text-gray-700 text-base">
 		        Book up to : 1 hour before<br />
@@ -76,7 +76,7 @@ export default {
     allGoogleSheet {
       edges {
         node {
-          *
+          Title
         }
       }
     }
