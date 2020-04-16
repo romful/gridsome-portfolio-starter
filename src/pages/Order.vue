@@ -76,7 +76,7 @@ export default {
       edges {
         node {
           Title
-          'Up to X pax'
+          UptoXpax
         }
       }
     }
