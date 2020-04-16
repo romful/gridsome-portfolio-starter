@@ -6,7 +6,7 @@
 		<div class="w-1/3 px-2" v-for="edge in $page.allGoogleSheet.edges">
 		  <div class="max-w-sm overflow-hiddenmx-auto">
 		    <img class="w-full rounded-xl" src="../../static/avatar.jpg" />
-		    <div class="px-6 py-4 mx-6 rounded-xl bg-white">
+		    <div class="px-6 py-4 mx-6 rounded-xl bg-white-500">
 		      <div class="font-bold text-xl mb-2">{{ edge.node.Title }}</div>
 		      <p class="text-gray-700 text-base">
 		        Book up to : 1 hour before<br />

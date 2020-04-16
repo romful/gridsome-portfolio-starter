@@ -124,3 +124,9 @@ nav .active {
 .top-bg + nav{
 	position: relative;
 }
+.rounded-xl{
+	border-radius: 1rem;
+}
+.bg-white-500{
+	background: rgba(255, 255, 255, .5);
+}
