@@ -2,12 +2,13 @@
   <Layout>
 
 <div class="container mx-auto">
+	<h1 class="text-center">booking available up to 1 hour before the requested service</h1>
 	<div class="flex flex-wrap mb-4">
-		<div class="w-1/3 px-2" v-for="page in $page.allGoogleSheet.edges">
+		<div class="w-1/3 px-2" v-for="edge in $page.allGoogleSheet.edges">
 		  <div class="max-w-sm rounded overflow-hidden shadow-md mx-auto">
 		    <img class="w-full" src="../../static/avatar.jpg" alt="Avatar" />
 		    <div class="px-6 py-4">
-		      <div class="font-bold text-xl mb-2">{{ page.node.Title }}</div>
+		      <div class="font-bold text-xl mb-2">{{ edge.node.Title }}</div>
 		      <p class="text-gray-700 text-base">
 		        Book up to : 1 hour before<br />
 		        Up to 7 people
@@ -76,7 +77,7 @@ export default {
       edges {
         node {
           Title
-          UptoXpax
+          Up_to_X_pax
         }
       }
     }
