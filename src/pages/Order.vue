@@ -1,6 +1,7 @@
 <template>
   <Layout>
-
+{{ $page.allGoogleSheet.edges }}
+!!!
 <div class="container mx-auto">
 	<h1 class="text-center">booking available up to 1 hour before the requested service</h1>
 	<div class="flex flex-wrap mb-4">
@@ -15,7 +16,7 @@
 		      </p>
 		      <div class="flex">
 		        <div class="w-1/2 text-700">Price : 175 &euro;</div>
-		        <div class="w-1/2 text-green-700 text-right">Available!</div>
+		        <div class="w-1/2 text-green-700 text-right">Available</div>
 		      </div>
 		    </div>
 		  </div>
@@ -73,7 +74,7 @@ export default {
 
 <page-query>
   query {
-    Services {
+    allGoogleSheet {
       edges {
         node {
           Title
