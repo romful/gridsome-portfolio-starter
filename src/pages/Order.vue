@@ -1,16 +1,9 @@
 <template>
   <Layout>
-!!!
-  <div>
-    {{ $page.allGoogleSheet.edges[0].node.Title }}
-  </div>
-
-  <div>
-    {{ $page.allGoogleSheet.edges[0].node.Title }}
-  </div>
 
 <div v-for="page in $page.allGoogleSheet.edges">
-  {{ page.node.Title }}
+  {{ page.node.Title }}<br />
+  {{ page.node["Up to X pax"] }}<br />
 </div>
 
 
@@ -121,6 +114,7 @@ export default {
       edges {
         node {
           Title
+          "Up to X pax"
         }
       }
     }
