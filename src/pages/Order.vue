@@ -1,13 +1,10 @@
 <template>
   <Layout>
-
-  <div>
-    {{ $page.allGoogleSheet.node.id }}
-  </div>
+!!!
   <div>
     {{ $page.allGoogleSheet.node.title }}
   </div>
-
+???
 
 
 
