@@ -2,14 +2,14 @@
   <Layout>
 !!!
   <div>
-    {{ $page.allGoogleSheet.node.Title }}
+    {{ $page.allGoogleSheet.edges.node }}
   </div>
 ???
 
 
 
 
-<div class="container mx-auto">
+<!--<div class="container mx-auto">
 	<div class="flex mb-4">
 		<div class="w-1/3 px-2">
 <div class="max-w-sm rounded overflow-hidden shadow-md mx-auto">
@@ -96,7 +96,7 @@
       </button>
     </div>
   </form>
-</div>
+</div>-->
 
 
   </Layout>
