@@ -13,8 +13,8 @@
       Up to 7 people
     </p>
     <div class="flex">
-      <div class="w-1/2">Price : 175 &euro;</div>
-      <div class="w-1/2 text-green-700">Available</div>
+      <div class="w-1/2 text-700">Price : 175 &euro;</div>
+      <div class="w-1/2 text-green-700-right">Available</div>
     </div>
   </div>
 </div>
@@ -29,8 +29,8 @@
       Up to 7 people
     </p>
     <div class="flex">
-      <div class="w-1/2">Price : 175 &euro;</div>
-      <div class="w-1/2 text-green-700">Available</div>
+      <div class="w-1/2 text-700">Price : 175 &euro;</div>
+      <div class="w-1/2 text-green-700-right">Available</div>
     </div>
   </div>
 </div>
@@ -45,8 +45,8 @@
       Up to 7 people
     </p>
     <div class="flex">
-      <div class="w-1/2">Price : 175 &euro;</div>
-      <div class="w-1/2 text-green-700">Available</div>
+      <div class="w-1/2 text-700">Price : 175 &euro;</div>
+      <div class="w-1/2 text-green-700-right">Available</div>
     </div>
   </div>
 </div>
@@ -54,7 +54,7 @@
 	</div>
 </div>
 
-<div class="w-full max-w-xs">
+<div class="w-full max-w-xs mx-auto">
   <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
     <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
