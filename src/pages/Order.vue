@@ -1,61 +1,23 @@
 <template>
   <Layout>
 
-<div v-for="page in $page.allGoogleSheet.edges">
-  {{ page.node.Title }}<br />
-<!--  {{ page.node["Up to X pax"] }}<br />-->
-</div>
-
-
 <div class="container mx-auto">
-	<div class="flex mb-4">
-		<div class="w-1/3 px-2">
-<div class="max-w-sm rounded overflow-hidden shadow-md mx-auto">
-  <img class="w-full" src="../../static/avatar.jpg" alt="Avatar" />
-  <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2">Transfer from / to the airport</div>
-    <p class="text-gray-700 text-base">
-      Book up to : 1 hour before<br />
-      Up to 7 people
-    </p>
-    <div class="flex">
-      <div class="w-1/2 text-700">Price : 175 &euro;</div>
-      <div class="w-1/2 text-green-700 text-right">Available</div>
-    </div>
-  </div>
-</div>
-		</div>
-		<div class="w-1/3 px-2">
-<div class="max-w-sm rounded overflow-hidden shadow-md mx-auto">
-  <img class="w-full" src="../../static/avatar.jpg" alt="Avatar" />
-  <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2">Transfer from / to the airport</div>
-    <p class="text-gray-700 text-base">
-      Book up to : 1 hour before<br />
-      Up to 7 people
-    </p>
-    <div class="flex">
-      <div class="w-1/2 text-700">Price : 175 &euro;</div>
-      <div class="w-1/2 text-green-700 text-right">Available</div>
-    </div>
-  </div>
-</div>
-		</div>
-		<div class="w-1/3 px-2">
-<div class="max-w-sm rounded overflow-hidden shadow-md mx-auto">
-  <img class="w-full" src="../../static/avatar.jpg" alt="Avatar" />
-  <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2">Transfer from / to the airport</div>
-    <p class="text-gray-700 text-base">
-      Book up to : 1 hour before<br />
-      Up to 7 people
-    </p>
-    <div class="flex">
-      <div class="w-1/2 text-700">Price : 175 &euro;</div>
-      <div class="w-1/2 text-green-700 text-right">Available</div>
-    </div>
-  </div>
-</div>
+	<div class="flex flex-wrap mb-4">
+		<div class="w-1/3 px-2" v-for="page in $page.allGoogleSheet.edges">
+		  <div class="max-w-sm rounded overflow-hidden shadow-md mx-auto">
+		    <img class="w-full" src="../../static/avatar.jpg" alt="Avatar" />
+		    <div class="px-6 py-4">
+		      <div class="font-bold text-xl mb-2">{{ page.node.Title }}</div>
+		      <p class="text-gray-700 text-base">
+		        Book up to : 1 hour before<br />
+		        Up to 7 people
+		      </p>
+		      <div class="flex">
+		        <div class="w-1/2 text-700">Price : 175 &euro;</div>
+		        <div class="w-1/2 text-green-700 text-right">Available</div>
+		      </div>
+		    </div>
+		  </div>
 		</div>
 	</div>
 </div>
@@ -114,7 +76,7 @@ export default {
       edges {
         node {
           Title
-          Up to X pax
+          'Up to X pax'
         }
       }
     }
