@@ -114,22 +114,3 @@ nav .active {
   height: 100%;
   border: 0;
 }
-.top-bg{
-	background: url(../../static/avatar.jpg) center center/cover no-repeat;
-	height: 30vh;
-	margin-bottom: -106px;
-	min-height: 106px;
-	opacity: .5;
-}
-.top-bg + nav{
-	position: relative;
-}
-.rounded-xl{
-	border-radius: 1rem;
-}
-.bg-white-700{
-	background: rgba(255, 255, 255, .7);
-}
-.mt--4{
-	margin-top: -1rem;
-}
