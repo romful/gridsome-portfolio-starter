@@ -3,18 +3,18 @@
 		<div class="container max-w-none bg-green-100 overflow-hidden">
 			<h1 class="text-center">booking available up to 1 hour before the requested service</h1>
 			<div class="flex flex-wrap mb-4 max-w-5xl mx-auto">
-				<div class="md:w-1/3 w-full px-2" v-for="edge in $page.allGoogleSheet.edges">
-					<div class="max-w-sm overflow-hiddenmx-auto">
+				<div class="md:w-1/2 lg:w-1/3 w-full px-2" v-for="edge in $page.allGoogleSheet.edges">
+					<div class="mx-auto max-w-sm overflow-hiddenmx-auto">
 						<img class="w-full rounded-xl" src="../../static/avatar.jpg" />
 						<div class="px-6 pb-4 pt-8 mx-6 -mt-4 mb-4 relative rounded-xl bg-white-700">
 							<div class="font-bold text-xl mb-2">{{ edge.node.Title }}</div>
 							<p class="text-gray-700 text-base">
 								Book up to : 1 hour before<br />
-								Up to 7 people
+								Up to {{ edge.node.Up_to_X_pax }} people
 							</p>
 							<div class="flex">
-								<div class="w-1/2 text-bold">Price : 175 &euro;</div>
-								<div class="w-1/2 text-bold text-green-700 text-right">Available</div>
+								<div class="w-1/2 font-bold">Price : 175 &euro;</div>
+								<div class="w-1/2 font-bold text-green-700 text-right">Available</div>
 							</div>
 						</div>
 					</div>
@@ -22,7 +22,7 @@
 			</div>
 			<div class="w-full max-w-xs mx-auto">
 				<h1 class="font-bold text-xl mb-2 text-center">Fill in the form below :</h1>
-				<h2 class="text-md mb-2 text-center bg-blue-900 rounded-xl">Transfer from / to the airport</h2>
+				<h2 class="text-md mb-2 text-center bg-blue-700 rounded-xl">Transfer from / to the airport</h2>
 				<form class="bg-white rounded-xl px-8 pt-6 pb-8 mb-4">
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-2" for="date">
@@ -73,6 +73,7 @@ export default {
       edges {
         node {
           Title
+          Up_to_X_pax
         }
       }
     }
