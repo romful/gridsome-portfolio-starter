@@ -3,7 +3,7 @@
 		<div class="container max-w-none bg-green-100">
 			<h1 class="text-center">booking available up to 1 hour before the requested service</h1>
 			<div class="flex flex-wrap mb-4">
-				<div class="md:w-full w-1/3 px-2" v-for="edge in $page.allGoogleSheet.edges">
+				<div class="w-1/3 px-2" v-for="edge in $page.allGoogleSheet.edges">
 					<div class="max-w-sm overflow-hiddenmx-auto">
 						<img class="w-full rounded-xl" src="../../static/avatar.jpg" />
 						<div class="px-6 pb-4 pt-8 mx-6 mt--4 mb-4 relative rounded-xl bg-white-700">
