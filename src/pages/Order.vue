@@ -13,8 +13,17 @@
 								<span v-if="edge.node.Up_to_X_pax != ''">Up to {{ edge.node.Up_to_X_pax }} <span v-if="edge.node.Up_to_X_pax > 1">people</span><span v-else>person</span><br /></span>
 							</p>
 							<div class="flex">
-								<div class="w-1/2 font-bold">Price : 175 &euro;</div>
-								<div class="w-1/2 font-bold text-green-700 text-right">Available</div>
+								<div class="w-1/2 font-bold">
+									<span v-if="edge.node.Price_vat_excluded">
+										Price : 175 &euro;
+										<span v-if="edge.node.Price_per_hour">per hour</span>
+										<span v-else-if="edge.node.Price_per_people">per person</span>
+									</span>
+								</div>
+								<div class="w-1/2 font-bold text-right">
+									<span v-if="edge.node.Price_vat_excluded" class="text-green-700">Available</span>
+									<span v-else class="text-red-700">Unavailable</span>
+								</div>
 							</div>
 						</div>
 					</div>
