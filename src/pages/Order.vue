@@ -15,7 +15,7 @@
 							<div class="flex">
 								<div class="w-1/2 font-bold">
 									<span v-if="edge.node.Price_vat_excluded">
-										Price : 175 &euro;
+										Price : {{ edge.node.Price_vat_excluded }} &euro;
 										<span v-if="edge.node.Price_per_hour">per hour</span>
 										<span v-else-if="edge.node.Price_per_people">per person</span>
 									</span>
