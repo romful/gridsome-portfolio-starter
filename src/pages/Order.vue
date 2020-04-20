@@ -10,7 +10,7 @@
 							<div class="font-bold text-xl mb-2">{{ edge.node.Title }}</div>
 							<p class="text-gray-700 text-base">
 								Book up to : 1 hour before<br />
-								Up to {{ edge.node.Up_to_X_pax }} people
+								<span v-if="edge.node.Up_to_X_pax != ''">Up to {{ edge.node.Up_to_X_pax }} people</span>
 							</p>
 							<div class="flex">
 								<div class="w-1/2 font-bold">Price : 175 &euro;</div>
@@ -61,23 +61,28 @@
 
 <script>
 export default {
-  metaInfo: {
-    title: 'Order'
-  }
+	metaInfo: {
+		title: 'Order'
+	}
 }
 </script>
 
 <page-query>
-  query {
-    allGoogleSheet {
-      edges {
-        node {
-          Title
-          Price_vat_excluded
-          Booking_Up_to_X_hours
-          Up_to_X_pax
-        }
-      }
-    }
-  }
+query {
+	allGoogleSheet {
+		edges {
+			node {
+				Title
+				Price_vat_excluded
+				Booking_Up_to_X_hours
+				Up_to_X_pax
+				Price_to_define
+				Price_per_hour
+				Fixed_price
+				Price_per_people
+				Included
+			}
+		}
+	}
+}
 </page-query>
