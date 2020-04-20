@@ -73,6 +73,8 @@ export default {
       edges {
         node {
           Title
+          Price_vat_excluded
+          Booking_Up_to_X_hours
           Up_to_X_pax
         }
       }
