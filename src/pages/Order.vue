@@ -30,13 +30,13 @@
 				</div>
 			</div>
 			<h1 class="font-bold text-xl mb-2 text-center">Fill in the form below :</h1>
-			<h2 class="text-md mb-2 text-center bg-blue-700 text-white rounded-xl py-2">Transfer from / to the airport</h2>
-			<form class="w-full max-w-xs mx-auto mb-4"
+			<h2 class="text-md mb-2 text-center bg-blue-700 text-white rounded-xl py-2max-w-xs mx-auto">Transfer from / to the airport</h2>
+			<form class="mb-8"
 				name="order"
 				method="post"
 				v-on:submit.prevent="handleSubmit"
 				action="/order/">
-				<div class="bg-white rounded-xl px-8 pt-6 pb-8 mb-4">
+				<div class="bg-white rounded-xl px-8 pt-6 pb-8 mb-4 w-full max-w-xs mx-auto">
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-2" for="date">
 							Date
@@ -53,9 +53,9 @@
 						<label class="block text-gray-700 text-sm font-bold mb-2" for="number">
 							How many people
 						</label>
-						<span class="text-xl w-16 rounded px-4 py-2 mr-8" @click="decrementNumber">-</span>
-						<input class="text-center appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="number" type="text" placeholder="Input Number" v-model="orderData.number" />
-						<span class="text-xl w-16 rounded px-4 py-2 ml-8" @click="incrementNumber">+</span>
+						<span class="cursor-pointer text-xl w-16 rounded-l px-4 py-2" @click="decrementNumber">-</span>
+						<input class="text-center appearance-none border w-16 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="number" type="text" placeholder="Input Number" v-model="orderData.number" />
+						<span class="cursor-pointer text-xl w-16 rounded-r px-4 py-2" @click="incrementNumber">+</span>
 					</div>
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-2" for="message">
@@ -64,11 +64,11 @@
 						<textarea class="appearance-none border rounded w-full h-64 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Input Message" v-model="orderData.message"></textarea>
 					</div>
 				</div>
-				<div class="text-center">
+				<div class="text-center mb-4">
 					By clicking in the Order button below, you accept the <span class="font-bold">terms and conditions</span> related to this request.<br />
 					You will receive an email to make the payment and finalise your booking.
 				</div>
-				<div class="text-center">
+				<div class="text-center mb-4">
 					Total price: <span class="font-bold"><span id="total">175</span> &euro;</span>
 				</div>
 				<div class="text-center">
