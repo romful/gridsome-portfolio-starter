@@ -109,15 +109,15 @@ export default{
 				.join('&')
 		},
 		handleSubmit(e) {
-			fetch('/', {
-				method: 'POST',
+			fetch(e.target.getAttribute('action'), {
+				method: e.target.getAttribute('method'),
 				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 				body: this.encode({
 					'form-name': e.target.getAttribute('name'),
 					...this.orderData,
 				}),
 			})
-			.then(() => this.$router.push('/success/'))
+			.then(() => this.$router.push(e.target.getAttribute('action')))
 			.catch(error => alert(error))
 		}
 	}
