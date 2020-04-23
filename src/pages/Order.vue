@@ -31,39 +31,43 @@
 			</div>
 			<div class="w-full max-w-xs mx-auto">
 				<h1 class="font-bold text-xl mb-2 text-center">Fill in the form below :</h1>
-				<h2 class="text-md mb-2 text-center bg-blue-700 rounded-xl">Transfer from / to the airport</h2>
-				<form class="bg-white rounded-xl px-8 pt-6 pb-8 mb-4">
-					<div class="mb-4">
-						<label class="block text-gray-700 text-sm font-bold mb-2" for="date">
-							Date
-						</label>
-						<input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="date" type="text" placeholder="Input Date" />
+				<h2 class="text-md mb-2 text-center bg-blue-700 text-white rounded-xl py-4">Transfer from / to the airport</h2>
+				<form>
+					<div class="bg-white rounded-xl px-8 pt-6 pb-8 mb-4">
+						<div class="mb-4">
+							<label class="block text-gray-700 text-sm font-bold mb-2" for="date">
+								Date
+							</label>
+							<input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="date" type="text" placeholder="Input Date" />
+						</div>
+						<div class="mb-4">
+							<label class="block text-gray-700 text-sm font-bold mb-2" for="time">
+								Time
+							</label>
+							<input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="time" type="text" placeholder="Input Time" />
+						</div>
+						<div class="mb-4">
+							<label class="block text-gray-700 text-sm font-bold mb-2" for="number">
+								How many people
+							</label>
+							<input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="number" type="text" placeholder="Input Number" />
+<button class="text-xl w-16 rounded px-4 py-2" @click="decrement">-</button>
+<input class="w-32 text-center ml-8 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ count }}" />
+<button class="text-xl w-16 rounded px-4 py-2 ml-8" @click="increment">+</button>
+						</div>
+						<div class="mb-4">
+							<label class="block text-gray-700 text-sm font-bold mb-2" for="message">
+								Message
+							</label>
+							<textarea class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Input Message"></textarea>
+						</div>
 					</div>
 					<div class="mb-4">
-						<label class="block text-gray-700 text-sm font-bold mb-2" for="time">
-							Time
-						</label>
-						<input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="time" type="text" placeholder="Input Time" />
-					</div>
-					<div class="mb-4">
-						<label class="block text-gray-700 text-sm font-bold mb-2" for="number">
-							How many people
-						</label>
-						<input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="number" type="text" placeholder="Input Number" />
-    <div>
-      <button class="text-5xl w-16 bg-green-900 hover:bg-green-800 text-white rounded px-4 py-2" @click="decrement">-</button>
-    </div>
-    <span class="text-5xl w-32 text-center ml-8">{{ count }}</span>
-    <button class="text-5xl w-16 bg-green-900 hover:bg-green-800 text-white rounded px-4 py-2 ml-8" @click="increment">+</button>
-					</div>
-					<div class="mb-4">
-						<label class="block text-gray-700 text-sm font-bold mb-2" for="message">
-							Message
-						</label>
-						<textarea class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Input Message"></textarea>
+						By clicking in the Order button below, you accept the <span class="text-bold">terms and conditions</span> related to this request.<br />
+						You will receive an email to make the payment and finalise your booking.
 					</div>
 					<div class="text-center">
-						<button class="border-1 border-green-700 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+						<button class="border-1 border-green-700 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
 							Order
 						</button>
 					</div>
