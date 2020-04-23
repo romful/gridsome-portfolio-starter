@@ -53,15 +53,15 @@
 						<label class="block text-gray-700 text-sm font-bold mb-2" for="number">
 							How many people
 						</label>
-						<span class="cursor-pointer text-xl w-16 rounded-l px-4 py-2" @click="decrementNumber">-</span>
-						<input class="text-center appearance-none border w-16 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="number" type="text" placeholder="Input Number" v-model="orderData.number" />
-						<span class="cursor-pointer text-xl w-16 rounded-r px-4 py-2" @click="incrementNumber">+</span>
+						<span class="cursor-pointer text-xl w-16 border rounded-l px-4 py-2" @click="decrementNumber">-</span>
+						<input class="text-center appearance-none w-16 border py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="number" type="text" placeholder="Input Number" v-model="orderData.number" />
+						<span class="cursor-pointer text-xl w-16 border rounded-r px-4 py-2" @click="incrementNumber">+</span>
 					</div>
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-2" for="message">
 							Message
 						</label>
-						<textarea class="appearance-none border rounded w-full h-64 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Input Message" v-model="orderData.message"></textarea>
+						<textarea class="appearance-none border rounded w-full h-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Input Message" v-model="orderData.message"></textarea>
 					</div>
 				</div>
 				<div class="text-center mb-4">
