@@ -35,34 +35,33 @@
 				name="order"
 				method="post"
 				v-on:submit.prevent="handleSubmit"
-				action="/success/">
+				action="/order/">
 				<div class="bg-white rounded-xl px-8 pt-6 pb-8 mb-4">
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-2" for="date">
 							Date
 						</label>
-						<input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="date" type="text" placeholder="Input Date" />
+						<input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="date" type="text" placeholder="Input Date" v-model="orderData.date" />
 					</div>
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-2" for="time">
 							Time
 						</label>
-						<input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="time" type="text" placeholder="Input Time" />
+						<input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="time" type="text" placeholder="Input Time" v-model="orderData.time" />
 					</div>
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-2" for="number">
 							How many people
 						</label>
-						<input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="number" type="text" placeholder="Input Number" />
-<button class="text-xl w-16 rounded px-4 py-2" @click="decrementNumber">-</button>
-<input class="w-32 text-center ml-8 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" v-model="orderData.number" />
-<button class="text-xl w-16 rounded px-4 py-2 ml-8" @click="incrementNumber">+</button>
+						<span class="text-xl w-16 rounded px-4 py-2 mr-8" @click="decrementNumber">-</span>
+						<input class="text-center appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="number" type="text" placeholder="Input Number" v-model="orderData.number" />
+						<span class="text-xl w-16 rounded px-4 py-2 ml-8" @click="incrementNumber">+</span>
 					</div>
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-2" for="message">
 							Message
 						</label>
-						<textarea class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Input Message"></textarea>
+						<textarea class="appearance-none border rounded w-full h-64 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Input Message" v-model="orderData.message"></textarea>
 					</div>
 				</div>
 				<div class="text-center">
@@ -90,7 +89,10 @@ export default{
 	data(){
 		return{
 			orderData: {
-				number: 1
+				date: "",
+				time: "",
+				number: 1,
+				message: ""
 			}
 		}
 	},
