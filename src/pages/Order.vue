@@ -50,6 +50,11 @@
 							How many people
 						</label>
 						<input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="number" type="text" placeholder="Input Number" />
+    <div>
+      <button class="text-5xl w-16 bg-green-900 hover:bg-green-800 text-white rounded px-4 py-2" @click="decrement">-</button>
+    </div>
+    <span class="text-5xl w-32 text-center ml-8">{{ count }}</span>
+    <button class="text-5xl w-16 bg-green-900 hover:bg-green-800 text-white rounded px-4 py-2 ml-8" @click="increment">+</button>
 					</div>
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-2" for="message">
@@ -72,6 +77,19 @@
 export default {
 	metaInfo: {
 		title: 'Order'
+	},
+	data() {
+		return {
+			count: 0
+		}
+	},
+	methods: {
+		increment() {
+			this.count++
+		},
+		decrement() {
+			this.count--
+		}
 	}
 }
 </script>
