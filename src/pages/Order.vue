@@ -53,9 +53,9 @@
 						<label class="block text-gray-700 text-sm font-bold mb-2" for="number">
 							How many people
 						</label>
-						<span class="text-center cursor-pointer text-xl w-12 border rounded-l py-2 leading-tight" @click="decrementNumber">-</span>
+						<span class="text-center inline-block cursor-pointer text-xl w-12 border rounded-l py-2 leading-tight" @click="decrementNumber">-</span>
 						<input class="text-center appearance-none w-16 border-t border-b py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="number" type="text" placeholder="Input Number" v-model="orderData.number" />
-						<span class="text-center cursor-pointer text-xl w-12 border rounded-r py-2 leading-tight" @click="incrementNumber">+</span>
+						<span class="text-center inline-block cursor-pointer text-xl w-12 border rounded-r py-2 leading-tight" @click="incrementNumber">+</span>
 					</div>
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-2" for="message">
