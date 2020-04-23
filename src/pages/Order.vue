@@ -31,7 +31,11 @@
 			</div>
 			<h1 class="font-bold text-xl mb-2 text-center">Fill in the form below :</h1>
 			<h2 class="text-md mb-2 text-center bg-blue-700 text-white rounded-xl py-2">Transfer from / to the airport</h2>
-			<form class="w-full max-w-xs mx-auto mb-4">
+			<form class="w-full max-w-xs mx-auto mb-4"
+				name="order"
+				method="post"
+				v-on:submit.prevent="handleSubmit"
+				action="/success/">
 				<div class="bg-white rounded-xl px-8 pt-6 pb-8 mb-4">
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-2" for="date">
@@ -85,7 +89,7 @@ export default{
 	},
 	data(){
 		return{
-			orderData{
+			orderData: {
 				number: 1
 			}
 		}
@@ -98,6 +102,23 @@ export default{
 			if(this.orderData.number > 1){
 				this.orderData.number--
 			}
+		},
+		encode(data) {
+			return Object.keys(data)
+				.map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+				.join('&')
+		},
+		handleSubmit(e) {
+			fetch('/', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+				body: this.encode({
+					'form-name': e.target.getAttribute('name'),
+					...this.orderData,
+				}),
+			})
+			.then(() => this.$router.push('/success/'))
+			.catch(error => alert(error))
 		}
 	}
 }
