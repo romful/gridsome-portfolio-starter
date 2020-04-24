@@ -107,9 +107,9 @@ export default{
 			this.orderData.maxNumber = data.Up_to_X_pax
 		},
 		incrementNumber(){
-			if((!this.orderData.maxNumber) || (this.orderData.number < this.orderData.maxNumber)){
+//			if((!this.orderData.maxNumber) || (this.orderData.number < this.orderData.maxNumber)){
 				this.orderData.number++
-			}
+//			}
 		},
 		decrementNumber(){
 			if(this.orderData.number > 1){
