@@ -21,7 +21,7 @@
 									</span>
 								</div>
 								<div class="w-1/2 font-bold text-right">
-									<a href="#order" @click="initOrder(edge.node)" v-if="edge.node.Price_vat_excluded" class="text-green-700">Available</a>
+									<a href="#order"  v-scroll-to="'#order'" @click="initOrder(edge.node)" v-if="edge.node.Price_vat_excluded" class="text-green-700">Available</a>
 									<span v-else class="text-red-700">Unavailable</span>
 								</div>
 							</div>
