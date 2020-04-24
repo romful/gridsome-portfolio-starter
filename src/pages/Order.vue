@@ -99,6 +99,8 @@ export default{
 				number: 1,
 				maxNumber: 0,
 				message: "",
+				Price_vat_excluded: 0,
+				Price_per_people: 0,
 				cost: 0
 			}
 		}
@@ -108,8 +110,8 @@ export default{
 			this.orderData.title = data.Title
 			this.orderData.number = 1
 			this.orderData.maxNumber = data.Up_to_X_pax
-			this.Price_vat_excluded = data.Price_vat_excluded
-			this.Price_per_people = data.Price_per_people
+			this.orderData.Price_vat_excluded = data.Price_vat_excluded
+			this.orderData.Price_per_people = data.Price_per_people
 			this.calc()
 		},
 		calc(){
