@@ -53,6 +53,7 @@
 						<div class="mb-4">
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="number">
 								How many people
+{{ this.orderData.number }}  {{ this.orderData.maxNumber }}
 							</label>
 							<span class="text-center inline-block cursor-pointer w-12 border rounded-l py-2 leading-tight" @click="decrementNumber">-</span>
 							<input class="text-center appearance-none w-16 border-t border-b py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="number" type="text" placeholder="Input Number" v-model="orderData.number" />
@@ -106,7 +107,7 @@ export default{
 			this.orderData.maxNumber = data.Up_to_X_pax
 		},
 		incrementNumber(){
-			if(!this.orderData.maxNumber || (this.orderData.number < this.orderData.maxNumber)){
+			if((!this.orderData.maxNumber) || (this.orderData.number < this.orderData.maxNumber)){
 				this.orderData.number++
 			}
 		},
