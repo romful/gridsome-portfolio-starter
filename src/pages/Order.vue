@@ -9,7 +9,7 @@
 						<div class="px-6 pb-4 pt-8 mx-6 -mt-4 mb-4 relative rounded-xl bg-white-700">
 							<div class="font-bold text-xl mb-2">{{ edge.node.Title }}</div>
 							<p class="text-gray-700 text-base">
-								<span v-if="edge.node.Booking_Up_to_X_hours != ''">Book up to : {{ edge.node.Booking_Up_to_X_hours }} <span v-if="edge.node.Booking_Up_to_X_hours > 1">hours</span><span v-else>hour</span> before<br /></span>
+								<span v-if="edge.node.Booking_Up_to_X_hours != ''">Book up to : {{ edge.node.Booking_Up_to_X_hours }} <span v-if="edge.node.Booking_Up_to_X_hours > 1">hours</span><span v-else>hour</span><br /></span>
 								<span v-if="edge.node.Up_to_X_pax != ''">Up to {{ edge.node.Up_to_X_pax }} <span v-if="edge.node.Up_to_X_pax > 1">people</span><span v-else>person</span><br /></span>
 							</p>
 							<div class="flex">
@@ -21,7 +21,7 @@
 									</span>
 								</div>
 								<div class="w-1/2 font-bold text-right">
-									<a href="#order"  v-scroll-to="'#order'" @click="init(edge.node)" v-if="edge.node.Price_vat_excluded" class="text-green-700">Available</a>
+									<a href="#order"  v-scroll-to="'#order'" @click="init(edge.node)" v-if="edge.node.Availability" class="text-green-700">Available</a>
 									<span v-else class="text-red-700">Unavailable</span>
 								</div>
 							</div>
@@ -52,13 +52,21 @@
 							</label>
 							<input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="time" type="text" placeholder="Input Time" v-model="orderData.time" />
 						</div>
-						<div class="mb-4">
-							<label class="block text-gray-700 text-sm font-bold mb-2" for="number">
+						<div class="mb-4" v-if="orderData.Price_per_people">
+							<label class="block text-gray-700 text-sm font-bold mb-2" for="people">
 								How many people
 							</label>
-							<span class="text-center inline-block cursor-pointer w-12 border rounded-l py-2 leading-tight" @click="decrementNumber">-</span>
-							<input class="text-center appearance-none w-16 border-t border-b py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="number" type="text" placeholder="Input Number" v-model="orderData.number" />
-							<span class="text-center inline-block cursor-pointer w-12 border rounded-r py-2 leading-tight" @click="incrementNumber">+</span>
+							<span class="text-center inline-block cursor-pointer w-12 border rounded-l py-2 leading-tight" @click="decrementPeople">-</span>
+							<input class="text-center appearance-none w-16 border-t border-b py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="people" type="text" placeholder="Input Number" v-model="orderData.people" />
+							<span class="text-center inline-block cursor-pointer w-12 border rounded-r py-2 leading-tight" @click="incrementPeople">+</span>
+						</div>
+						<div class="mb-4" v-if="orderData.Price_per_hour">
+							<label class="block text-gray-700 text-sm font-bold mb-2" for="hours">
+								How many hours
+							</label>
+							<span class="text-center inline-block cursor-pointer w-12 border rounded-l py-2 leading-tight" @click="decrementHours">-</span>
+							<input class="text-center appearance-none w-16 border-t border-b py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="hours" type="text" placeholder="Input Number" v-model="orderData.hours" />
+							<span class="text-center inline-block cursor-pointer w-12 border rounded-r py-2 leading-tight" @click="incrementHours">+</span>
 						</div>
 						<div class="mb-4">
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="message">
@@ -71,7 +79,7 @@
 						By clicking in the Order button below, you accept the <span class="font-bold">terms and conditions</span> related to this request.<br />
 						You will receive an email to make the payment and finalise your booking.
 					</div>
-					<div class="text-center mb-4">
+					<div class="text-center mb-4" v-if="orderData.Price_vat_excluded">
 						Total price: <span class="font-bold">{{ orderData.cost }} &euro;</span>
 					</div>
 					<div class="text-center">
@@ -96,11 +104,14 @@ export default{
 				title: "",
 				date: "",
 				time: "",
-				number: 1,
-				maxNumber: 0,
+				people: 1,
+				hours: 1,
+				Up_to_X_pax: 0,
+				Booking_Up_to_X_hours: 0,
 				message: "",
 				Price_vat_excluded: 0,
 				Price_per_people: 0,
+				Price_per_hour: 0,
 				cost: 0
 			}
 		}
@@ -108,8 +119,8 @@ export default{
 	methods: {
 		init(data){
 			this.orderData.title = data.Title
-			this.orderData.number = 1
-			this.orderData.maxNumber = data.Up_to_X_pax
+			this.orderData.people = 1
+			this.orderData.Up_to_X_pax = data.Up_to_X_pax
 			this.orderData.Price_vat_excluded = data.Price_vat_excluded
 			this.orderData.Price_per_people = data.Price_per_people
 			this.calc()
@@ -117,18 +128,33 @@ export default{
 		calc(){
 			this.orderData.cost = this.orderData.Price_vat_excluded
 			if(this.orderData.Price_per_people){
-				this.orderData.cost *= this.orderData.number
+				this.orderData.cost *= this.orderData.people
+			}
+			if(this.orderData.Price_per_hour){
+				this.orderData.cost *= this.orderData.hours
 			}
 		},
-		incrementNumber(){
-			if(!this.orderData.maxNumber || this.orderData.number < this.orderData.maxNumber){
-				this.orderData.number++
+		incrementPeople(){
+			if(!this.orderData.Up_to_X_pax || this.orderData.people < this.orderData.Up_to_X_pax){
+				this.orderData.people++
 				this.calc()
 			}
 		},
-		decrementNumber(){
-			if(this.orderData.number > 1){
-				this.orderData.number--
+		decrementPeople(){
+			if(this.orderData.people > 1){
+				this.orderData.people--
+				this.calc()
+			}
+		},
+		incrementHours(){
+			if(!this.orderData.Booking_Up_to_X_hours || this.orderData.hours < this.orderData.Booking_Up_to_X_hours){
+				this.orderData.hours++
+				this.calc()
+			}
+		},
+		decrementHours(){
+			if(this.orderData.hours > 1){
+				this.orderData.hours--
 				this.calc()
 			}
 		},
@@ -167,6 +193,7 @@ query {
 				Fixed_price
 				Price_per_people
 				Included
+				Availability
 			}
 		}
 	}
