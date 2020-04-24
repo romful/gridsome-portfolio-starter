@@ -117,7 +117,7 @@ export default{
 		calc(){
 			this.orderData.cost = this.orderData.Price_vat_excluded
 			if(this.orderData.Price_per_people){
-				this.orderData.cost *= this.oderData.number
+				this.orderData.cost *= this.orderData.number
 			}
 		},
 		incrementNumber(){
