@@ -30,7 +30,7 @@
 				</div>
 			</div>
 			<h1 class="font-bold text-xl mb-2 text-center">Fill in the form below :</h1>
-			<h2 class="text-md mb-2 text-center bg-blue-700 text-white rounded-xl py-2max-w-xs mx-auto">Transfer from / to the airport</h2>
+			<h2 class="text-md mb-2 text-center bg-blue-700 text-white rounded-xl py-2 max-w-xs mx-auto">Transfer from / to the airport</h2>
 			<form class="mb-8"
 				name="order"
 				method="post"
