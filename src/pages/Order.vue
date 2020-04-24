@@ -99,7 +99,7 @@ export default{
 				number: 1,
 				maxNumber: 0,
 				message: "",
-				cost: ""
+				cost: 0
 			}
 		}
 	},
