@@ -95,6 +95,7 @@ export default{
 				date: "",
 				time: "",
 				number: 1,
+				maxNumber = 0,
 				message: ""
 			}
 		}
@@ -102,8 +103,12 @@ export default{
 	methods: {
 		initOrder(data){
 			this.orderData.title = data.Title
+			this.orderData.maxNumber = data.Up_to_X_pax
 		},
 		incrementNumber(){
+			if(this.orderData.maxNumber and this.orderData.number >= this.orderData.maxNumber){
+				return;
+			}
 			this.orderData.number++
 		},
 		decrementNumber(){
