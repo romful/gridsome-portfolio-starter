@@ -103,13 +103,11 @@ export default{
 	},
 	methods: {
 		initOrder(data){
-			this.orderData.title = data.Title
-			this.orderData.maxNumber = data.Up_to_X_pax
+			this.orderData.title = data.Title;
+			this.orderData.maxNumber = data.Up_to_X_pax;
 		},
 		incrementNumber(){
-//			if((!this.orderData.maxNumber) || (this.orderData.number < this.orderData.maxNumber)){
-				this.orderData.number++
-//			}
+			this.orderData.number++
 		},
 		decrementNumber(){
 			if(this.orderData.number > 1){
