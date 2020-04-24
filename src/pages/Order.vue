@@ -9,7 +9,7 @@
 						<div class="px-6 pb-4 pt-8 mx-6 -mt-4 mb-4 relative rounded-xl bg-white-700">
 							<div class="font-bold text-xl mb-2">{{ edge.node.Title }}</div>
 							<p class="text-gray-700 text-base">
-								<span v-if="edge.node.Booking_Up_to_X_hours != ''">Book up to : {{ edge.node.Booking_Up_to_X_hours }} <span v-if="edge.node.Booking_Up_to_X_hours > 1">hours</span><span v-else>hour</span><br /></span>
+								<span v-if="edge.node.Booking_Up_to_X_hours != ''">Book up to : {{ edge.node.Booking_Up_to_X_hours }} <span v-if="edge.node.Booking_Up_to_X_hours > 1">hours</span><span v-else>hour</span> before<br /></span>
 								<span v-if="edge.node.Up_to_X_pax != ''">Up to {{ edge.node.Up_to_X_pax }} <span v-if="edge.node.Up_to_X_pax > 1">people</span><span v-else>person</span><br /></span>
 							</p>
 							<div class="flex">
@@ -147,10 +147,8 @@ export default{
 			}
 		},
 		incrementHours(){
-			if(!this.orderData.Booking_Up_to_X_hours || this.orderData.hours < this.orderData.Booking_Up_to_X_hours){
-				this.orderData.hours++
-				this.calc()
-			}
+			this.orderData.hours++
+			this.calc()
 		},
 		decrementHours(){
 			if(this.orderData.hours > 1){
@@ -188,7 +186,6 @@ query {
 				Price_vat_excluded
 				Booking_Up_to_X_hours
 				Up_to_X_pax
-				Price_to_define
 				Price_per_hour
 				Price_per_people
 				Included
