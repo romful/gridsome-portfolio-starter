@@ -106,6 +106,7 @@ export default{
 	methods: {
 		init(data){
 			this.orderData.title = data.Title
+			this.orderData.number = 1
 			this.orderData.maxNumber = data.Up_to_X_pax
 			this.Price_vat_excluded = data.Price_vat_excluded
 			this.Price_per_people = data.Price_per_people
