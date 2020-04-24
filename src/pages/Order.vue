@@ -96,18 +96,20 @@ export default{
 				date: "",
 				time: "",
 				number: 1,
-				maxNumber = 0,
+				maxNumber: 0,
 				message: ""
 			}
 		}
 	},
 	methods: {
 		initOrder(data){
-			this.orderData.title = data.Title;
-			this.orderData.maxNumber = data.Up_to_X_pax;
+			this.orderData.title = data.Title
+			this.orderData.maxNumber = data.Up_to_X_pax
 		},
 		incrementNumber(){
-			this.orderData.number++
+			if(!this.orderData.maxNumber || this.orderData.number < this.orderData.maxNumber){
+				this.orderData.number++
+			}
 		},
 		decrementNumber(){
 			if(this.orderData.number > 1){
