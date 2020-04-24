@@ -21,7 +21,7 @@
 									</span>
 								</div>
 								<div class="w-1/2 font-bold text-right">
-									<a href="#order"  v-scroll-to="'#order'" @click="initOrder(edge.node)" v-if="edge.node.Price_vat_excluded" class="text-green-700">Available</a>
+									<a href="#order"  v-scroll-to="'#order'" @click="init(edge.node)" v-if="edge.node.Price_vat_excluded" class="text-green-700">Available</a>
 									<span v-else class="text-red-700">Unavailable</span>
 								</div>
 							</div>
@@ -37,6 +37,8 @@
 					method="post"
 					v-on:submit.prevent="handleSubmit"
 					action="/order/">
+					<input type="hidden" name="title" v-model="orderData.title" />
+					<input type="hidden" name="cost" v-model="orderData.cost" />
 					<div class="bg-white rounded-xl px-8 pt-6 pb-8 mb-4 w-full max-w-xs mx-auto">
 						<div class="mb-4">
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="date">
@@ -53,7 +55,6 @@
 						<div class="mb-4">
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="number">
 								How many people
-{{ orderData.number }}  {{ orderData.maxNumber }}
 							</label>
 							<span class="text-center inline-block cursor-pointer w-12 border rounded-l py-2 leading-tight" @click="decrementNumber">-</span>
 							<input class="text-center appearance-none w-16 border-t border-b py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="number" type="text" placeholder="Input Number" v-model="orderData.number" />
@@ -71,7 +72,7 @@
 						You will receive an email to make the payment and finalise your booking.
 					</div>
 					<div class="text-center mb-4">
-						Total price: <span class="font-bold"><span id="total">175</span> &euro;</span>
+						Total price: <span class="font-bold">{{ orderData.cost }} &euro;</span>
 					</div>
 					<div class="text-center">
 						<button class="border-1 text-white border-green-700 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline" type="submit">
@@ -97,23 +98,34 @@ export default{
 				time: "",
 				number: 1,
 				maxNumber: 0,
-				message: ""
+				message: "",
+				cost: ""
 			}
 		}
 	},
 	methods: {
-		initOrder(data){
+		init(data){
 			this.orderData.title = data.Title
 			this.orderData.maxNumber = data.Up_to_X_pax
+			this.Price_vat_excluded = data.Price_vat_excluded
+			this.Price_per_people = data.Price_per_people
+		},
+		calc(){
+			this.orderData.cost = this.orderData.Price_vat_excluded
+			if(this.Price_per_people){
+				this.orderData.cost = this.oderData.number
+			}
 		},
 		incrementNumber(){
 			if(!this.orderData.maxNumber || this.orderData.number < this.orderData.maxNumber){
 				this.orderData.number++
+				calc()
 			}
 		},
 		decrementNumber(){
 			if(this.orderData.number > 1){
 				this.orderData.number--
+				calc()
 			}
 		},
 		encode(data) {
