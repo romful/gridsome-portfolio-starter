@@ -109,11 +109,12 @@ export default{
 			this.orderData.maxNumber = data.Up_to_X_pax
 			this.Price_vat_excluded = data.Price_vat_excluded
 			this.Price_per_people = data.Price_per_people
+			calc()
 		},
 		calc(){
 			this.orderData.cost = this.orderData.Price_vat_excluded
-			if(this.Price_per_people){
-				this.orderData.cost = this.oderData.number
+			if(this.orderData.Price_per_people){
+				this.orderData.cost *= this.oderData.number
 			}
 		},
 		incrementNumber(){
