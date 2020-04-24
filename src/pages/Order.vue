@@ -5,8 +5,8 @@
 			<div class="flex flex-wrap mb-4 max-w-5xl mx-auto">
 				<div class="md:w-1/2 lg:w-1/3 w-full px-2" v-for="edge in $page.allGoogleSheet.edges">
 					<div class="mx-auto max-w-sm overflow-hiddenmx-auto">
-						<img v-if="edge.node.Img" class="w-full rounded-xl" src="{{ edge.node.Img }}" />
-						<img v-else class="w-full rounded-xl" src="../../static/avatar.jpg" />
+						<g-img v-if="edge.node.Img" class="w-full rounded-xl" :src="{{ edge.node.Img }}" />
+						<g-img v-else class="w-full rounded-xl" src="../../static/avatar.jpg" />
 						<div class="px-6 pb-4 pt-8 mx-6 -mt-4 mb-4 relative rounded-xl bg-white-700">
 							<div class="font-bold text-xl mb-2">{{ edge.node.Title }}</div>
 							<p class="text-gray-700 text-base">
