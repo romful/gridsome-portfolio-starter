@@ -123,6 +123,7 @@ export default{
 			this.orderData.Up_to_X_pax = data.Up_to_X_pax
 			this.orderData.Price_vat_excluded = data.Price_vat_excluded
 			this.orderData.Price_per_people = data.Price_per_people
+			this.orderData.Price_per_hour = data.Price_per_hour
 			this.calc()
 		},
 		calc(){
