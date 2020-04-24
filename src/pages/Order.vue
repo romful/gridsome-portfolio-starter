@@ -190,7 +190,6 @@ query {
 				Up_to_X_pax
 				Price_to_define
 				Price_per_hour
-				Fixed_price
 				Price_per_people
 				Included
 				Availability
