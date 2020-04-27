@@ -4,6 +4,7 @@
 import DefaultLayout from '~/layouts/Default.vue'
 import VueScrollTo from 'vue-scrollto'
 import VueFuse from 'vue-fuse'
+import { Datetime } from 'vue-datetime'
 import '~/css/style.css'
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
