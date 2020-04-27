@@ -45,6 +45,14 @@
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="date">
 								Date
 							</label>
+							<datetime
+								class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+								id="date"
+								name="date"
+								type="text"
+								placeholder="Input Date"
+								v-model="orderData.date"
+							></datetime>
 							<input
 								class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								id="date"
@@ -95,7 +103,6 @@
 						</button>
 					</div>
 				</form>
-vue-datetime
 			</div>
 		</div>
 	</Layout>
