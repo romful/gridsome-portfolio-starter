@@ -7,7 +7,7 @@ import VueFuse from 'vue-fuse'
 
 //import Vue from 'vue'
 import Datetime from 'vue-datetime'
-import 'vue-datetime/dist/vue-datetime.css'
+import 'node_modules/vue-datetime/dist/vue-datetime.css'
 
 import '~/css/style.css'
 export default function (Vue, { router, head, isClient }) {
