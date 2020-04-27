@@ -21,7 +21,7 @@ export default function (Vue, { router, head, isClient }) {
 
   Vue.use(VueFuse)
 
-  Vue.component('datetime', Datetime)
+  Vue.use(Datetime)
 
   head.meta.push({
     name: 'keywords',
