@@ -7,8 +7,7 @@ import VueFuse from 'vue-fuse'
 
 import Vue from 'vue'
 import { Datetime } from 'vue-datetime'
-//import 'vue-datetime/dist/vue-datetime.css'
-Vue.use(Datetime)
+import 'vue-datetime/dist/vue-datetime.css'
 
 import '~/css/style.css'
 export default function (Vue, { router, head, isClient }) {
@@ -21,6 +20,8 @@ export default function (Vue, { router, head, isClient }) {
   })
 
   Vue.use(VueFuse)
+
+  Vue.use(Datetime)
 
   head.meta.push({
     name: 'keywords',
