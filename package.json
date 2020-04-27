@@ -18,8 +18,11 @@
     "gridsome-plugin-rss": "^1.2.0",
     "gridsome-source-google-sheets": "^0.4.1",
     "lodash.pick": "^4.4.0",
+    "luxon": "^1.23.0",
+    "vue-datetime": "^1.0.0-beta.11",
     "vue-fuse": "^2.2.0",
-    "vue-scrollto": "^2.17.1"
+    "vue-scrollto": "^2.17.1",
+    "weekstart": "^1.0.1"
   },
   "devDependencies": {
     "tailwindcss": "^1.2.0"

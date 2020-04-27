@@ -94,8 +94,67 @@
 							Order
 						</button>
 					</div>
+<<<<<<< Updated upstream
 				</form>
 			</div>
+=======
+<<<<<<< Updated upstream
+				</div>
+				<div class="text-center mb-4">
+					By clicking in the Order button below, you accept the <span class="font-bold">terms and conditions</span> related to this request.<br />
+					You will receive an email to make the payment and finalise your booking.
+				</div>
+				<div class="text-center mb-4">
+					Total price: <span class="font-bold"><span id="total">175</span> &euro;</span>
+				</div>
+				<div class="text-center">
+					<button class="border-1 border-green-700 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+						Order
+					</button>
+				</div>
+			</form>
+=======
+					<div class="text-center">
+						<button class="border-1 border-green-700 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+							Order
+						</button>
+					</div>
+				</form>
+			</div>
+=======
+  <Layout>
+<<<<<<< HEAD
+<div class="container mx-auto bg-green-100">
+	<h1 class="text-center">booking available up to 1 hour before the requested service</h1>
+	<div class="flex flex-wrap mb-4">
+		<div class="w-1/3 px-2" v-for="edge in $page.allGoogleSheet.edges">
+		  <div class="max-w-sm overflow-hiddenmx-auto">
+		    <img class="w-full rounded-xl" src="../../static/avatar.jpg" />
+		    <div class="px-6 pb-4 pt-8 mx-6 mt--4 mb-4 relative rounded-xl bg-white-700">
+		      <div class="font-bold text-xl mb-2">{{ edge.node.Title }}</div>
+=======
+
+<div class="container mx-auto">
+	<div class="flex flex-wrap mb-4">
+		<div class="w-1/3 px-2" v-for="page in $page.allGoogleSheet.edges">
+		  <div class="max-w-sm rounded overflow-hidden shadow-md mx-auto">
+		    <img class="w-full" src="../../static/avatar.jpg" alt="Avatar" />
+		    <div class="px-6 py-4">
+		      <div class="font-bold text-xl mb-2">{{ page.node.Title }}</div>
+>>>>>>> parent of efcad20... 3
+		      <p class="text-gray-700 text-base">
+		        Book up to : 1 hour before<br />
+		        Up to 7 people
+		      </p>
+		      <div class="flex">
+		        <div class="w-1/2 text-bold">Price : 175 &euro;</div>
+		        <div class="w-1/2 text-bold text-green-700 text-right">Available</div>
+		      </div>
+		    </div>
+		  </div>
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 		</div>
 	</Layout>
 </template>
@@ -185,6 +244,7 @@ export default{
 }
 </script>
 <page-query>
+<<<<<<< Updated upstream
 query {
 	allGoogleSheet {
 		edges {
@@ -202,4 +262,19 @@ query {
 		}
 	}
 }
+=======
+  query {
+    allGoogleSheet {
+      edges {
+        node {
+          Title
+<<<<<<< HEAD
+=======
+          UptoXpax
+>>>>>>> parent of efcad20... 3
+        }
+      }
+    }
+  }
+>>>>>>> Stashed changes
 </page-query>
