@@ -5,9 +5,9 @@ import DefaultLayout from '~/layouts/Default.vue'
 import VueScrollTo from 'vue-scrollto'
 import VueFuse from 'vue-fuse'
 
-import Vue from 'vue'
-import Datetime from 'vue-datetime'
 import '~/css/vue-datetime.min.css'
+//import Vue from 'vue'
+import Datetime from 'vue-datetime'
 
 import '~/css/style.css'
 export default function (Vue, { router, head, isClient }) {
