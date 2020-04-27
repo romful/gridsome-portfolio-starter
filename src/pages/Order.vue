@@ -105,7 +105,7 @@
 				</form>
 			</div>
 		</div>
-import 'vue-datetime/dist/vue-datetime.css'
+Vue.component('datetime', Datetime)
 	</Layout>
 </template>
 

@@ -5,9 +5,9 @@ import DefaultLayout from '~/layouts/Default.vue'
 import VueScrollTo from 'vue-scrollto'
 import VueFuse from 'vue-fuse'
 
-import Vue from 'vue'
-import { Datetime } from 'vue-datetime'
-import 'vue-datetime/dist/vue-datetime.css'
+//import Vue from 'vue'
+import Datetime from 'vue-datetime'
+//import 'vue-datetime/dist/vue-datetime.css'
 
 import '~/css/style.css'
 export default function (Vue, { router, head, isClient }) {
@@ -21,7 +21,7 @@ export default function (Vue, { router, head, isClient }) {
 
   Vue.use(VueFuse)
 
-  Vue.use(Datetime)
+  Vue.component('datetime', Datetime)
 
   head.meta.push({
     name: 'keywords',
