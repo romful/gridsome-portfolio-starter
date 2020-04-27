@@ -95,7 +95,7 @@
 						</button>
 					</div>
 				</form>
-				!!!!!
+vue-datetime
 			</div>
 		</div>
 	</Layout>
