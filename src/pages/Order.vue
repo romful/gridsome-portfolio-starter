@@ -105,6 +105,7 @@
 
 <script>
 import VueTailwindDatepicker from '@coding-wisely/vue-tailwind-datepicker'
+import VueTimepicker from 'vue2-timepicker'
 export default{
 	components: {
 		VueTailwindDatepicker,
