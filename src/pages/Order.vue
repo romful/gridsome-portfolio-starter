@@ -105,7 +105,11 @@
 </template>
 
 <script>
+import VueTailwindDatepicker from '@coding-wisely/vue-tailwind-datepicker'
 export default{
+	components: {
+		VueTailwindDatepicker
+	},
 	metaInfo: {
 		title: 'Order'
 	},
