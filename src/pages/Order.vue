@@ -55,7 +55,12 @@
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="time">
 								Time
 							</label>
-							<input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="time" type="text" placeholder="Input Time" v-model="orderData.time" />
+							<vue-timepicker
+								class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+								id="time"
+								type="text"
+								v-model="orderData.time"
+							></vue-timepicker>
 						</div>
 						<div class="mb-4" v-if="orderData.Price_per_people">
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="people">
@@ -102,7 +107,8 @@
 import VueTailwindDatepicker from '@coding-wisely/vue-tailwind-datepicker'
 export default{
 	components: {
-		VueTailwindDatepicker
+		VueTailwindDatepicker,
+		VueTimepicker
 	},
 	metaInfo: {
 		title: 'Order'
