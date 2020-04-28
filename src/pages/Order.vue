@@ -112,7 +112,7 @@ components
 <script>
 export default{
 	components: {
-		'datetime': Datetime
+		datetime: Datetime
 	},
 	metaInfo: {
 		title: 'Order'
