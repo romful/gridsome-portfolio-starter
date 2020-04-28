@@ -5,7 +5,7 @@ import DefaultLayout from '~/layouts/Default.vue'
 import VueScrollTo from 'vue-scrollto'
 import VueFuse from 'vue-fuse'
 
-//import VueTailwindDatepicker from 'vue-tailwind-datepicker'
+import VueTailwindDatepicker from '@coding-wisely/vue-tailwind-datepicker'
 
 import '~/css/style.css'
 export default function (Vue, { router, head, isClient }) {
@@ -19,7 +19,7 @@ export default function (Vue, { router, head, isClient }) {
 
   Vue.use(VueFuse)
 
- // Vue.use(VueTailwindDatepicker)
+  Vue.use(VueTailwindDatepicker)
 
   head.meta.push({
     name: 'keywords',
