@@ -8,7 +8,6 @@ import VueFuse from 'vue-fuse'
 //import Vue from 'vue'
 import Datetime from 'vue-datetime'
 
-import '~/css/datetime.css'
 import '~/css/style.css'
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
