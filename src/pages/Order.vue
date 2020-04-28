@@ -105,11 +105,15 @@
 				</form>
 			</div>
 		</div>
+components
 	</Layout>
 </template>
 
 <script>
 export default{
+	components: {
+		'datetime': Datetime
+	},
 	metaInfo: {
 		title: 'Order'
 	},
