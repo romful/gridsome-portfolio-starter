@@ -99,14 +99,14 @@
 				</form>
 			</div>
 		</div>
-vue2-datepicker
+import 'vue2-datepicker/index.css'
 	</Layout>
 </template>
 <script>
 /*import VueTailwindDatepicker from '@coding-wisely/vue-tailwind-datepicker'*/
 import VueDatepicker from 'vue2-datepicker'
 import VueTimepicker from 'vue2-timepicker'
-/*import 'vue2-timepicker/dist/VueTimepicker.css'*/
+import 'vue2-datepicker/index.css'
 export default{
 	components: {
 		VueDatepicker,
