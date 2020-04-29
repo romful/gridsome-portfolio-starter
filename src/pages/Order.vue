@@ -99,19 +99,19 @@
 				</form>
 			</div>
 		</div>
-/*	components: {
-		VueTailwindDatepicker,
+	components: {
+/*		VueTailwindDatepicker,*/
 		VueTimepicker
-	},*/
+	},
 	</Layout>
 </template>
 <script>
 /*import VueTailwindDatepicker from '@coding-wisely/vue-tailwind-datepicker'*/
 export default{
-/*	components: {
-		VueTailwindDatepicker,
+	components: {
+/*		VueTailwindDatepicker,*/
 		VueTimepicker
-	},*/
+	},
 	metaInfo: {
 		title: 'Order'
 	},
