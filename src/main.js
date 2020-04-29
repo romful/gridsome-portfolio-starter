@@ -6,8 +6,8 @@ import VueScrollTo from 'vue-scrollto'
 import VueFuse from 'vue-fuse'
 
 /*import VueTailwindDatepicker from '@coding-wisely/vue-tailwind-datepicker'*/
-import VueTimepicker from 'vue2-timepicker'
-import 'vue2-timepicker/dist/VueTimepicker.css'
+/*import VueTimepicker from 'vue2-timepicker'
+import 'vue2-timepicker/dist/VueTimepicker.css'*/
 
 import '~/css/style.css'
 export default function (Vue, { router, head, isClient }) {
@@ -21,7 +21,7 @@ export default function (Vue, { router, head, isClient }) {
 
 /*  Vue.use(VueTailwindDatepicker)*/
 
-  Vue.use(VueTimepicker)
+/*  Vue.use(VueTimepicker)*/
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
