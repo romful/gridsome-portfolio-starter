@@ -45,11 +45,11 @@
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="date">
 								Date
 							</label>
-							<vue-tailwind-datepicker-removed
+							<vue-datepicker
 								class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								id="date"
 								name="date"
-							></vue-tailwind-datepicker-removed>
+							></vue-datepicker>
 						</div>
 						<div class="mb-4">
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="time">
@@ -99,19 +99,17 @@
 				</form>
 			</div>
 		</div>
-  head.link.push({
-        rel: 'stylesheet',
-        href: '/VueTimepicker.css'
-  })
+vue2-datepicker
 	</Layout>
 </template>
 <script>
 /*import VueTailwindDatepicker from '@coding-wisely/vue-tailwind-datepicker'*/
+import VueDatepicker from 'vue2-datepicker'
 import VueTimepicker from 'vue2-timepicker'
 /*import 'vue2-timepicker/dist/VueTimepicker.css'*/
 export default{
 	components: {
-/*		VueTailwindDatepicker,*/
+		VueDatepicker,
 		VueTimepicker
 	},
 	metaInfo: {

@@ -12,6 +12,10 @@ import VueFuse from 'vue-fuse'
 import '~/css/style.css'
 export default function (Vue, { router, head, isClient }) {
 
+/*  head.link.push({
+        rel: 'stylesheet',
+        href: '/VueTimepicker.css'
+  })*/
   head.link.push({
         rel: 'stylesheet',
         href: '/VueTimepicker.css'
