@@ -49,6 +49,7 @@
 								class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								id="date"
 								name="date"
+								v-model="orderData.date"
 							></datepicker>
 						</div>
 						<div class="mb-4">
@@ -99,10 +100,7 @@
 				</form>
 			</div>
 		</div>
-  head.link.push({
-        rel: 'stylesheet',
-        href: '/datepicker.css'
-  })
+date: new Date(),
 	</Layout>
 </template>
 <script>
@@ -121,7 +119,7 @@ export default{
 		return{
 			orderData: {
 				title: "",
-				date: "",
+				date: new Date(),
 				time: "",
 				people: 1,
 				hours: 1,
