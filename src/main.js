@@ -11,8 +11,6 @@ import 'vue2-timepicker/dist/VueTimepicker.css'
 
 import '~/css/style.css'
 export default function (Vue, { router, head, isClient }) {
-  // Set default layout as a global component
-  Vue.component('Layout', DefaultLayout)
 
   Vue.use(VueScrollTo, {
     duration: 500,
@@ -24,6 +22,9 @@ export default function (Vue, { router, head, isClient }) {
 /*  Vue.use(VueTailwindDatepicker)*/
 
   Vue.use(VueTimepicker)
+
+  // Set default layout as a global component
+  Vue.component('Layout', DefaultLayout)
 
   head.meta.push({
     name: 'keywords',
