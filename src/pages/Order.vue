@@ -101,7 +101,7 @@
 		</div>
 	</Layout>
 </template>
-
+/*import VueTailwindDatepicker from '@coding-wisely/vue-tailwind-datepicker'*/
 <script>
 /*import VueTailwindDatepicker from '@coding-wisely/vue-tailwind-datepicker'*/
 import VueTimepicker from 'vue2-timepicker'
