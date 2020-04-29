@@ -46,7 +46,10 @@
 								Date
 							</label>
 							<datepicker
-								class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+								type="date"
+								format="D.MM.YY"
+								valueType="format"
+								class="appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								id="date"
 								name="date"
 								v-model="orderData.date"
@@ -59,7 +62,8 @@
 							<datepicker
 								type="time"
 								format="H:mm"
-								class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+								valueType="format"
+								class="appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								id="time"
 								name="time"
 								v-model="orderData.time"
@@ -103,7 +107,7 @@
 				</form>
 			</div>
 		</div>
-format
+value format
 	</Layout>
 </template>
 <script>
