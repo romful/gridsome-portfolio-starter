@@ -10,7 +10,7 @@ import VueFuse from 'vue-fuse'
 //import 'vue2-timepicker/dist/VueTimepicker.css'
 
 import '~/css/style.css'
-import '~/css/VueTimepicker.css'
+require('~/css/VueTimepicker.css')
 export default function (Vue, { router, head, isClient }) {
 
   Vue.use(VueScrollTo, {
