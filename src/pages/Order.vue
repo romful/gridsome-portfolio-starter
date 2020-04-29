@@ -108,7 +108,7 @@
 <script>
 /*import VueTailwindDatepicker from '@coding-wisely/vue-tailwind-datepicker'*/
 import VueTimepicker from 'vue2-timepicker'
-import 'vue2-timepicker/dist/VueTimepicker.css'
+/*import 'vue2-timepicker/dist/VueTimepicker.css'*/
 export default{
 	components: {
 /*		VueTailwindDatepicker,*/
