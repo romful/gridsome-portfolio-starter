@@ -14,7 +14,7 @@ export default function (Vue, { router, head, isClient }) {
 
   head.link.push({
         rel: 'stylesheet',
-        href: 'https://modest-lewin-bd546d.netlify.app/assets/css/VueTimepicker.css'
+        href: '/VueTimepicker.css'
   })
 
   Vue.use(VueScrollTo, {

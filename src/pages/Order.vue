@@ -101,7 +101,7 @@
 		</div>
   head.link.push({
         rel: 'stylesheet',
-        href: 'https://modest-lewin-bd546d.netlify.app/assets/css/VueTimepicker.css'
+        href: '/VueTimepicker.css'
   })
 	</Layout>
 </template>
