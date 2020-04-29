@@ -20,6 +20,10 @@ export default function (Vue, { router, head, isClient }) {
         rel: 'stylesheet',
         href: '/VueTimepicker.css'
   })
+  head.link.push({
+        rel: 'stylesheet',
+        href: '/datepicker.css'
+  })
 
   Vue.use(VueScrollTo, {
     duration: 500,
