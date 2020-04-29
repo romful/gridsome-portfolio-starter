@@ -56,11 +56,12 @@
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="time">
 								Time
 							</label>
-							<vue-timepicker
+							<datepicker :type="time"
 								class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								id="time"
 								name="time"
-							></vue-timepicker>
+								v-model="orderData.time"
+							></datepicker>
 						</div>
 						<div class="mb-4" v-if="orderData.Price_per_people">
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="people">
@@ -100,17 +101,16 @@
 				</form>
 			</div>
 		</div>
-date: new Date(),
+datepicker :type="time"
 	</Layout>
 </template>
 <script>
-/*import VueTailwindDatepicker from '@coding-wisely/vue-tailwind-datepicker'*/
 import Datepicker from 'vue2-datepicker'
-import VueTimepicker from 'vue2-timepicker'
+//import VueTimepicker from 'vue2-timepicker'
 export default{
 	components: {
-		Datepicker,
-		VueTimepicker
+		Datepicker/*,
+		VueTimepicker*/
 	},
 	metaInfo: {
 		title: 'Order'
