@@ -56,7 +56,7 @@
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="time">
 								Time
 							</label>
-							<datepicker :type="time"
+							<datepicker type="time"
 								class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								id="time"
 								name="time"
@@ -101,7 +101,7 @@
 				</form>
 			</div>
 		</div>
-datepicker :type="time"
+datepicker type="time"
 	</Layout>
 </template>
 <script>
@@ -120,7 +120,7 @@ export default{
 			orderData: {
 				title: "",
 				date: new Date(),
-				time: "",
+				time: new Date(),
 				people: 1,
 				hours: 1,
 				Up_to_X_pax: 0,
