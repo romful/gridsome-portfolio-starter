@@ -99,7 +99,7 @@
 				</form>
 			</div>
 		</div>
-import 'vue2-timepicker/dist/VueTimepicker.css'
+import '~/css/VueTimepicker.css'
 	</Layout>
 </template>
 <script>
