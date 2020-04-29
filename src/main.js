@@ -5,17 +5,9 @@ import DefaultLayout from '~/layouts/Default.vue'
 import VueScrollTo from 'vue-scrollto'
 import VueFuse from 'vue-fuse'
 
-/*import VueTailwindDatepicker from '@coding-wisely/vue-tailwind-datepicker'*/
-/*import VueTimepicker from 'vue2-timepicker'*/
-//import 'vue2-timepicker/dist/VueTimepicker.css'
-
 import '~/css/style.css'
 export default function (Vue, { router, head, isClient }) {
 
-/*  head.link.push({
-        rel: 'stylesheet',
-        href: '/VueTimepicker.css'
-  })*/
   head.link.push({
         rel: 'stylesheet',
         href: '/datepicker.css'
