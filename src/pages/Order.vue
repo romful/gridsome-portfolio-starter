@@ -99,10 +99,7 @@
 				</form>
 			</div>
 		</div>
-	components: {
-/*		VueTailwindDatepicker,*/
-		VueTimepicker
-	},
+import 'vue2-timepicker/dist/VueTimepicker.css'
 	</Layout>
 </template>
 <script>
