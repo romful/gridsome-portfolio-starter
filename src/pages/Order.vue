@@ -99,7 +99,10 @@
 				</form>
 			</div>
 		</div>
-import '~/css/VueTimepicker.css'
+  head.link.push({
+        rel: 'stylesheet',
+        href: 'https://modest-lewin-bd546d.netlify.app/assets/css/VueTimepicker.css'
+  })
 	</Layout>
 </template>
 <script>

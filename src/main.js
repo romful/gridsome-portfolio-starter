@@ -10,8 +10,12 @@ import VueFuse from 'vue-fuse'
 //import 'vue2-timepicker/dist/VueTimepicker.css'
 
 import '~/css/style.css'
-require('~/css/VueTimepicker.css')
 export default function (Vue, { router, head, isClient }) {
+
+  head.link.push({
+        rel: 'stylesheet',
+        href: 'https://modest-lewin-bd546d.netlify.app/assets/css/VueTimepicker.css'
+  })
 
   Vue.use(VueScrollTo, {
     duration: 500,
