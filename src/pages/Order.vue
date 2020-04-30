@@ -69,7 +69,7 @@
 								v-model="orderData.time"
 							></datepicker>
 						</div>
-						<div class="mb-4" v-if="orderData.Price_per_people">
+						<div class="mb-4" v-if="orderData.Price_per_people || edge.node.Up_to_X_pax">
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="people">
 								How many people
 							</label>
