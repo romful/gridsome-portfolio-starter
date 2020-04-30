@@ -49,6 +49,7 @@
 								type="date"
 								format="D.MM.YY"
 								valueType="format"
+								:not-before="disabledBefore"
 								class="appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								id="date"
 								name="date"
@@ -137,6 +138,7 @@ export default{
 		}
 	},
 	methods: {
+		disabledBefore: new Date(),
 		init(data){
 			this.orderData.title = data.Title
 			this.orderData.people = 1
