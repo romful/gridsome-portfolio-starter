@@ -139,6 +139,7 @@ export default{
 	},
 	methods: {
 		dateFormat(date){
+			var MM, DD, YYYY;
 			var dtf = new Intl.DateTimeFormat('en', { year: "numeric", month: "2-digit", day: "2-digit" });
 			[{ value: MM },,{ value: DD },,{ value: YYYY }] = dtf.formatToParts(date);
 			return `${YYYY}-${MM}-${DD}`;
