@@ -49,7 +49,7 @@
 								type="date"
 								format="D.MM.YY"
 								valueType="YYYY-MM-DD"
-								:not-before="orderData.date"
+								:not-before="orderData.notBefore"
 								class="appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								id="date"
 								name="date"
@@ -130,6 +130,7 @@ export default{
 			orderData: {
 				title: "",
 				date: this.today(),
+				notBefore: new Date(),
 				time: "12:00",
 				people: 1,
 				hours: 1,
@@ -198,11 +199,14 @@ export default{
 		handleSubmit(e) {
 			var data = {
 				fields: [{
-					name: "email",
-					value: this.orderData.email
-				}, {
 					name: "service_concierge",
 					value: this.orderData.title
+				}, {
+					name: "date_service",
+					value: this.orderData.date
+				}, {
+					name: "email",
+					value: this.orderData.email
 				}, {
 					name: "price",
 					value: this.orderData.cost
