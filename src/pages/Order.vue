@@ -87,6 +87,12 @@
 							<span class="text-center inline-block cursor-pointer w-12 border rounded-r py-2 leading-tight" @click="incrementHours">+</span>
 						</div>
 						<div class="mb-4">
+							<label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+								E-mail
+							</label>
+							<input class="appearance-none w-16 border-t border-b py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="E-mail" v-model="orderData.email" />
+						</div>
+						<div class="mb-4">
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="message">
 								Message
 							</label>
@@ -130,6 +136,7 @@ export default{
 				Up_to_X_pax: 0,
 				Booking_Up_to_X_hours: 0,
 				message: "",
+				email: "",
 				Price_vat_excluded: 0,
 				Price_per_people: 0,
 				Price_per_hour: 0,
@@ -189,10 +196,13 @@ export default{
 			}
 		},
 		handleSubmit(e) {
-			var fields = Object.keys(this.orderData)
+			var simpleData = {
+				email: this.orderData.email
+			};
+			var fields = Object.keys(simpleData)
 				.map(key => ({
-					"name": key,
-					"value": this.orderData[key]
+					name: key,
+					value: this.orderData[key]
 				}));
 			fetch(e.target.getAttribute('action'), {
 				method: e.target.getAttribute('method'),
