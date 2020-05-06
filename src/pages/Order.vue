@@ -145,7 +145,7 @@ export default{
 		},
 		today(){
 			var today = new Date();
-			return dateFormat(today)
+			return this.dateFormat(today)
 		},
 		init(data){
 			this.orderData.title = data.Title
