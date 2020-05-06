@@ -37,7 +37,7 @@
 					name="order"
 					method="post"
 					v-on:submit.prevent="handleSubmit"
-					action="/order/">
+					action="https://api.hsforms.com/submissions/v3/integration/submit/7568331/a3a3813d-79b6-4819-ae74-f82372d68398">
 					<input type="hidden" name="title" v-model="orderData.title" />
 					<input type="hidden" name="cost" v-model="orderData.cost" />
 					<div class="bg-white rounded-xl px-8 pt-6 pb-8 mb-4 w-full max-w-xs mx-auto">
@@ -123,7 +123,7 @@ export default{
 		return{
 			orderData: {
 				title: "",
-				date: today(),
+				date: this.today(),
 				time: "12:00",
 				people: 1,
 				hours: 1,
@@ -143,7 +143,7 @@ export default{
 		},
 		today(){
 			var today = new Date();
-			return today.toLocaleDateString("en-US", options())
+			return today.toLocaleDateString("en-US", this.options())
 		},
 		init(data){
 			this.orderData.title = data.Title
