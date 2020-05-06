@@ -90,7 +90,7 @@
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="email">
 								E-mail
 							</label>
-							<input class="appearance-none w-16 border-t border-b py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="E-mail" v-model="orderData.email" />
+							<input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="E-mail" v-model="orderData.email" />
 						</div>
 						<div class="mb-4">
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="message">
@@ -196,20 +196,19 @@ export default{
 			}
 		},
 		handleSubmit(e) {
-			var simpleData = {
-				email: this.orderData.email
+			var data = {
+				fields: [{
+					name: "email",
+					value: this.orderData.email
+				}, {
+					name: "service_concierge",
+					value: this.orderData.title
+				}]
 			};
-			var fields = Object.keys(simpleData)
-				.map(key => ({
-					name: key,
-					value: this.orderData[key]
-				}));
 			fetch(e.target.getAttribute('action'), {
 				method: e.target.getAttribute('method'),
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({
-					"fields": fields
-				}),
+				body: JSON.stringify(data),
 			})
 			.then((response) => {
 				return response.json();
