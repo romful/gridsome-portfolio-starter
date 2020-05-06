@@ -138,12 +138,14 @@ export default{
 		}
 	},
 	methods: {
-		options(){
-			return { year: "numeric", month: "2-digit", day: "2-digit" };
+		dateFormat(date){
+			var dtf = new Intl.DateTimeFormat('en', { year: "numeric", month: "2-digit", day: "2-digit" });
+			[{ value: MM },,{ value: DD },,{ value: YYYY }] = dtf.formatToParts(date);
+			return `${YYYY}-${MM}-${DD}`;
 		},
 		today(){
 			var today = new Date();
-			return today.toLocaleDateString("en-US", this.options())
+			return dateFormat(today)
 		},
 		init(data){
 			this.orderData.title = data.Title
@@ -185,22 +187,29 @@ export default{
 				this.calc()
 			}
 		},
-		encode(data) {
-			return Object.keys(data)
-				.map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-				.join('&')
-		},
 		handleSubmit(e) {
-			fetch(e.target.getAttribute('action'), {
+			var fields = Object.keys(data)
+				.map(key => ({
+					"name": key,
+					"value": data[key]
+				}));
+			var response = await fetch(e.target.getAttribute('action'), {
 				method: e.target.getAttribute('method'),
-				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-				body: this.encode({
-					'form-name': e.target.getAttribute('name'),
-					...this.orderData,
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					"fields": fields
 				}),
-			})
-			.then(() => this.$router.push(e.target.getAttribute('action')))
-			.catch(error => alert(error))
+			});
+			var json = await response.json();
+			if(json.inlineMessage) {
+				alert(json.inlineMessage);
+			}else if(json.errors && json.errors[0] && json.errors[0].message){
+				alert(json.errors[0].message);
+			}else if(json.message){
+				alert(json.message);
+			}else{
+				alert("ERROR!!!");
+			}
 		}
 	}
 }
