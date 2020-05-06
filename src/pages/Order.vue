@@ -189,7 +189,7 @@ export default{
 			}
 		},
 		handleSubmit(e) {
-			var fields = Object.keys(orderData)
+			var fields = Object.keys(this.orderData)
 				.map(key => ({
 					"name": key,
 					"value": data[key]
