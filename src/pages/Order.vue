@@ -203,6 +203,9 @@ export default{
 				}, {
 					name: "service_concierge",
 					value: this.orderData.title
+				}, {
+					name: "price",
+					value: this.orderData.cost
 				}]
 			};
 			fetch(e.target.getAttribute('action'), {
