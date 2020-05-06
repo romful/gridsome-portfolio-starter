@@ -49,7 +49,7 @@
 								type="date"
 								format="D.MM.YY"
 								valueType="YYYY-MM-DD"
-								:not-before="today"
+								:not-before="orderData.date"
 								class="appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								id="date"
 								name="date"
@@ -192,7 +192,7 @@ export default{
 			var fields = Object.keys(this.orderData)
 				.map(key => ({
 					"name": key,
-					"value": data[key]
+					"value": this.orderData[key]
 				}));
 			fetch(e.target.getAttribute('action'), {
 				method: e.target.getAttribute('method'),
