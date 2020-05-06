@@ -193,23 +193,27 @@ export default{
 					"name": key,
 					"value": data[key]
 				}));
-			var response = await fetch(e.target.getAttribute('action'), {
+			fetch(e.target.getAttribute('action'), {
 				method: e.target.getAttribute('method'),
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
 					"fields": fields
 				}),
+			})
+			.then((response) => {
+				return response.json();
+			})
+			.then((json) => {
+				if(json.inlineMessage) {
+					alert(json.inlineMessage);
+				}else if(json.errors && json.errors[0] && json.errors[0].message){
+					alert(json.errors[0].message);
+				}else if(json.message){
+					alert(json.message);
+				}else{
+					alert("ERROR!!!");
+				}
 			});
-			var json = await response.json();
-			if(json.inlineMessage) {
-				alert(json.inlineMessage);
-			}else if(json.errors && json.errors[0] && json.errors[0].message){
-				alert(json.errors[0].message);
-			}else if(json.message){
-				alert(json.message);
-			}else{
-				alert("ERROR!!!");
-			}
 		}
 	}
 }
