@@ -49,7 +49,7 @@
 								type="date"
 								format="D.MM.YY"
 								valueType="YYYY-MM-DD"
-								notBefore="today"
+								:not-before="today"
 								class="appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								id="date"
 								name="date"
@@ -189,7 +189,7 @@ export default{
 			}
 		},
 		handleSubmit(e) {
-			var fields = Object.keys(data)
+			var fields = Object.keys(orderData)
 				.map(key => ({
 					"name": key,
 					"value": data[key]
