@@ -48,8 +48,8 @@
 							<datepicker
 								type="date"
 								format="D.MM.YY"
-								valueType="format"
-								:not-before="disabledBefore"
+								valueType="YYYY-MM-DD"
+								notBefore="today"
 								class="appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								id="date"
 								name="date"
@@ -123,8 +123,8 @@ export default{
 		return{
 			orderData: {
 				title: "",
-				date: new Date(),
-				time: new Date(),
+				date: today(),
+				time: "12:00",
 				people: 1,
 				hours: 1,
 				Up_to_X_pax: 0,
@@ -138,7 +138,13 @@ export default{
 		}
 	},
 	methods: {
-		disabledBefore: new Date(),
+		options(){
+			return { year: "numeric", month: "2-digit", day: "2-digit" };
+		},
+		today(){
+			var today = new Date();
+			return today.toLocaleDateString("en-US", options())
+		},
 		init(data){
 			this.orderData.title = data.Title
 			this.orderData.people = 1
