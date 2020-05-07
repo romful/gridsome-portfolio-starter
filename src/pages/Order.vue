@@ -2,6 +2,11 @@
 	<Layout>
 		<div class="container max-w-none bg-green-100 overflow-hidden">
 			<h1 class="text-center">booking available up to 1 hour before the requested service</h1>
+			<p>
+				<select>
+					<option v-for="edge in $page.allGoogleSheet.edges">{{ edge.node.Category }}</option>
+				</select>
+			</p>
 			<div class="flex flex-wrap mb-4 max-w-5xl mx-auto">
 				<div class="md:w-1/2 lg:w-1/3 w-full px-2" v-for="edge in $page.allGoogleSheet.edges">
 					<div class="mx-auto max-w-sm overflow-hiddenmx-auto">
@@ -130,7 +135,7 @@ export default{
 			orderData: {
 				title: "",
 				date: this.today(),
-				notBefore: new Date(),
+				notBefore: "2020-05-06",
 				time: "12:00",
 				people: 1,
 				hours: 1,
@@ -240,6 +245,7 @@ query {
 	allGoogleSheet {
 		edges {
 			node {
+				Category
 				Title
 				Img
 				Price_vat_excluded
