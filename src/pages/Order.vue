@@ -2,15 +2,16 @@
 	<Layout>
 		<div class="container max-w-none bg-green-100 overflow-hidden">
 			<h1 class="text-center">booking available up to 1 hour before the requested service</h1>
-			<div class="inline-block relative w-64">
-				<select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-					<option>-- select the category --</option>
+			<div class="mx-auto my-10 relative w-64">
+				<select v-model="category" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+					<option value="">-- select the category --</option>
 					<option v-for="category in categories">{{ category }}</option>
 				</select>
 				<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
 					<svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
 				</div>
 			</div>
+			{{ category }}
 			<div class="flex flex-wrap mb-4 max-w-5xl mx-auto">
 				<div class="md:w-1/2 lg:w-1/3 w-full px-2" v-for="edge in $page.allGoogleSheet.edges">
 					<div class="mx-auto max-w-sm overflow-hiddenmx-auto">
@@ -147,6 +148,7 @@ export default{
 	},
 	data(){
 		return{
+			category: "",
 			orderData: {
 				title: "",
 				date: this.today(),
