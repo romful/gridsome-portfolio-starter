@@ -2,11 +2,11 @@
 	<Layout>
 		<div class="container max-w-none bg-green-100 overflow-hidden">
 			<h1 class="text-center">booking available up to 1 hour before the requested service</h1>
-			<p>
-				<select>
+			<div class="text-center">
+				<select class="text-xl">
 					<option v-for="category in categories">{{ category }}</option>
 				</select>
-			</p>
+			</div>
 			<div class="flex flex-wrap mb-4 max-w-5xl mx-auto">
 				<div class="md:w-1/2 lg:w-1/3 w-full px-2" v-for="edge in $page.allGoogleSheet.edges">
 					<div class="mx-auto max-w-sm overflow-hiddenmx-auto">
@@ -133,10 +133,11 @@ export default{
 	computed: {
 		categories(){
 			let categories = [];
-			categories.push('123');
-			categories.push('1234');
-			categories.push('1235');
-			categories.push('0123');
+			$page.allGoogleSheet.edges.forEach((edge) => {
+				if(!categories.includes(edge.node.Category)){
+					categories.push(edge.node.Category);
+				}
+			});
 			return categories;
 		}
 	},
