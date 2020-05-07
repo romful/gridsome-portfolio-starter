@@ -4,7 +4,7 @@
 			<h1 class="text-center">booking available up to 1 hour before the requested service</h1>
 			<p>
 				<select>
-					<option v-for="edge in $page.allGoogleSheet.edges">{{ edge.node.Category }}</option>
+					<option v-for="category in categories">{{ category }}</option>
 				</select>
 			</p>
 			<div class="flex flex-wrap mb-4 max-w-5xl mx-auto">
@@ -129,6 +129,16 @@ export default{
 	},
 	metaInfo: {
 		title: 'Order'
+	},
+	computed: {
+		categories(){
+			let categories = [];
+			categories.push('123');
+			categories.push('1234');
+			categories.push('1235');
+			categories.push('0123');
+			return categories;
+		}
 	},
 	data(){
 		return{
