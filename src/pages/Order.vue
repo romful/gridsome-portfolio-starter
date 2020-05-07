@@ -13,7 +13,7 @@
 			</div>
 			{{ category }}
 			<div class="flex flex-wrap mb-4 max-w-5xl mx-auto">
-				<div class="md:w-1/2 lg:w-1/3 w-full px-2" v-for="edge in $page.allGoogleSheet.edges">
+				<div class="md:w-1/2 lg:w-1/3 w-full px-2" v-for="edge in $page.allGoogleSheet.edges" v-if="edge.node.Category==category">
 					<div class="mx-auto max-w-sm overflow-hiddenmx-auto">
 						<img v-if="edge.node.Img" class="w-full rounded-xl" :src="edge.node.Img" />
 						<img v-else class="w-full rounded-xl" src="../../static/avatar.jpg" />
