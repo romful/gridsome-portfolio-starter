@@ -123,6 +123,17 @@
 				</form>
 			</div>
 		</div>
+  <div>
+    <div>
+      <img :src="$auth.user.picture" />
+      <h2>{{ $auth.user.name }}</h2>
+      <p>{{ $auth.user.email }}</p>
+    </div>
+
+    <div>
+      <pre>{{ JSON.stringify($auth.user, null, 2) }}</pre>
+    </div>
+  </div>
 	</Layout>
 </template>
 <script>
@@ -167,6 +178,14 @@ export default{
 		}
 	},
 	methods: {
+		login() {
+			this.$auth.loginWithRedirect();
+		},
+		logout() {
+			this.$auth.logout({
+				returnTo: window.location.origin
+			});
+		},
 		dateFormat(date){
 			var MM, DD, YYYY;
 			var dtf = new Intl.DateTimeFormat('en', { year: "numeric", month: "2-digit", day: "2-digit" });
