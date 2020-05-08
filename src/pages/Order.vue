@@ -16,21 +16,21 @@
 					<div class="mx-auto max-w-sm overflow-hiddenmx-auto">
 						<img v-if="edge.node.Img" class="w-full rounded-xl" :src="edge.node.Img" />
 						<img v-else class="w-full rounded-xl" src="../../static/avatar.jpg" />
-						<div class="px-6 pb-4 pt-8 mx-6 -mt-4 mb-4 relative rounded-xl bg-white-700">
+						<div class="px-6 pb-4 pt-8 mx-4 -mt-4 mb-4 relative rounded-xl bg-white-700">
 							<div class="font-bold text-xl mb-2">{{ edge.node.Title }}</div>
 							<p class="text-gray-700 text-base">
 								<span v-if="edge.node.Booking_Up_to_X_hours != ''">Book up to : {{ edge.node.Booking_Up_to_X_hours }} <span v-if="edge.node.Booking_Up_to_X_hours > 1">hours</span><span v-else>hour</span> before<br /></span>
 								<span v-if="edge.node.Up_to_X_pax != ''">Up to {{ edge.node.Up_to_X_pax }} <span v-if="edge.node.Up_to_X_pax > 1">people</span><span v-else>person</span><br /></span>
 							</p>
 							<div class="flex">
-								<div class="w-1/2 font-bold">
+								<div class="w-1/3 font-bold">
 									<span v-if="edge.node.Price_vat_excluded">
 										Price : {{ edge.node.Price_vat_excluded }} &euro;
 										<span v-if="edge.node.Price_per_hour">per hour</span>
 										<span v-else-if="edge.node.Price_per_people">per person</span>
 									</span>
 								</div>
-								<div class="w-1/2 font-bold text-right">
+								<div class="w-1/3 font-bold text-right">
 									<a href="#order"  v-scroll-to="'#order'" @click="init(edge.node)" v-if="edge.node.Availability" class="text-green-700">Available</a>
 									<span v-else class="text-red-700">Unavailable</span>
 								</div>
