@@ -22,8 +22,8 @@
 								<span v-if="edge.node.Booking_Up_to_X_hours != ''">Book up to : {{ edge.node.Booking_Up_to_X_hours }} <span v-if="edge.node.Booking_Up_to_X_hours > 1">hours</span><span v-else>hour</span> before<br /></span>
 								<span v-if="edge.node.Up_to_X_pax != ''">Up to {{ edge.node.Up_to_X_pax }} <span v-if="edge.node.Up_to_X_pax > 1">people</span><span v-else>person</span><br /></span>
 							</p>
-							<div class="flex">
-								<div class="w-1/3 font-bold">
+							<div class="flex text-sm">
+								<div class="w-2/3 font-bold">
 									<span v-if="edge.node.Price_vat_excluded">
 										Price : {{ edge.node.Price_vat_excluded }} &euro;
 										<span v-if="edge.node.Price_per_hour">per hour</span>
