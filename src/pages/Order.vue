@@ -1,9 +1,9 @@
 <template>
 	<Layout>
-		<div class="container max-w-none bg-green-100 overflow-hidden">
+		<div class="container max-w-none overflow-hidden">
 			<h1 class="text-center">booking available up to 1 hour before the requested service</h1>
 			<div class="mx-auto my-10 relative w-64">
-				<select v-model="category" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+				<select v-model="category" class="block appearance-none w-full border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
 					<option value="">-- select the category --</option>
 					<option v-for="category in categories">{{ category }}</option>
 				</select>
@@ -49,7 +49,7 @@
 					action="https://api.hsforms.com/submissions/v3/integration/submit/7568331/a3a3813d-79b6-4819-ae74-f82372d68398">
 					<input type="hidden" name="title" v-model="orderData.title" />
 					<input type="hidden" name="cost" v-model="orderData.cost" />
-					<div class="bg-white rounded-xl px-8 pt-6 pb-8 mb-4 w-full max-w-xs mx-auto">
+					<div class="bg-background-form rounded-xl px-8 pt-6 pb-8 mb-4 w-full max-w-xs mx-auto">
 						<div class="mb-4">
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="date">
 								Date
