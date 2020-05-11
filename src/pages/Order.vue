@@ -19,7 +19,7 @@
 					<div class="mx-auto max-w-sm overflow-hiddenmx-auto">
 						<img v-if="edge.node.Img" class="w-full rounded-xl" :src="edge.node.Img" />
 						<img v-else class="w-full rounded-xl" src="../../static/avatar.jpg" />
-						<div class="px-6 pb-4 pt-8 mx-4 -mt-4 mb-4 relative rounded-xl cursor-pointer duration-500 bg-white opacity-75 hover:opacity-100 hover:scale-110" @click="edge.node.Availability && init(edge.node)">
+						<div class="px-6 pb-4 pt-8 mx-4 -mt-4 mb-4 relative rounded-xl cursor-pointer duration-500 bg-white opacity-75 hover:opacity-100 hover:transform hover:scale-110" @click="edge.node.Availability && init(edge.node)" :class="'opacity-100': edge.node.Title == orderData.title">
 							<div class="font-bold text-xl mb-2">{{ edge.node.Title }}</div>
 							<p class="text-gray-700 text-base">
 								<span v-if="edge.node.Booking_Up_to_X_hours != ''">Book up to : {{ edge.node.Booking_Up_to_X_hours }} <span v-if="edge.node.Booking_Up_to_X_hours > 1">hours</span><span v-else>hour</span> before<br /></span>
