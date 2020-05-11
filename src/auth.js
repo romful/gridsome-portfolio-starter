@@ -95,7 +95,7 @@ let auth = new Vue({
     Vue.prototype.$auth = auth
   }
 }*/
-export const auth0 = {
+export const Auth0Plugin = {
   install(Vue) {
     Vue.prototype.$auth = auth
   }
