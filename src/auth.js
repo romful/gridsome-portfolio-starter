@@ -90,8 +90,13 @@ let auth = new Vue({
   }
 })
 
-export default {
+/*export default {
   install: function(Vue) {
+    Vue.prototype.$auth = auth
+  }
+}*/
+export default = {
+  install(Vue) {
     Vue.prototype.$auth = auth
   }
 }
