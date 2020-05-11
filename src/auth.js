@@ -95,7 +95,7 @@ let auth = new Vue({
     Vue.prototype.$auth = auth
   }
 }*/
-export default = {
+export const auth0 = {
   install(Vue) {
     Vue.prototype.$auth = auth
   }

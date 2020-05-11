@@ -7,7 +7,7 @@ import VueFuse from 'vue-fuse'
 
 //import { domain, clientId } from "../auth_config.json";
 //import { Auth0Plugin } from "./auth";
-import { auth } from "./auth";
+import { auth0 } from "./auth";
 
 import '~/css/style.css'
 export default function (Vue, { router, head, isClient }) {
@@ -24,7 +24,7 @@ export default function (Vue, { router, head, isClient }) {
 
   Vue.use(VueFuse)
 
-  Vue.use(auth)
+  Vue.use(auth0)
 /*  Vue.use(Auth0Plugin, {
     domain,
     clientId,
