@@ -2,7 +2,7 @@
 	<Layout>
 		<div class="container max-w-none overflow-hidden">
 			<h1 class="text-center">booking available up to 1 hour before the requested service</h1>
-			<div class="mx-auto my-10 relative w-64 text-center">
+			<div class="mx-auto my-10 relative w-64 text-center uppercase">
 				{{ now }}
 			</div>
 			<div class="mx-auto my-10 relative w-64">
@@ -203,7 +203,11 @@ export default{
 				hour12: false
 			});
 			[{ value: weekday },,{ value: month },,{ value: day },,{ value: hour },,{ value: minute }] = dtf.formatToParts(date);
+			day += nth(day);
 			return `${weekday} ${day} ${month} - ${hour}:${minute}`;
+		},
+		nth(n){
+			return["st","nd","rd"][((n+90)%100-10)%10-1]||"th";
 		},
 		today(){
 			var today = new Date();
