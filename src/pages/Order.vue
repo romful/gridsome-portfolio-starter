@@ -2,6 +2,9 @@
 	<Layout>
 		<div class="container max-w-none overflow-hidden">
 			<h1 class="text-center">booking available up to 1 hour before the requested service</h1>
+			<div class="mx-auto my-10 relative w-64 text-center">
+				{{ now }}
+			</div>
 			<div class="mx-auto my-10 relative w-64">
 				<select v-model="category" class="block appearance-none w-full border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
 					<option value="">-- select the category --</option>
@@ -135,6 +138,10 @@ export default{
 		title: 'Order'
 	},
 	computed: {
+		now(){
+			let time = new Date();
+			return this.dateTimeFormat(time);
+		}
 		categories(){
 			let categories = [];
 			this.$page.allGoogleSheet.edges.forEach((edge) => {
@@ -177,10 +184,27 @@ export default{
 		},
 		dateFormat(date){
 			var MM, DD, YYYY;
-			var dtf = new Intl.DateTimeFormat('en', { year: "numeric", month: "2-digit", day: "2-digit" });
+			var dtf = new Intl.DateTimeFormat('en', {
+				year: "numeric",
+				month: "2-digit",
+				day: "2-digit"
+			});
 			[{ value: MM },,{ value: DD },,{ value: YYYY }] = dtf.formatToParts(date);
 			return `${YYYY}-${MM}-${DD}`;
 		},
+		dateTimeFormat(date){
+			var weekday, month, day, hour, minute;
+			var dtf = new Intl.DateTimeFormat('en', {
+				weekday: "short",
+				month: "long",
+				day: "numeric",
+				hour: "numeric",
+				minute: "2-digit",
+				hour12: false
+			});
+			[{ value: weekday },,{ value: month },,{ value: day },,{ value: hour },,{ value: minute }] = dtf.formatToParts(date);
+			return `${weekday} ${day} ${month} - ${hour}:${minute}`;
+		}
 		today(){
 			var today = new Date();
 			return this.dateFormat(today)
