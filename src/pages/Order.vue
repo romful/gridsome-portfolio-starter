@@ -19,7 +19,7 @@
 					<div class="mx-auto max-w-sm overflow-hiddenmx-auto">
 						<img v-if="edge.node.Img" class="w-full rounded-xl" :src="edge.node.Img" />
 						<img v-else class="w-full rounded-xl" src="../../static/avatar.jpg" />
-						<div class="px-6 pb-4 pt-8 mx-4 -mt-4 mb-4 relative rounded-xl bg-white-700 hover:bg-white" @click="edge.node.Availability && init(edge.node)">
+						<div class="px-6 pb-4 pt-8 mx-4 -mt-4 mb-4 relative rounded-xl cursor-pointer bg-white opacity-75 hover:opacity-100 hover:scale-110" @click="edge.node.Availability && init(edge.node)">
 							<div class="font-bold text-xl mb-2">{{ edge.node.Title }}</div>
 							<p class="text-gray-700 text-base">
 								<span v-if="edge.node.Booking_Up_to_X_hours != ''">Book up to : {{ edge.node.Booking_Up_to_X_hours }} <span v-if="edge.node.Booking_Up_to_X_hours > 1">hours</span><span v-else>hour</span> before<br /></span>
@@ -42,6 +42,7 @@
 					</div>
 				</div>
 			</div>
+			<div id="before-order"></div>
 			<div id="order" v-if="orderData.title">
 				<h1 class="font-bold text-xl mb-2 text-center">Fill in the form below :</h1>
 				<h2 class="text-md mb-2 text-center bg-blue-700 text-white rounded-xl py-2 max-w-xs mx-auto">{{ orderData.title }}</h2>
@@ -203,7 +204,7 @@ export default{
 				hour12: false
 			});
 			[{ value: weekday },,{ value: month },,{ value: day },,{ value: hour },,{ value: minute }] = dtf.formatToParts(date);
-			day += nth(day);
+			day += this.nth(day);
 			return `${weekday} ${day} ${month} - ${hour}:${minute}`;
 		},
 		nth(n){
@@ -221,7 +222,7 @@ export default{
 			this.orderData.Price_per_people = data.Price_per_people
 			this.orderData.Price_per_hour = data.Price_per_hour
 			this.calc()
-			this.$scrollTo('#order')
+			this.$scrollTo("#before-order")
 		},
 		calc(){
 			this.orderData.cost = this.orderData.Price_vat_excluded
