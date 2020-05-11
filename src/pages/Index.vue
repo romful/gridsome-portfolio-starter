@@ -2,8 +2,9 @@
 	<Layout>
 		<div class="container max-w-none overflow-hidden">
 			<h1 class="text-center">booking available up to 1 hour before the requested service</h1>
-			<div class="mx-auto min-h-screen bg-cover" style="background: /portals.png">
-				<img class="mx-auto my-10 w-64" src="/logo.png">
+			<div class="mx-auto min-h-screen bg-cover flex justify-around" style="background: url(/portals.png)">
+				<img class="mx-auto mt-10" src="/logo.png">
+				<div class="italic text-lg">Concierge</div>
 			</div>
 			<div class="mx-auto my-10 w-64 text-center uppercase font-bold">
 				{{ now }}
