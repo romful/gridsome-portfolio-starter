@@ -141,7 +141,7 @@ export default{
 		now(){
 			let time = new Date();
 			return this.dateTimeFormat(time);
-		}
+		},
 		categories(){
 			let categories = [];
 			this.$page.allGoogleSheet.edges.forEach((edge) => {
