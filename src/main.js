@@ -23,8 +23,7 @@ export default function (Vue, { router, head, isClient }) {
 
   Vue.use(VueFuse)
 
-//  Vue.use(Auth0Plugin)
-  Vue.use(Auth0Plugin, {
+/*  Vue.use(Auth0Plugin, {
     domain,
     clientId,
     onRedirectCallback: appState => {
@@ -34,7 +33,7 @@ export default function (Vue, { router, head, isClient }) {
           : window.location.pathname
       );
     }
-  });
+  })*/
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
