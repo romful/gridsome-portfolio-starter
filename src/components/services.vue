@@ -1,7 +1,7 @@
 <script>
 export default {
 	props: ['categories']
-},
+}
 methods: {
 	created() {
 		this.categories = [];
