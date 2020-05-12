@@ -1,22 +1,6 @@
 .theme-light{
 	background: #f0fff4;
 }
-.top-bg{
-	background: url(../../static/avatar.jpg) center center/cover no-repeat;
-	height: 30vh;
-	margin-bottom: -106px;
-	min-height: 106px;
-	opacity: .5;
-}
-.top-bg + nav{
-	position: relative;
-}
 .rounded-xl{
 	border-radius: 1rem;
-}
-.theme-light .bg-white-700{
-	background: rgba(255, 255, 255, .7);
-}
-.theme-dark .bg-white-700{
-	background: rgba(0, 0, 0, .7);
 }

@@ -3,14 +3,14 @@
     <header class="bg-cover flex flex-col justify-around items-center" style="background-image: url(/portals.png); min-height: 42.67578125vw">
       <img class="mt-10" src="/logo.png" />
       <div class="italic text-xl text-white">Concierge</div>
-      <nav class="container mx-auto flex flex-wrap justify-between items-center py-8">
+      <nav class="relative container mx-auto flex flex-wrap justify-between items-center py-8">
         <div class="block lg:hidden">
           <button @click="toggle" class="flex items-center px-3 py-2 border rounded border-gray-500 hover:text-gray-600 hover:border-gray-600">
             <svg class="current-color h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" fill="gray" /></svg>
           </button>
         </div>
         <ul
-          class="uppercase tracking-wide font-bold w-full block flex-grow lg:flex lg:flex-initial lg:w-auto items-center mt-8 lg:mt-0"
+          class="uppercase tracking-wide font-bold w-full block flex-grow lg:flex lg:flex-initial lg:w-auto absolute lg:static items-center mx-auto mt-8 lg:mt-0 px-8 py-4 lg:p-0 z-10 bg-current"
           :class="isOpen ? 'block': 'hidden'"
         >
           <li class="mr-8 mb-6 lg:mb-0">
