@@ -1,10 +1,6 @@
 <template>
 	<Layout>
 		<div class="container max-w-none overflow-hidden">
-			<div class="mx-auto bg-cover flex flex-col justify-around items-center " style="background-image: url(/portals.png); min-height: .4267578125vw">
-				<img class="mt-10" src="/logo.png" />
-				<div class="italic text-xl text-white">Concierge</div>
-			</div>
 			<div class="mx-auto my-10 w-64 text-center uppercase font-bold">
 				{{ now }}
 			</div>
