@@ -1,7 +1,7 @@
 <template>
   <div class="content-wrapper bg-background-primary font-sans text-copy-primary leading-normal flex flex-col min-h-screen" :class="theme">
-    <header class="bg-cover flex flex-col justify-around items-center" style="background-image: url(../../static/portals.png); min-height: 42.67578125vw">
-      <img class="mt-10" src="../../static/logo.png" />
+    <header class="bg-cover flex flex-col justify-around items-center" style="background-image: url(/portals.png); min-height: 42.67578125vw">
+      <img class="mt-10" src="/logo.png" />
       <div class="italic text-xl text-white">Concierge</div>
       <nav class="container mx-auto flex flex-wrap justify-between items-center py-8">
         <div class="block lg:hidden">
