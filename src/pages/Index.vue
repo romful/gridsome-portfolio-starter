@@ -17,7 +17,7 @@
 			<div class="flex flex-wrap mb-4 max-w-5xl mx-auto">
 				<div class="md:w-1/2 lg:w-1/3 w-full px-2" v-for="edge in $page.allGoogleSheet.edges" v-if="edge.node.Category==category || !category && edge.node.Featured">
 					<div class="mx-auto max-w-sm overflow-hiddenmx-auto">
-						<div class="w-full rounded-xl h-32 bg-no-repeat bg-contain bg-bottom" style="background-image: {{ edge.node.Img }}"></div>
+						<div class="w-full rounded-xl h-64 bg-no-repeat bg-contain bg-bottom" :style="{'background-image': edge.node.Img }"></div>
 						<div class="px-6 pb-4 pt-8 mx-4 -mt-4 mb-4 relative rounded-xl cursor-pointer duration-500 bg-white opacity-75 hover:opacity-100 transform hover:scale-110" @click="edge.node.Availability && init(edge.node)" :class="{'opacity-100': edge.node.Title == orderData.title}">
 							<div class="font-bold text-xl mb-2">{{ edge.node.Title }}</div>
 							<p class="text-gray-700 text-base">
