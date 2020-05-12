@@ -144,7 +144,7 @@ export default{
 		},
 		categories(){
 			let categories = [];
-			this.$page.allGoogleSheet.edges.forEach((edge) => {
+			$page.allGoogleSheet.edges.forEach((edge) => {
 				if(!categories.includes(edge.node.Category)){
 					categories.push(edge.node.Category);
 				}
