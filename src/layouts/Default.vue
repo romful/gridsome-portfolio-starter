@@ -20,22 +20,22 @@
             <theme-switcher :theme="theme" @themeChanged="updateTheme" />
           </li>
           <li class="mr-8 mb-6 lg:mb-0">
-            <a v-if="$route.path === '/'" href="/#projects" v-scroll-to="'#projects'" class="text-white hover:text-gray-600">Projects</a>
-            <g-link v-else to="/#projects" class="text-white hover:text-gray-600">Projects</g-link>
+            <a v-if="$route.path === '/'" href="/#projects" v-scroll-to="'#projects'" class="text-copy-primary bg:text-white hover:text-gray-600">Projects</a>
+            <g-link v-else to="/#projects" class="text-copy-primary bg:text-white hover:text-gray-600">Projects</g-link>
           </li>
           <li class="mr-8 mb-6 lg:mb-0">
-            <a v-if="$route.path === '/'" href="/#about" v-scroll-to="'#about'" class="text-white hover:text-gray-600">About</a>
-            <g-link v-else to="/#about" class="text-white hover:text-gray-600">About</g-link>
+            <a v-if="$route.path === '/'" href="/#about" v-scroll-to="'#about'" class="text-copy-primary bg:text-white hover:text-gray-600">About</a>
+            <g-link v-else to="/#about" class="text-copy-primary bg:text-white hover:text-gray-600">About</g-link>
           </li>
           <li class="mr-8 mb-6 lg:mb-0">
-            <a v-if="$route.path === '/'" href="/#contact" v-scroll-to="'#contact'" class="text-white hover:text-gray-600">Contact</a>
-            <g-link v-else to="/#contact" class="text-white hover:text-gray-600">Contact</g-link>
+            <a v-if="$route.path === '/'" href="/#contact" v-scroll-to="'#contact'" class="text-copy-primary bg:text-white hover:text-gray-600">Contact</a>
+            <g-link v-else to="/#contact" class="text-copy-primary bg:text-white hover:text-gray-600">Contact</g-link>
           </li>
           <li class="mr-8 mb-6 lg:mb-0">
-            <g-link to="/docs" class="text-white hover:text-gray-600">Docs</g-link>
+            <g-link to="/docs" class="text-copy-primary bg:text-white hover:text-gray-600">Docs</g-link>
           </li>
           <li>
-            <g-link to="/blog" class="text-white hover:text-gray-600">Blog</g-link>
+            <g-link to="/blog" class="text-copy-primary bg:text-white hover:text-gray-600">Blog</g-link>
           </li>
         </ul>
       </nav>
