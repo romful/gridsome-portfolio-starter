@@ -19,6 +19,5 @@ export default{
 		Datepicker,
 		services
 	}
-	Vue.use(services)
 }
 </script>
