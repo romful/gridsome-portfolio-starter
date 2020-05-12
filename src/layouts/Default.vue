@@ -10,7 +10,7 @@
           </button>
         </div>
         <ul
-          class="uppercase tracking-wide font-bold w-full block flex-grow lg:flex lg:flex-initial lg:w-auto absolute lg:static items-center mx-auto mt-8 lg:mt-0 px-8 py-4 lg:p-0 z-10 bg-current"
+          class="uppercase tracking-wide font-bold block flex-grow lg:flex lg:flex-initial absolute lg:static items-center mx-auto mt-8 lg:mt-0 px-8 py-4 lg:p-0 z-10 bg-current"
           :class="isOpen ? 'block': 'hidden'"
         >
           <li class="mr-8 mb-6 lg:mb-0">
