@@ -1,3 +1,19 @@
+<script>
+export default {
+	props: ['categories']
+},
+methods: {
+	created() {
+		this.categories = [];
+		this.$static.allGoogleSheet.edges.forEach((edge) => {
+			if(!this.categories.includes(edge.node.Category)){
+				this.categories.push(edge.node.Category);
+			}
+		});
+	}
+}
+</script>
+
 <static-query>
 query {
 	allGoogleSheet {
