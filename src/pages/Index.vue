@@ -129,6 +129,7 @@
 	</Layout>
 </template>
 <script>
+import services from '../components/services'
 import Datepicker from 'vue2-datepicker'
 export default{
 	components: {
@@ -144,7 +145,7 @@ export default{
 		},
 		categories(){
 			let categories = [];
-			$page.allGoogleSheet.edges.forEach((edge) => {
+			services.$static.allGoogleSheet.edges.forEach((edge) => {
 				if(!categories.includes(edge.node.Category)){
 					categories.push(edge.node.Category);
 				}
