@@ -1,6 +1,15 @@
 <script>
 export default {
-	props: ['categories'],
+	install(Vue) {
+		Vue.prototype.$services = {
+			categories: [1, 2, 3]
+		};
+	},
+	data() {
+		return {
+			categories: []
+		};
+	},
 	methods: {
 		created() {
 			this.categories = [];
