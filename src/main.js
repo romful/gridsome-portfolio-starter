@@ -4,9 +4,7 @@
 import DefaultLayout from '~/layouts/Default.vue'
 import VueScrollTo from 'vue-scrollto'
 import VueFuse from 'vue-fuse'
-
-import { domain, clientId } from "../auth_config.json";
-import { Auth0Plugin } from "./auth";
+import AuthPlugin from './plugins/auth'
 
 import '~/css/style.css'
 export default function (Vue, { router, head, isClient }) {
@@ -22,18 +20,22 @@ export default function (Vue, { router, head, isClient }) {
   })
 
   Vue.use(VueFuse)
+  Vue.use(AuthPlugin)
 
-/*  Vue.use(Auth0Plugin, {
-    domain,
-    clientId,
-    onRedirectCallback: appState => {
-      router.push(
-        appState && appState.targetUrl
-          ? appState.targetUrl
-          : window.location.pathname
-      );
+  router.beforeEach((to, from, next) => {
+    if(to.path != '/blog') { // check if "to"-route is not "dashboard" and allow access
+      next()
+    } else if (router.app.$auth.isAuthenticated()) { // if authenticated allow access
+      if (from.name !== null) {
+        if (from.query._storyblok) {
+          return next(false)
+        }
+      }
+      next()
+    } else { // trigger auth0's login
+      router.app.$auth.login()
     }
-  })*/
+  })
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
