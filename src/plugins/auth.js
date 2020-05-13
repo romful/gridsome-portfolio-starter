@@ -7,7 +7,8 @@ let webAuth = new auth0.WebAuth({
   domain: domain,
   clientID: clientId,
   // make sure port is 8080
-  redirectUri: 'http://localhost:8080/callback', 
+  //redirectUri: 'http://localhost:8080/callback', 
+  redirectUri: 'https://modest-lewin-bd546d.netlify.app/callback', 
   // we will use the api/v2/ to access the user information as payload
   audience: 'https://'+domain+'/api/v2/',
   responseType: 'token id_token',
