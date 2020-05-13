@@ -23,16 +23,18 @@ export default function (Vue, { router, head, isClient }) {
   Vue.use(AuthPlugin)
 
   router.beforeEach((to, from, next) => {
-    if(to.path != '/blog') { // check if "to"-route is not "dashboard" and allow access
+    if(to.path != '/blog') {
       next()
-    } else if (router.app.$auth.isAuthenticated()) { // if authenticated allow access
+    } 
+    else if (router.app.$auth.isAuthenticated()) { // if authenticated allow access
       if (from.name !== null) {
         if (from.query._storyblok) {
           return next(false)
         }
       }
       next()
-    } else { // trigger auth0's login
+    } 
+    else { // trigger auth0's login
       router.app.$auth.login()
     }
   })
