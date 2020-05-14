@@ -141,7 +141,7 @@ export default{
 		title: 'Order'
 	},
 	mounted() {
-		this.user = $auth.user;
+		this.user = this.$auth.user;
 	},
 	computed: {
 		now(){
