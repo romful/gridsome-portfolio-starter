@@ -8,7 +8,7 @@ export default {
 		title: 'Profile'
 	},
 	mounted() {
-		this.$auth.logout();
+//		this.$auth.logout();
 	}
 }
 </script>
