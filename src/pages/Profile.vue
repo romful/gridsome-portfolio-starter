@@ -45,16 +45,14 @@ export default{
 	},
 	mounted() {
 		this.user = this.$auth.user;
+		logout(){
+			this.$auth.logout();
+		}
 	},
 	data(){
 		return{
 			user: {},
 		}
 	},
-	methods: {
-		logout(){
-			this.$auth.logout();
-		}
-	}
 }
 </script>
