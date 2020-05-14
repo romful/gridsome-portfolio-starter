@@ -44,7 +44,7 @@ export default{
 		title: 'Profile'
 	},
 	mounted() {
-		this.user = this.$auth.user;
+		this.user = this.$auth.user || {};
 	},
 	data(){
 		return{
