@@ -5,6 +5,7 @@ import DefaultLayout from '~/layouts/Default.vue'
 import VueScrollTo from 'vue-scrollto'
 import VueFuse from 'vue-fuse'
 import AuthPlugin from './plugins/auth'
+import HubspotPlugin from './plugins/hubspot'
 
 import '~/css/style.css'
 export default function (Vue, { router, head, isClient }) {
