@@ -12,7 +12,7 @@ let webAuth = new auth0.WebAuth({
   // we will use the api/v2/ to access the user information as payload
   audience: 'https://'+domain+'/api/v2/',
   responseType: 'token id_token',
-  scope: 'openid profile'
+  scope: 'openid email profile'
 })
 
 let auth = new Vue({
