@@ -62,7 +62,7 @@ let auth = new Vue({
         localStorage.removeItem('expires_at')
         localStorage.removeItem('user')
         webAuth.logout({
-          returnTo: 'http://localhost:8081/login', // Allowed logout URL listed in dashboard
+          returnTo: 'https://modest-lewin-bd546d.netlify.app/', // Allowed logout URL listed in dashboard
           clientID: 'riUGE1w3dFvpMQdxVr3YDQZr7amNQp0v', // Your client ID
         })
       })

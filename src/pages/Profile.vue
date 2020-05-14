@@ -4,7 +4,7 @@
 			<div class="mx-auto my-10 w-64 text-center uppercase font-bold">
 				Hello {{ user.given_name || user.name }}
 			</div>
-			<table class="table-auto">
+			<table class="table-auto mx-auto mb-4">
 				<tbody>
 					<tr>
 						<td class="border px-4 py-2">Picture</td>
@@ -32,6 +32,9 @@
 					</tr>
 				</tbody>
 			</table>
+			<div class="text-center mb-4">
+				<button @click="logout">Logout</button>
+			</div>
 		</div>
 	</Layout>
 </template>
@@ -42,6 +45,11 @@ export default{
 	},
 	mounted() {
 		this.user = this.$auth.user;
+	},
+	methods: {
+		logout(){
+			this.$auth.logout();
+		}
 	},
 	data(){
 		return{
