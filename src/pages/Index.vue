@@ -2,7 +2,7 @@
 	<Layout>
 		<div class="container max-w-none overflow-hidden">
 			<div class="mx-auto my-10 w-64 text-center uppercase font-bold">
-				Hello {{ user.given_name }}
+				Hello {{ user.given_name || user.name }}
 			</div>
 			<div class="mx-auto my-10 w-64 text-center uppercase font-bold">
 				{{ now }}
