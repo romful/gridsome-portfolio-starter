@@ -5,11 +5,11 @@
 <script>
 export default {
 	metaInfo: {
-		title: 'Profile'
+		title: 'Login'
 	},
 	mounted() {
 		this.$auth.handleAuthentication().then((data) => {
-			this.$router.push({ name: 'profile' })
+			this.$router.push({ name: 'home' })
 		})
 	}
 }
