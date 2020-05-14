@@ -45,13 +45,15 @@ export default{
 	},
 	mounted() {
 		this.user = this.$auth.user;
+	},
+	methods: {
 		logout(){
 			this.$auth.logout();
 		}
 	},
 	data(){
 		return{
-			user: {},
+			user: {}
 		}
 	},
 }
