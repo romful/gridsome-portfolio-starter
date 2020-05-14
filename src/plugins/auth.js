@@ -1,6 +1,6 @@
 import auth0 from 'auth0-js'
 import Vue from 'vue'
-import { domain, clientId } from "../../auth_config.json";
+import { domain, clientId, siteDomain } from "../../auth_config.json";
 
 // exchange the object with your own from the setup step above.
 let webAuth = new auth0.WebAuth({
@@ -8,7 +8,7 @@ let webAuth = new auth0.WebAuth({
   clientID: clientId,
   // make sure port is 8080
   //redirectUri: 'http://localhost:8080/callback', 
-  redirectUri: 'https://'+domain+'/callback', 
+  redirectUri: 'https://'+siteDomain+'/callback', 
   // we will use the api/v2/ to access the user information as payload
   audience: 'https://'+domain+'/api/v2/',
   responseType: 'token id_token',
@@ -62,7 +62,7 @@ let auth = new Vue({
         localStorage.removeItem('expires_at')
         localStorage.removeItem('user')
         webAuth.logout({
-          returnTo: 'https://'+domain+'/', // Allowed logout URL listed in dashboard
+          returnTo: 'https://'+siteDomain+'/', // Allowed logout URL listed in dashboard
           clientID: clientId, // Your client ID
         })
       })
