@@ -23,7 +23,7 @@ export default function (Vue, { router, head, isClient }) {
   Vue.use(AuthPlugin)
 
   router.beforeEach((to, from, next) => {
-    if(to.path == '/logout') {
+    if(to.path != '/blog') {
       next()
     } 
     else if (router.app.$auth.isAuthenticated()) { // if authenticated allow access
