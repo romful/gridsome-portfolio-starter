@@ -5,7 +5,7 @@
 				Hello {{ user.given_name || user.name }}
 			</div>
 			<div class="mx-auto my-10 w-64 text-center uppercase font-bold">
-				<g-link to="/profile" class="text-copy-primary lg:text-white hover:text-gray-600">My Profile</g-link>
+				<g-link to="/profile">My Profile</g-link>
 			</div>
 			<div class="mx-auto my-10 w-64 text-center uppercase font-bold">
 				{{ now }}
