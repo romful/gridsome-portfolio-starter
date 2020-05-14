@@ -5,10 +5,10 @@
 <script>
 export default {
 	metaInfo: {
-		title: 'Profile'
+		title: 'Logout'
 	},
 	mounted() {
-//		this.$auth.logout();
+		this.$auth.logout();
 	}
 }
 </script>

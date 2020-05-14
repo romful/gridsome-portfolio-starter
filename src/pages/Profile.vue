@@ -33,13 +33,14 @@
 				</tbody>
 			</table>
 			<div class="text-center mb-4">
-				<g-link to="/">Logout</g-link>
+				<g-link to="/logout">Logout</g-link>
 			</div>
 		</div>
 	</Layout>
 </template>
 <script>
 export default{
+	name: "profile",
 	metaInfo: {
 		title: 'Profile'
 	},
