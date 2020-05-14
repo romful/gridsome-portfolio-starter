@@ -8,7 +8,7 @@ let webAuth = new auth0.WebAuth({
   clientID: clientId,
   // make sure port is 8080
   //redirectUri: 'http://localhost:8080/callback', 
-  redirectUri: 'https://modest-lewin-bd546d.netlify.app/callback', 
+  redirectUri: 'https://'+domain+'/callback', 
   // we will use the api/v2/ to access the user information as payload
   audience: 'https://'+domain+'/api/v2/',
   responseType: 'token id_token',
@@ -62,8 +62,8 @@ let auth = new Vue({
         localStorage.removeItem('expires_at')
         localStorage.removeItem('user')
         webAuth.logout({
-          returnTo: 'https://modest-lewin-bd546d.netlify.app/', // Allowed logout URL listed in dashboard
-          clientID: 'riUGE1w3dFvpMQdxVr3YDQZr7amNQp0v', // Your client ID
+          returnTo: 'https://'+domain+'/', // Allowed logout URL listed in dashboard
+          clientID: clientId, // Your client ID
         })
       })
     },
