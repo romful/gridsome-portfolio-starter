@@ -142,6 +142,7 @@ export default{
 	},
 	mounted() {
 		this.user = this.$auth.user;
+		this.orderData.email = this.user.email || this.user.name;
 	},
 	computed: {
 		now(){
@@ -181,14 +182,6 @@ export default{
 		}
 	},
 	methods: {
-		login() {
-			this.$auth.loginWithRedirect();
-		},
-		logout() {
-			this.$auth.logout({
-				returnTo: window.location.origin
-			});
-		},
 		dateFormat(date){
 			var MM, DD, YYYY;
 			var dtf = new Intl.DateTimeFormat('en', {
