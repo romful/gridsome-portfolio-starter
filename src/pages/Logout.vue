@@ -8,9 +8,7 @@ export default {
 		title: 'Profile'
 	},
 	mounted() {
-		this.$auth.handleAuthentication().then((data) => {
-			this.$router.push({ name: 'home' })
-		})
+		this.$auth.logout();
 	}
 }
 </script>

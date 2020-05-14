@@ -33,7 +33,7 @@
 				</tbody>
 			</table>
 			<div class="text-center mb-4">
-				<button @click="logout">Logout</button>
+				<g-link to="/">Logout</g-link>
 			</div>
 		</div>
 	</Layout>
@@ -45,11 +45,6 @@ export default{
 	},
 	mounted() {
 		this.user = this.$auth.user;
-	},
-	methods: {
-		logout(){
-			this.$auth.logout();
-		}
 	},
 	data(){
 		return{

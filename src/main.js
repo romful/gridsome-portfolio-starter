@@ -23,10 +23,10 @@ export default function (Vue, { router, head, isClient }) {
   Vue.use(AuthPlugin)
 
   router.beforeEach((to, from, next) => {
-/*    if(to.path != '/profile') {
+    if(to.path != '/logout') {
       next()
     } 
-    else */if (router.app.$auth.isAuthenticated()) { // if authenticated allow access
+    else if (router.app.$auth.isAuthenticated()) { // if authenticated allow access
       if (from.name !== null) {
         if (from.query._storyblok) {
           return next(false)
