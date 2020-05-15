@@ -1,8 +1,8 @@
 <template>
 	<Layout>
 		<div class="container max-w-none overflow-hidden">
-			<div class="mx-auto my-10 w-64 text-center uppercase font-bold">
-				Hello {{ user.given_name || user.name }}
+			<div class="mx-auto my-10 w-3/3 text-center text-xl font-serif font-bold italic">
+				Hello {{ user.given_name || user.name }}, How Can I help you today ?
 			</div>
 			<div class="mx-auto my-10 w-64 text-center font-bold">
 				<g-link to="/profile">My Profile</g-link>
@@ -13,10 +13,10 @@
 			<div class="mx-auto my-10 w-64 text-center uppercase font-bold">
 				{{ now }}
 			</div>
-			<h1 class="text-center">booking available up to 2 hours before the requested service</h1>
+		
 			<div class="mx-auto my-10 relative w-64">
 				<select v-model="category" class="block appearance-none w-full border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-					<option value="">-- select the category --</option>
+					<option value="">-- Choose a service --</option>
 					<option v-for="category in categories">{{ category }}</option>
 				</select>
 				<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -53,7 +53,7 @@
 			<div id="before-order"></div>
 			<div id="order" v-if="orderData.title">
 				<h1 class="font-bold text-xl mb-2 text-center">Fill in the form below :</h1>
-				<h2 class="text-md mb-2 text-center bg-blue-700 text-white rounded-xl py-2 max-w-xs mx-auto">{{ orderData.title }}</h2>
+				<h2 class="text-md mb-2 text-center bg-blue-500 text-white rounded-xl py-2 max-w-xs mx-auto">{{ orderData.title }}</h2>
 				<form class="mb-8"
 					name="order"
 					method="post"
@@ -117,7 +117,7 @@
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="message">
 								Message
 							</label>
-							<textarea class="appearance-none border rounded w-full h-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Input Message" v-model="orderData.message"></textarea>
+							<textarea class="appearance-none border rounded w-full h-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Specify your request" v-model="orderData.message"></textarea>
 						</div>
 					</div>
 					<div class="text-center mb-4">

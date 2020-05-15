@@ -2,7 +2,7 @@
   <div class="content-wrapper bg-background-primary font-sans text-copy-primary leading-normal flex flex-col min-h-screen" :class="theme">
     <header class="bg-cover flex flex-col justify-around items-center" style="background-image: url(/portals.png); min-height: 42.67578125vw">
       <img class="mt-10" src="/logo.png" />
-      <div class="italic text-xl text-white">Concierge</div>
+   
       <theme-switcher :theme="theme" @themeChanged="updateTheme" />
 <!--      <nav class="relative container mx-auto flex flex-wrap justify-between items-center py-8">
         <div class="block lg:hidden">
@@ -33,10 +33,10 @@
     <div class="flex-grow">
       <slot/>
     </div>
-    <footer class="bg-green-700 text-white">
+    <footer class="bg-blue-500 text-white">
       <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between py-8">
         <div class="mb-8 lg:mb-0">
-          <div>Copyright {{ new Date().getFullYear() }}. All rights reserved.</div>
+          <div>Copyright {{ new Date().getFullYear() }}. All rights reserved. - Built & Designed by VIP Services Mallorca </div>
         </div>
         <ul class="flex items-center">
           <li>
