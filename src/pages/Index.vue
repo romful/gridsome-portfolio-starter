@@ -164,7 +164,7 @@
 					</div>
 					<p>{{ orderData.description }}</p>
 					<div class="flex justify-end pt-2">
-						<button @click="showForm" class="border-1 text-white border-green-700 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline">Order</button>
+						<button @click="showForm" class="border-1 text-white border-green-700 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline">Book now</button>
 					</div>
 				</div>
 			</div>
