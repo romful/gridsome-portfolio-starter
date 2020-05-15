@@ -7,9 +7,6 @@
 			<div class="mx-auto my-10 w-64 text-center font-bold">
 				<g-link to="/profile">My Profile</g-link>
 			</div>
-			<div class="mx-auto my-10 w-64 text-center">
-				<button class="modal-open" @click="toggleModal">Open modal</button>
-			</div>
 			<div class="mx-auto my-10 w-64 text-center uppercase font-bold">
 				{{ now }}
 			</div>
