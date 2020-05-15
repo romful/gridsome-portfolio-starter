@@ -159,7 +159,7 @@
 							</svg>
 						</div>
 					</div>
-					<p>{{ orderData.description }}</p>
+					<p v-html="orderData.description"></p>
 					<div class="flex justify-end pt-2">
 						<button @click="showForm" class="border-1 text-white border-green-700 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline">Book now</button>
 					</div>
@@ -262,7 +262,7 @@ export default{
 		init(data){
 			this.orderData.modal = true;
 			this.orderData.title = data.Title;
-			this.orderData.description = data.Description.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+			this.orderData.description = data.Description;
 			this.orderData.people = 1;
 			this.orderData.Up_to_X_pax = data.Up_to_X_pax;
 			this.orderData.Price_vat_excluded = data.Price_vat_excluded;
