@@ -4,8 +4,11 @@
 			<div class="mx-auto my-10 w-64 text-center uppercase font-bold">
 				Hello {{ user.given_name || user.name }}
 			</div>
-			<div class="mx-auto my-10 w-64 text-center uppercase font-bold">
+			<div class="mx-auto my-10 w-64 text-center font-bold">
 				<g-link to="/profile">My Profile</g-link>
+			</div>
+			<div class="mx-auto my-10 w-64 text-center">
+				<button @click="$hubspot.getContactByEmail($auth.user.email)">Get my contact</button>
 			</div>
 			<div class="mx-auto my-10 w-64 text-center uppercase font-bold">
 				{{ now }}
