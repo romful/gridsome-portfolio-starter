@@ -262,7 +262,7 @@ export default{
 		init(data){
 			this.orderData.modal = true;
 			this.orderData.title = data.Title;
-			this.orderData.description = data.Description;
+			this.orderData.description = data.Description.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 			this.orderData.people = 1;
 			this.orderData.Up_to_X_pax = data.Up_to_X_pax;
 			this.orderData.Price_vat_excluded = data.Price_vat_excluded;
