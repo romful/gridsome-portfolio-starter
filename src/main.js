@@ -22,6 +22,7 @@ export default function (Vue, { router, head, isClient }) {
 
   Vue.use(VueFuse)
   Vue.use(AuthPlugin)
+  Vue.use(HubspotPlugin)
 
   router.beforeEach((to, from, next) => {
     if(to.path != '/profile') {

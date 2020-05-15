@@ -13,6 +13,7 @@ let hubspot = new Vue({
 
 export default {
   install: function(Vue) {
-    Vue.prototype.$hubspot = hubspot
+    Vue.prototype.$hubspot = hubspot;
+    console.log(hownerid, hapikey);
   }
 }
