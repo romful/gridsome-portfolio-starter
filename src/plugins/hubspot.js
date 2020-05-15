@@ -8,7 +8,8 @@ let hubspot = new Vue({
 		getContactByEmail(email){
 			console.log(email);
 			fetch("https://api.hubapi.com/contacts/v1/contact/email/" + email + "/profile?hapikey=" + hapikey, {
-				method: "GET"
+				method: "GET",
+				headers: { 'Content-Type': 'application/json' }
 			})
 			.then((response) => {
 				console.log(response);
