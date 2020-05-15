@@ -30,7 +30,9 @@
     </header>
 
     <div class="flex-grow">
-      <theme-switcher :theme="theme" @themeChanged="updateTheme" />
+      <div class="text-center">
+        <theme-switcher :theme="theme" @themeChanged="updateTheme" />
+      </div>
       <slot/>
     </div>
     <footer class="bg-blue-500 text-white">
