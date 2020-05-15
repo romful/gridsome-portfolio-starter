@@ -229,7 +229,7 @@ export default{
 	},
 	methods: {
 		toggleModal(){
-			orderData.modal = false;
+			this.orderData.modal = !this.orderData.modal;
 		},
 		dateFormat(date){
 			var MM, DD, YYYY;
@@ -265,7 +265,7 @@ export default{
 		init(data){
 			this.orderData.modal = true;
 			this.orderData.title = data.Title;
-			this.orderData.description = Description;
+			this.orderData.description = data.Description;
 			this.orderData.people = 1;
 			this.orderData.Up_to_X_pax = data.Up_to_X_pax;
 			this.orderData.Price_vat_excluded = data.Price_vat_excluded;
