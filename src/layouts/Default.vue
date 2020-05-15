@@ -3,7 +3,6 @@
     <header class="bg-cover flex flex-col justify-around items-center" style="background-image: url(/portals.png); min-height: 42.67578125vw">
       <img class="mt-10" src="/logo.png" />
    
-      <theme-switcher :theme="theme" @themeChanged="updateTheme" />
 <!--      <nav class="relative container mx-auto flex flex-wrap justify-between items-center py-8">
         <div class="block lg:hidden">
           <button @click="toggle" class="flex items-center px-3 py-2 border rounded border-gray-500 hover:text-gray-600 hover:border-gray-600">
@@ -31,6 +30,7 @@
     </header>
 
     <div class="flex-grow">
+      <theme-switcher :theme="theme" @themeChanged="updateTheme" />
       <slot/>
     </div>
     <footer class="bg-blue-500 text-white">
