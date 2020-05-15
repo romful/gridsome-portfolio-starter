@@ -8,7 +8,7 @@
 				<g-link to="/profile">My Profile</g-link>
 			</div>
 			<div class="mx-auto my-10 w-64 text-center">
-				<button @click="$hubspot.getContactByEmail($auth.user.email)">Get my contact</button>
+				<button @click="hubspot.getContactByEmail(user.email)">Get my contact</button>
 			</div>
 			<div class="mx-auto my-10 w-64 text-center uppercase font-bold">
 				{{ now }}
@@ -149,6 +149,7 @@ export default{
 	mounted() {
 		this.user = this.$auth.user || {};
 		this.orderData.email = this.user.email || this.user.name;
+		this.hubspot = this.$hubspot;
 	},
 	computed: {
 		now(){
