@@ -51,7 +51,7 @@
 				</div>
 			</div>
 			<div id="before-order"></div>
-			<div id="order" v-if="orderData.title">
+			<div id="order" v-if="orderData.form">
 				<h1 class="font-bold text-xl mb-2 text-center">Fill in the form below :</h1>
 				<h2 class="text-md mb-2 text-center bg-blue-500 text-white rounded-xl py-2 max-w-xs mx-auto">{{ orderData.title }}</h2>
 				<form class="mb-8"
@@ -150,23 +150,19 @@
 				</form>
 			</div>
 		</div>
-		<div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
+		<div v-if="orderData.modal" class="modal fixed w-full h-full top-0 left-0 flex items-center justify-center">
 			<div @click="toggleModal" class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
 			<div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
 				<div class="modal-content py-4 text-left px-6">
 					<div class="flex justify-between items-center pb-3">
-						<p class="text-2xl font-bold">Simple Modal!</p>
+						<p class="text-2xl font-bold text-center">{{ orderData.title }}</p>
 						<div @click="toggleModal" class="modal-close cursor-pointer z-50">
 							<svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
 								<path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
 							</svg>
 						</div>
 					</div>
-					<p>Modal content can go here</p>
-					<p>...</p>
-					<p>...</p>
-					<p>...</p>
-					<p>...</p>
+					<p>{{ orderData.description }}</p>
 					<div class="flex justify-end pt-2">
 						<button class="border-1 text-white border-green-700 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline">Action</button>
 					</div>
@@ -210,7 +206,10 @@ export default{
 			user: {},
 			category: "",
 			orderData: {
+				modal: false,
+				form: false,
 				title: "",
+				description: "",
 				datetime: this.today() + " 12:00",
 				date: this.today(),
 				notBefore: "2020-05-06",
@@ -230,11 +229,7 @@ export default{
 	},
 	methods: {
 		toggleModal(){
-			const body = document.querySelector('body');
-			const modal = document.querySelector('.modal');
-			modal.classList.toggle('opacity-0');
-			modal.classList.toggle('pointer-events-none');
-			body.classList.toggle('modal-active');
+			orderData.modal = false;
 		},
 		dateFormat(date){
 			var MM, DD, YYYY;
@@ -268,14 +263,20 @@ export default{
 			return this.dateFormat(today)
 		},
 		init(data){
-			this.orderData.title = data.Title
-			this.orderData.people = 1
-			this.orderData.Up_to_X_pax = data.Up_to_X_pax
-			this.orderData.Price_vat_excluded = data.Price_vat_excluded
-			this.orderData.Price_per_people = data.Price_per_people
-			this.orderData.Price_per_hour = data.Price_per_hour
-			this.calc()
-			this.$scrollTo("#before-order")
+			this.orderData.modal = true;
+			this.orderData.title = data.Title;
+			this.orderData.description = Description;
+			this.orderData.people = 1;
+			this.orderData.Up_to_X_pax = data.Up_to_X_pax;
+			this.orderData.Price_vat_excluded = data.Price_vat_excluded;
+			this.orderData.Price_per_people = data.Price_per_people;
+			this.orderData.Price_per_hour = data.Price_per_hour;
+		},
+		showForm(){
+			this.orderData.modal = false;
+			this.orderData.form = true;
+			this.calc();
+			this.$scrollTo("#before-order");
 		},
 		calc(){
 			this.orderData.cost = this.orderData.Price_vat_excluded
@@ -355,6 +356,7 @@ query {
 				Category
 				Featured
 				Title
+				Description
 				Img
 				Price_vat_excluded
 				Booking_Up_to_X_hours
