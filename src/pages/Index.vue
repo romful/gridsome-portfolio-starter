@@ -63,6 +63,21 @@
 					<input type="hidden" name="cost" v-model="orderData.cost" />
 					<div class="bg-background-form rounded-xl px-8 pt-6 pb-8 mb-4 w-full max-w-xs mx-auto">
 						<div class="mb-4">
+							<label class="block text-gray-700 text-sm font-bold mb-2" for="datetime">
+								Date &amp; Time
+							</label>
+							<datepicker
+								type="datetime"
+								format="D.MM.YY H:mm"
+								valueType="YYYY-MM-DD HH:mm"
+								:not-before="orderData.notBefore"
+								class="appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+								id="datetime"
+								name="datetime"
+								v-model="orderData.datetime"
+							></datepicker>
+						</div>
+<!--						<div class="mb-4">
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="date">
 								Date
 							</label>
@@ -90,7 +105,7 @@
 								name="time"
 								v-model="orderData.time"
 							></datepicker>
-						</div>
+						</div>-->
 						<div class="mb-4" v-if="orderData.Price_per_people || orderData.Up_to_X_pax">
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="people">
 								How many people
@@ -172,6 +187,7 @@ export default{
 			category: "",
 			orderData: {
 				title: "",
+				datetime: this.today() + " 12:00",
 				date: this.today(),
 				notBefore: "2020-05-06",
 				time: "12:00",
