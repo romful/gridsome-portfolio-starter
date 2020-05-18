@@ -134,7 +134,7 @@
 					</div>
 					<div class="text-center mb-4">
 						By clicking in the Order button below, you accept the <span class="font-bold">terms and conditions</span> related to this request.<br />
-						You will receive an email to make the payment and finalise your booking.
+						You will receive an email to approve the request and make the payment and finalise your booking.
 					</div>
 					<div class="text-center mb-4" v-if="orderData.Price_vat_excluded">
 						Total price: <span class="font-bold">{{ orderData.cost }} &euro;</span>
