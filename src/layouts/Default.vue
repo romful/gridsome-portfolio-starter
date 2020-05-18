@@ -1,7 +1,7 @@
 <template>
   <div class="content-wrapper bg-background-primary font-sans text-copy-primary leading-normal flex flex-col min-h-screen" :class="theme">
-    <header class="bg-cover flex flex-col justify-around items-center" style="background-image: url(/portals.png); min-height: 42.67578125vw">
-      <g-link class="mt-10" to="/"><img src="/logo.png" /></g-link>
+    <header class="relative bg-cover flex flex-col justify-around items-center" style="background-image: url(/portals.png); min-height: 42.67578125vw">
+      <g-link class="relative mt-10" to="/"><img src="/logo.png" /></g-link>
       <nav class="relative container mx-auto flex flex-wrap justify-between items-center py-8">
         <div class="block lg:hidden">
           <button @click="toggle" class="flex items-center px-3 py-2 border rounded border-gray-500 hover:text-gray-600 hover:border-gray-600">
