@@ -6,6 +6,7 @@ import VueScrollTo from 'vue-scrollto'
 import VueFuse from 'vue-fuse'
 import AuthPlugin from './plugins/auth'
 import HubspotPlugin from './plugins/hubspot'
+import ServicesPlugin from './plugins/services'
 
 import '~/css/style.css'
 export default function (Vue, { router, head, isClient }) {
@@ -23,6 +24,7 @@ export default function (Vue, { router, head, isClient }) {
   Vue.use(VueFuse)
   Vue.use(AuthPlugin)
   Vue.use(HubspotPlugin)
+  Vue.use(ServicesPlugin)
 
   router.beforeEach((to, from, next) => {
     if(to.path != '/profile') {
