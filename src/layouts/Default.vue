@@ -18,7 +18,7 @@
           <li class="mr-8 mb-6 lg:mb-0">
             <theme-switcher :theme="theme" @themeChanged="updateTheme" />
           </li>-->
-          <li class="mr-8 mb-6 lg:mb-0" v-for="category in $categories">
+          <li class="mr-8 mb-6 lg:mb-0" v-for="category in $services.categories">
             <span class="text-copy-primary lg:text-white hover:text-gray-600">{{ category }}</span>
           </li>
         </ul>
