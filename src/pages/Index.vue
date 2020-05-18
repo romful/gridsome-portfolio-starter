@@ -24,7 +24,7 @@
 				<div class="md:w-1/2 lg:w-1/3 w-full px-2" v-for="edge in $page.allGoogleSheet.edges" v-if="edge.node.Category==$services.category || !$services.category && edge.node.Featured">
 					<div @click="edge.node.Availability && init(edge.node)" class="mx-auto max-w-sm overflow-hiddenmx-auto cursor-pointer duration-500 transform hover:scale-110">
 						<div class="w-full rounded-xl h-64 bg-no-repeat bg-contain bg-bottom" :style="{'background-image': 'url(' + edge.node.Img + ')' }"></div>
-						<div class="px-6 pb-4 pt-8 mx-4 -mt-4 mb-4 relative rounded-xl bg-white opacity-75 hover:opacity-100" :class="{'opacity-100': edge.node.Title == orderData.title, 'border': edge.node.Title == orderData.title, 'border-blue-500': edge.node.Title == orderData.title}">
+						<div class="px-6 pb-4 pt-8 mx-4 -mt-4 mb-4 relative rounded-xl bg-white opacity-75 hover:opacity-100" :class="{'opacity-100': edge.node.Title == orderData.title, 'border-2': edge.node.Title == orderData.title, 'border-blue-500': edge.node.Title == orderData.title}">
 							<div class="font-bold text-xl mb-2">{{ edge.node.Title }}</div>
 							<p class="text-gray-700 text-base">
 								<span v-if="edge.node.Booking_Up_to_X_hours != ''">Book up to : {{ edge.node.Booking_Up_to_X_hours }} <span v-if="edge.node.Booking_Up_to_X_hours > 1">hours</span><span v-else>hour</span> before<br /></span>
