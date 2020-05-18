@@ -10,7 +10,8 @@ let services = new Vue({
 				"Home Services",
 				"Wellness",
 				"Transport"
-			]
+			],
+			category: ""
 		}
 	},
 	methods: {
