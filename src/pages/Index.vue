@@ -20,7 +20,7 @@
 					<svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
 				</div>
 			</div>
-			<div class="flex flex-wrap mb-4 max-w-5xl mx-auto">
+			<div id="services" class="flex flex-wrap mb-4 max-w-5xl mx-auto">
 				<div class="md:w-1/2 lg:w-1/3 w-full px-2" v-for="edge in $page.allGoogleSheet.edges" v-if="edge.node.Category==$services.category || !$services.category && edge.node.Featured">
 					<div class="mx-auto max-w-sm overflow-hiddenmx-auto">
 						<div class="w-full rounded-xl h-64 bg-no-repeat bg-contain bg-bottom" :style="{'background-image': 'url(' + edge.node.Img + ')' }"></div>
