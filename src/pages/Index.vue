@@ -67,8 +67,7 @@
 								type="datetime"
 								format="D.MM.YY H:mm"
 								valueType="YYYY-MM-DD HH:mm"
-								:not-before="notBefore"
-								:not-after="notAfter"
+								:disabledDays="disabledDays"
 								class="appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								id="datetime"
 								name="datetime"
@@ -217,6 +216,11 @@ export default{
 		}
 	},
 	methods: {
+		disabledDays(value){
+			const date = new Date(value);
+			const today = new Date();
+			return date < today;
+		},
 		toggleModal(){
 			this.orderData.modal = !this.orderData.modal;
 		},
