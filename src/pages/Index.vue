@@ -185,7 +185,12 @@ export default{
 				}
 			});
 			return categories;
-		}
+		},
+		disabledDays(value){
+			const date = new Date(value);
+			const today = new Date();
+			return date < today;
+		},
 	},
 	data(){
 		return{
@@ -216,11 +221,6 @@ export default{
 		}
 	},
 	methods: {
-		disabledDays(value){
-			const date = new Date(value);
-			const today = new Date();
-			return date < today;
-		},
 		toggleModal(){
 			this.orderData.modal = !this.orderData.modal;
 		},
