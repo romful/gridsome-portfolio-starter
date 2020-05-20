@@ -67,45 +67,14 @@
 								type="datetime"
 								format="D.MM.YY H:mm"
 								valueType="YYYY-MM-DD HH:mm"
-								:not-before="1589932800"
-								:notBefore="1590019200"
-								not-before="1590105600"
-								notBefore="1590192000"
+								:not-before="notBefore"
+								:not-after="notAfter"
 								class="appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								id="datetime"
 								name="datetime"
 								v-model="orderData.datetime"
 							></datepicker>
 						</div>
-<!--						<div class="mb-4">
-							<label class="block text-gray-700 text-sm font-bold mb-2" for="date">
-								Date
-							</label>
-							<datepicker
-								type="date"
-								format="D.MM.YY"
-								valueType="YYYY-MM-DD"
-								:not-before="orderData.notBefore"
-								class="appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-								id="date"
-								name="date"
-								v-model="orderData.date"
-							></datepicker>
-						</div>
-						<div class="mb-4">
-							<label class="block text-gray-700 text-sm font-bold mb-2" for="time">
-								Time
-							</label>
-							<datepicker
-								type="time"
-								format="H:mm"
-								valueType="format"
-								class="appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-								id="time"
-								name="time"
-								v-model="orderData.time"
-							></datepicker>
-						</div>-->
 						<div class="mb-4" v-if="orderData.Price_per_people || orderData.Up_to_X_pax">
 							<label class="block text-gray-700 text-sm font-bold mb-2" for="people">
 								How many people
@@ -231,7 +200,8 @@ export default{
 				description: "",
 				datetime: this.today() + " 12:00",
 				date: this.today(),
-				notBefore: "2020-05-06",
+				notBefore: new Date(2020, 5, 20),
+				notAfter: new Date(2020, 6, 20),
 				time: "12:00",
 				people: 1,
 				hours: 1,
