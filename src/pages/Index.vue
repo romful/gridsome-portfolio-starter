@@ -67,7 +67,7 @@
 								type="datetime"
 								format="D.MM.YY H:mm"
 								valueType="YYYY-MM-DD HH:mm"
-								:disabledDays="disabledDays"
+								disabledDate="disabledDate"
 								class="appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								id="datetime"
 								name="datetime"
@@ -185,12 +185,7 @@ export default{
 				}
 			});
 			return categories;
-		},
-		disabledDays(value){
-			const date = new Date(value);
-			const today = new Date();
-			return date < today;
-		},
+		}
 	},
 	data(){
 		return{
@@ -221,6 +216,11 @@ export default{
 		}
 	},
 	methods: {
+		disabledDate(value){
+			const date = new Date(value);
+			const today = new Date();
+			return date < today;
+		},
 		toggleModal(){
 			this.orderData.modal = !this.orderData.modal;
 		},
