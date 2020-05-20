@@ -67,7 +67,7 @@
 								type="datetime"
 								format="D.MM.YY H:mm"
 								valueType="YYYY-MM-DD HH:mm"
-								disabledDate="disabledDate"
+								disabledDate="disabledDays"
 								class="appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 								id="datetime"
 								name="datetime"
@@ -216,7 +216,7 @@ export default{
 		}
 	},
 	methods: {
-		disabledDate(value){
+		disabledDays(value){
 			const date = new Date(value);
 			const today = new Date();
 			return date < today;
