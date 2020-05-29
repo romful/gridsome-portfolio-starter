@@ -1,4 +1,4 @@
-import Hubspot from 'hubspot'
+const Hubspot = require('hubspot')
 import Vue from 'vue'
 import { hownerid, hapikey } from "../../hubspot_config.json";
 
