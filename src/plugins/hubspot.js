@@ -1,4 +1,3 @@
-//const Hubspot = require('hubspot')
 import Vue from 'vue'
 import { hownerid, hapikey } from "../../hubspot_config.json";
 
@@ -11,6 +10,7 @@ let hubspot = new Vue({
 /*			const hubspot = new Hubspot({
 				apiKey: hapikey
 			});*/
+			const Hubspot = require('hubspot');
 			console.log("start hubspot contact...", hapikey);
 //			console.log(hubspot);
 
