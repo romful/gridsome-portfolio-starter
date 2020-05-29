@@ -19,6 +19,7 @@
     "gridsome-plugin-remark-shiki": "^0.3.1",
     "gridsome-plugin-rss": "^1.2.0",
     "gridsome-source-google-sheets": "^0.4.1",
+    "hubspot": "^2.3.12",
     "lodash.pick": "^4.4.0",
     "luxon": "^1.23.0",
     "vue-datetime": "^1.0.0-beta.11",
