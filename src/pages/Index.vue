@@ -157,7 +157,7 @@
 			</div>
 		</div>
 		<div>
-			<button @click="this.$hubspot.getContactByEmail('procom@mail.ru')">Get Contact By Email</button>
+			<button @click="$hubspot.getContactByEmail('procom@mail.ru')">Get Contact By Email</button>
 		</div>
 	</Layout>
 </template>
