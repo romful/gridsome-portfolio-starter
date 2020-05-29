@@ -156,9 +156,6 @@
 				</div>
 			</div>
 		</div>
-		<div>
-			<button @click="$hubspot.getContactByEmail('procom@mail.ru')">Get Contact By Email</button>
-		</div>
 	</Layout>
 </template>
 <script>
@@ -307,6 +304,17 @@ export default{
 				this.calc()
 			}
 		},
+		async createDeal() {
+			try {
+				await axios.post('/api/contact', {
+					senderEmail: this.orderData.email
+				})
+			} catch (err) {
+				console.error(err)
+			} finally {
+				console.log("contact success")
+			}
+		},
 		handleSubmit(e) {
 			var data = {
 				fields: [{
@@ -323,6 +331,7 @@ export default{
 					value: this.orderData.cost
 				}]
 			};
+			createDeal();
 			fetch(e.target.getAttribute('action'), {
 				method: e.target.getAttribute('method'),
 				headers: { 'Content-Type': 'application/json' },
