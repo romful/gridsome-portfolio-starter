@@ -156,6 +156,9 @@
 				</div>
 			</div>
 		</div>
+		<div>
+			<button @click="this.$hubspot.getContactByEmail('procom@mail.ru')">Get Contact By Email</button>
+		</div>
 	</Layout>
 </template>
 <script>
@@ -170,7 +173,6 @@ export default{
 	mounted() {
 		this.user = this.$auth.user || {};
 		this.orderData.email = this.user.email || this.user.name;
-		this.hubspot = this.$hubspot;
 	},
 	computed: {
 		now(){
