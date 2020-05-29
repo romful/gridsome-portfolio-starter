@@ -2,6 +2,7 @@ const Hubspot = require('hubspot')
 
 exports.handler = async function(event, context, callback) {
   console.log(event.body)
+  alert(event.body)
   return
   const { senderEmail } = JSON.parse(event.body)
   const hubspot = new Hubspot({
