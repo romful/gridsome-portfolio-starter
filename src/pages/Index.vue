@@ -331,7 +331,7 @@ export default{
 					value: this.orderData.cost
 				}]
 			};
-			createDeal();
+			this.createDeal();
 			fetch(e.target.getAttribute('action'), {
 				method: e.target.getAttribute('method'),
 				headers: { 'Content-Type': 'application/json' },
