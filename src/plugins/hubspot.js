@@ -8,11 +8,11 @@ let hubspot = new Vue({
 	methods: {
 		getContactByEmail(email){
 			console.log(email);
-			const hubspot = new Hubspot({
+/*			const hubspot = new Hubspot({
 				apiKey: hapikey
-			});
+			});*/
 			console.log("start hubspot contact...", hapikey);
-			console.log(hubspot);
+//			console.log(hubspot);
 
 /*			fetch("https://api.hubapi.com/contacts/v1/contact/email/" + email + "/profile?hapikey=" + hapikey, {
 				method: "GET",
