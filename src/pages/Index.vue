@@ -160,6 +160,7 @@
 </template>
 <script>
 import Datepicker from 'vue2-datepicker'
+import axios from 'axios'
 export default{
 	components: {
 		Datepicker
