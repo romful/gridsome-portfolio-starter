@@ -1,3 +1,4 @@
+import Hubspot from 'hubspot'
 import Vue from 'vue'
 import { hownerid, hapikey } from "../../hubspot_config.json";
 
@@ -7,7 +8,13 @@ let hubspot = new Vue({
 	methods: {
 		getContactByEmail(email){
 			console.log(email);
-			fetch("https://api.hubapi.com/contacts/v1/contact/email/" + email + "/profile?hapikey=" + hapikey, {
+			const hubspot = new Hubspot({
+				apiKey: hapikey
+			});
+			console.log("start hubspot contact...", hapikey);
+			console.log(hubspot);
+
+/*			fetch("https://api.hubapi.com/contacts/v1/contact/email/" + email + "/profile?hapikey=" + hapikey, {
 				method: "GET",
 				headers: { 'Content-Type': 'application/json' }
 			})
@@ -26,7 +33,7 @@ let hubspot = new Vue({
 				}else{
 					alert("ERROR!!!");
 				}
-			});
+			});*/
 		}
 	}
 })
