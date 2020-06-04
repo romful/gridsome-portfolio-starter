@@ -321,7 +321,7 @@ export default{
 					value: this.orderData.title
 				}, {
 					name: "date_service",
-					value: this.orderData.date
+					value: this.orderData.datetime
 				}, {
 					name: "email",
 					value: this.orderData.email
