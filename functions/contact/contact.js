@@ -27,7 +27,7 @@ exports.handler = async function(event, context, callback) {
           name: 'dealtype',
         },
         {
-          value: orderData.datetime,
+          value: Date.parse(orderData.datetime),
           name: 'date_of_service',
         },
         {
