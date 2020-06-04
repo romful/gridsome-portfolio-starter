@@ -7,11 +7,11 @@
 			<table class="table-auto mx-auto mb-4">
 				<thead>
 					<tr>
-						<th>Date of Deal</th>
-						<th>Service</th>
-						<th>Date of Service</th>
-						<th>Price</th>
-						<th>Status</th>
+						<th class="border px-4 py-2">Date of Deal</th>
+						<th class="border px-4 py-2">Service</th>
+						<th class="border px-4 py-2">Date of Service</th>
+						<th class="border px-4 py-2">Price</th>
+						<th class="border px-4 py-2">Status</th>
 					</tr>
 				</thead>
 				<tbody>
