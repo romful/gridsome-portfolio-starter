@@ -2,13 +2,40 @@ const Hubspot = require('hubspot')
 
 exports.handler = async function(event, context, callback) {
   console.log(event.body)
-  const { senderEmail } = JSON.parse(event.body)
+//  const { senderEmail } = JSON.parse(event.body)
+  const orderData = JSON.parse(event.body)
   const hubspot = new Hubspot({
     apiKey: process.env.HUBSPOT_API_KEY
   })
   console.log("start hubspot contact...", process.env.HUBSPOT_API_KEY)
   ///
-  await hubspot.contacts.getByEmail(senderEmail)
+      const dealProperties = [
+        {
+          value: orderData.email,
+          name: 'dealname',
+        },
+        {
+          value: 'appointmentscheduled',
+          name: 'dealstage',
+        },
+        {
+          value: 'default',
+          name: 'pipeline',
+        },
+        {
+          value: 'newbusiness',
+          name: 'dealtype',
+        },
+        {
+          value: orderData.datetime,
+          name: 'date_of_service',
+        },
+        {
+          value: orderData.cost,
+          name: 'amount',
+        }
+      ]
+  await hubspot.contacts.getByEmail(orderData.email)
   .then( async data => { 
     console.log('CONTACT EXISTS')
     const payload = { 
@@ -27,36 +54,18 @@ exports.handler = async function(event, context, callback) {
       'metadata': {
         "from": 
           {
-            "email": senderEmail,
+            "email": orderData.email,
 //            "firstName": senderFirstName,
 //            "lastName": senderLastName,
           },
         "to": [{ "email": "bot11x11 <procom@mail.ru>" }],
         "subject": "New Form Submission",
-        "text": senderEmail
+        "text": orderData.email
       }
     }
     await hubspot.engagements.create(payload)
     .then( async data => { 
       console.log("ENGAGEMENT CREATED")
-      const dealProperties = [
-        {
-          value: senderEmail,
-          name: 'dealname',
-        },
-        {
-          value: 'appointmentscheduled',
-          name: 'dealstage',
-        },
-        {
-          value: 'default',
-          name: 'pipeline',
-        },
-        {
-          value: 'newbusiness',
-          name: 'dealtype',
-        },
-      ]
       await hubspot.deals.create({associations: { associatedVids: [ data.vid ] }, properties: dealProperties})
       .then(data => { 
         console.log("ENGAGEMENT + DEAL CREATED")
@@ -73,7 +82,7 @@ exports.handler = async function(event, context, callback) {
       "properties": [
 //        { "property": "firstname","value": senderFirstName },
 //        { "property": "lastname", "value": senderLastName },
-        { "property": "email", "value": senderEmail },
+        { "property": "email", "value": orderData.email },
 //        { "property": "company", "value": senderCompany },
       ]
     }
@@ -96,7 +105,7 @@ exports.handler = async function(event, context, callback) {
         'metadata': {
           "from": 
             {
-              "email": senderEmail,
+              "email": orderData.email,
 //              "firstName": senderFirstName,
 //              "lastName": senderLastName,
             },
@@ -108,24 +117,6 @@ exports.handler = async function(event, context, callback) {
       await hubspot.engagements.create(payload)
       .then( async data => { 
         console.log("ENGAGEMENT CREATED")
-        const dealProperties = [
-          {
-            value: senderEmail,
-            name: 'dealname',
-          },
-          {
-            value: 'appointmentscheduled',
-            name: 'dealstage',
-          },
-          {
-            value: 'default',
-            name: 'pipeline',
-          },
-          {
-            value: 'newbusiness',
-            name: 'dealtype',
-          },
-        ]
         await hubspot.deals.create({associations: { associatedVids: [ data.vid ] }, properties: dealProperties})
         .then(data => { 
           console.log("DEAL CREATED")

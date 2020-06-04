@@ -198,10 +198,10 @@ export default{
 				title: "",
 				description: "",
 				datetime: this.today() + " 12:00",
-				date: this.today(),
-				notBefore: new Date(2020, 5, 20),
-				notAfter: new Date(2020, 6, 20),
-				time: "12:00",
+//				date: this.today(),
+//				notBefore: new Date(2020, 5, 20),
+//				notAfter: new Date(2020, 6, 20),
+//				time: "12:00",
 				people: 1,
 				hours: 1,
 				Up_to_X_pax: 0,
@@ -307,9 +307,7 @@ export default{
 		},
 		async createDeal() {
 			try {
-				await axios.post('/api/contact', {
-					senderEmail: this.orderData.email
-				})
+				await axios.post('/api/contact', this.orderData)
 			} catch (err) {
 				console.error(err)
 			} finally {
