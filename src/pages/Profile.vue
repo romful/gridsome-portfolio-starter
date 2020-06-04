@@ -5,6 +5,19 @@
 				Hello {{ user.given_name || user.name }}
 			</div>
 			<table class="table-auto mx-auto mb-4">
+				<thead>
+					<tr>
+						<th>Date of Deal</th>
+						<th>Service</th>
+						<th>Date of Service</th>
+						<th>Price</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<table class="table-auto mx-auto mb-4">
 				<tbody>
 					<tr>
 						<td class="border px-4 py-2">Picture</td>
