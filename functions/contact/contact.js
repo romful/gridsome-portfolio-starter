@@ -38,42 +38,13 @@ exports.handler = async function(event, context, callback) {
   await hubspot.contacts.getByEmail(orderData.email)
   .then( async data => { 
     console.log('CONTACT EXISTS')
-    const payload = { 
-      'engagement': { 
-        'active': true, 
-        'ownerId': 1, 
-        'type': 'EMAIL', 
-        'timestamp': Date.now() 
-      }, 
-      'associations': { 
-        'contactIds': [data.vid], 
-        'companyIds': [ ], 
-        'dealIds': [ ], 
-        'ownerIds': [ ] 
-      },
-      'metadata': {
-        "from": 
-          {
-            "email": orderData.email,
-//            "firstName": senderFirstName,
-//            "lastName": senderLastName,
-          },
-        "to": [{ "email": "bot11x11 <procom@mail.ru>" }],
-        "subject": "New Form Submission",
-        "text": orderData.email
+    await hubspot.deals.create({associations: { associatedVids: [ data.vid ] }, properties: dealProperties})
+    .then(data => { 
+      console.log("DEAL CREATED")
+      return {
+        statusCode: 200,
+        body: "DEAL CREATED",
       }
-    }
-    await hubspot.engagements.create(payload)
-    .then( async data => { 
-      console.log("ENGAGEMENT CREATED")
-      await hubspot.deals.create({associations: { associatedVids: [ data.vid ] }, properties: dealProperties})
-      .then(data => { 
-        console.log("ENGAGEMENT + DEAL CREATED")
-        return {
-          statusCode: 200,
-          body: "ENGAGEMENT + DEAL CREATED",
-        }
-      })
     })
   })
   .catch( async (e) => {
@@ -89,50 +60,21 @@ exports.handler = async function(event, context, callback) {
     await hubspot.contacts.create(contactObj)
     .then( async data => { 
       console.log("NEW CONTACT ADDED")
-      const payload = { 
-        'engagement': { 
-          'active': true, 
-          'ownerId': 1, 
-          'type': 'EMAIL', 
-          'timestamp': Date.now() 
-        }, 
-        'associations': { 
-          'contactIds': [data.vid], 
-          'companyIds': [ ], 
-          'dealIds': [ ], 
-          'ownerIds': [ ] 
-        },
-        'metadata': {
-          "from": 
-            {
-              "email": orderData.email,
-//              "firstName": senderFirstName,
-//              "lastName": senderLastName,
-            },
-          "to": [{ "email": "bot11x11 <procom@mail.ru>" }],
-          "subject": "New Form Submission",
-          "text": message
-        }
-      }
-      await hubspot.engagements.create(payload)
-      .then( async data => { 
-        console.log("ENGAGEMENT CREATED")
-        await hubspot.deals.create({associations: { associatedVids: [ data.vid ] }, properties: dealProperties})
-        .then(data => { 
-          console.log("DEAL CREATED")
-          return {
-            statusCode: 200,
-            body: "CONTACT + ENGAGEMENT + DEAL CREATED",
-          }
-        })
-      })
-      .catch( (err) => {
-        console.log("ERROR 456", err.message)
+      await hubspot.deals.create({associations: { associatedVids: [ data.vid ] }, properties: dealProperties})
+      .then(data => { 
+        console.log("DEAL CREATED")
         return {
-          statusCode: err.code,
-          body: JSON.stringify({ msg: err.message })
+          statusCode: 200,
+          body: "CONTACT + DEAL CREATED",
         }
       })
+    })
+    .catch( (err) => {
+      console.log("ERROR 456", err.message)
+      return {
+        statusCode: err.code,
+        body: JSON.stringify({ msg: err.message })
+      }
     })
     .catch( (err) => {
       console.log("ERROR 233", err.message)
