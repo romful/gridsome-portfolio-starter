@@ -11,6 +11,7 @@ exports.handler = async function(event, context, callback) {
 		.then(data => { 
 			return {
 				status: 200,
+				statusText: 'OK',
 				data: JSON.stringify(data)
 			}
 		})
