@@ -52,6 +52,7 @@
 	</Layout>
 </template>
 <script>
+import axios from 'axios'
 export default{
 	metaInfo: {
 		title: 'Profile'
