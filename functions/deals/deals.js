@@ -10,21 +10,21 @@ exports.handler = async function(event, context, callback) {
 		await hubspot.deals.getAssociated('contact', data.vid, opts)
 		.then(data => { 
 			return {
-				statusCode: 200,
-				body: JSON.stringify(data)
+				status: 200,
+				data: JSON.stringify(data)
 			}
 		})
 		.catch( async (err) => {
 			return {
-				statusCode: err.code,
-				body: JSON.stringify({ msg: err.message })
+				status: err.code,
+				statusText: err.message
 			}
 		})
 	})
 	.catch( async (err) => {
 		return {
-			statusCode: err.code,
-			body: JSON.stringify({ msg: err.message })
+			status: err.code,
+			statusText: err.message
 		}
 	})
 }
