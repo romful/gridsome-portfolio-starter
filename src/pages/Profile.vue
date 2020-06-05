@@ -63,7 +63,9 @@ export default{
 	},
 	methods: {
 		async getDeals() {
-			await axios.post('/api/deals', this.user.email || this.user.name)
+			await axios.post('/api/deals', {
+				email: this.user.email || this.user.name
+			})
 			.then(data => { 
 				console.log(data);
 			})
