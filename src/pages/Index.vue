@@ -306,13 +306,13 @@ export default{
 			}
 		},
 		async createDeal() {
-			try {
-				await axios.post('/api/contact', this.orderData)
-			} catch (err) {
+			await axios.post('/api/contact', this.orderData)
+			.then(data => { 
+				console.log(data);
+			})
+			.catch(async (err) => {
 				console.error(err)
-			} finally {
-				console.log("contact success")
-			}
+			});
 		},
 		handleSubmit(e) {
 			var data = {

@@ -58,6 +58,18 @@ export default{
 	},
 	mounted() {
 		this.user = this.$auth.user || {};
+		this.getDeals();
+	},
+	methods: {
+		async getDeals() {
+			await axios.post('/api/deals', this.user.email || this.user.name)
+			.then(data => { 
+				console.log(data);
+			})
+			.catch(async (err) => {
+				console.error(err)
+			});
+		},
 	},
 	data(){
 		return{
