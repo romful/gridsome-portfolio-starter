@@ -24,8 +24,8 @@
 				<div v-for="service in services" class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2">
 					<div class="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-4">
 						<div class="mx-auto h-40 bg-no-repeat bg-contain bg-bottom rounded-md" :style="{'background-image': 'url(' + service.image + ')' }"></div>
-						<div class="h-4 w-40 mt-8 block mx-auto text-center">{{ service.title }}</div>
-						<div class="h-2 bg-gray-200 w-64 mt-2 block mx-auto rounded-sm"></div>
+						<div class="w-40 mt-8 block mx-auto text-center font-bold">{{ service.title }}</div>
+						<div class="w-64 mt-2 block mx-auto">{{ service.description }}</div>
 						<div class="flex justify-center mt-4">
 							<div class="rounded-sm px-4 bg-green-300">Discover</div>
 						</div>
@@ -227,21 +227,27 @@ export default{
 			},
 			services: [{
 				title: "Wellness Services",
+				description: "Description goes here",
 				image: "/avatar.jpg"
 			}, {
 				title: "Transportation",
+				description: "Description goes here",
 				image: "/avatar.jpg"
 			}, {
 				title: "Activities",
+				description: "Description goes here",
 				image: "/avatar.jpg"
 			}, {
 				title: "Gastronomy",
+				description: "Description goes here",
 				image: "/avatar.jpg"
 			}, {
 				title: "Home Services",
+				description: "Description goes here",
 				image: "/avatar.jpg"
 			}, {
 				title: "Local Booking",
+				description: "Description goes here",
 				image: "/avatar.jpg"
 			}]
 		}
