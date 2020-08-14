@@ -11,7 +11,7 @@
 				{{ now }}
 			</div>
 		
-			<div class="mx-auto my-10 relative w-64">
+<!--			<div class="mx-auto my-10 relative w-64">
 				<select v-model="$services.category" class="block appearance-none w-full border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
 					<option value="">-- Choose a service --</option>
 					<option v-for="category in $services.categories">{{ category }}</option>
@@ -19,9 +19,44 @@
 				<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
 					<svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
 				</div>
+			</div>-->
+			<div class="grid grid-cols-6 gap-4 items-start mt-8 mx-auto px-8">
+				<div class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2">
+					<div class="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-4">
+						<div class="mx-auto h-40 bg-gray-200 rounded-md"></div>
+						<div class="h-4 bg-gray-200 w-40 mt-8 block mx-auto rounded-sm"></div>
+						<div class="h-2 bg-gray-200 w-64 mt-2 block mx-auto rounded-sm"></div>
+						<div class="flex justify-center mt-4">
+							<div class="rounded-sm h-8 w-20 px-4 bg-gray-200 mr-2"></div>
+							<div class="rounded-sm h-8 w-20 px-4 bg-green-300"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2">
+					<div class="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-4">
+						<div class="mx-auto h-40 bg-gray-200 rounded-md"></div>
+						<div class="h-4 bg-gray-200 w-40 mt-8 block mx-auto rounded-sm"></div>
+						<div class="h-2 bg-gray-200 w-64 mt-2 block mx-auto rounded-sm"></div>
+						<div class="flex justify-center mt-4">
+							<div class="rounded-sm h-8 w-20 px-4 bg-gray-200 mr-2"></div>
+							<div class="rounded-sm h-8 w-20 px-4 bg-green-300"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2">
+					<div class="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-4">
+						<div class="mx-auto h-40 bg-gray-200 rounded-md"></div>
+						<div class="h-4 bg-gray-200 w-40 mt-8 block mx-auto rounded-sm"></div>
+						<div class="h-2 bg-gray-200 w-64 mt-2 block mx-auto rounded-sm"></div>
+						<div class="flex justify-center mt-4">
+							<div class="rounded-sm h-8 w-20 px-4 bg-gray-200 mr-2"></div>
+							<div class="rounded-sm h-8 w-20 px-4 bg-green-300"></div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div id="services" class="flex flex-wrap mb-4 max-w-5xl mx-auto">
-				<div class="md:w-1/2 lg:w-1/3 w-full px-2" v-for="edge in $page.allGoogleSheet.edges" v-if="edge.node.Category==$services.category || !$services.category && edge.node.Featured">
+        			<div id="services" class="flex flex-wrap mb-4 max-w-5xl mx-auto">
+				<div class="md:w-1/2 lg:w-1/3 w-full px-2" v-for="edge in $page.allGoogleSheet.edges" v-if="edge.node.Category==$services.category">
 					<div @click="edge.node.Availability && init(edge.node)" class="mx-auto max-w-sm overflow-hiddenmx-auto cursor-pointer duration-500 transform hover:scale-110">
 						<div class="w-full rounded-xl h-64 bg-no-repeat bg-contain bg-bottom" :style="{'background-image': 'url(' + edge.node.Img + ')' }"></div>
 						<div class="px-6 pb-4 pt-8 mx-4 -mt-4 mb-4 relative rounded-xl bg-white opacity-75 hover:opacity-100" :class="{'opacity-100': edge.node.Title == orderData.title, 'border-2': edge.node.Title == orderData.title, 'border-blue-500': edge.node.Title == orderData.title}">
