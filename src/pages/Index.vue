@@ -23,7 +23,7 @@
 			<div v-if="!$services.category" class="grid grid-cols-6 gap-4 items-start mt-8 mx-auto px-8">
 				<div v-for="service in services" class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2">
 					<div class="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-4">
-						<div class="mx-auto h-40 bg-gray-200 rounded-md"></div>
+						<div class="mx-auto h-40 bg-no-repeat bg-contain bg-bottom rounded-md" :style="{'background-image': 'url(' + service.image + ')' }"></div>
 						<div class="h-4 w-40 mt-8 block mx-auto text-center">{{ service.title }}</div>
 						<div class="h-2 bg-gray-200 w-64 mt-2 block mx-auto rounded-sm"></div>
 						<div class="flex justify-center mt-4">
@@ -226,17 +226,23 @@ export default{
 				cost: 0
 			},
 			services: [{
-				title: "Wellness Services"
+				title: "Wellness Services",
+				image: "../../static/avatar.jpg"
 			}, {
-				title: "Transportation"
+				title: "Transportation",
+				image: "../../static/avatar.jpg"
 			}, {
-				title: "Activities"
+				title: "Activities",
+				image: "../../static/avatar.jpg"
 			}, {
-				title: "Gastronomy"
+				title: "Gastronomy",
+				image: "../../static/avatar.jpg"
 			}, {
-				title: "Home Services"
+				title: "Home Services",
+				image: "../../static/avatar.jpg"
 			}, {
-				title: "Local Booking"
+				title: "Local Booking",
+				image: "../../static/avatar.jpg"
 			}]
 		}
 	},
