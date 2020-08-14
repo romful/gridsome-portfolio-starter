@@ -23,8 +23,8 @@
 			<div v-if="!$services.category" class="grid grid-cols-6 gap-4 items-start mt-8 mx-auto px-8">
 				<div v-for="service in services" class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2">
 					<div class="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-4">
-						<div class="mx-auto h-40 bg-gray-200 rounded-md">{{ service.title }}</div>
-						<div class="h-4 bg-gray-200 w-40 mt-8 block mx-auto rounded-sm"></div>
+						<div class="mx-auto h-40 bg-gray-200 rounded-md"></div>
+						<div class="h-4 bg-gray-200 w-40 mt-8 block mx-auto rounded-sm">{{ service.title }}</div>
 						<div class="h-2 bg-gray-200 w-64 mt-2 block mx-auto rounded-sm"></div>
 						<div class="flex justify-center mt-4">
 							<div class="rounded-sm h-8 w-20 px-4 bg-gray-200 mr-2"></div>
