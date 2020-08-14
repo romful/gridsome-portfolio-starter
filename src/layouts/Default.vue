@@ -1,9 +1,9 @@
 <template>
   <div class="content-wrapper bg-background-primary font-sans text-copy-primary leading-normal flex flex-col min-h-screen" :class="theme">
-    <header class="relative flex justify-around items-center px-4">
-      <g-link class="relative text-white" to="/">CONCIERGE</g-link>
+    <header class="relative flex justify-around items-center py-4">
+      <g-link class="relative text-white hover:text-gray-400" to="/">CONCIERGE</g-link>
       <g-link class="relative" to="/"><img src="/logo.png" /></g-link>
-      <g-link class="relative text-white" to="/profile">My account</g-link>
+      <g-link class="relative text-white hover:text-gray-400" to="/profile">My account</g-link>
     </header>
 
     <div class="flex-grow">
