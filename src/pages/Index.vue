@@ -27,7 +27,7 @@
 						<div class="h-4 w-40 mt-8 block mx-auto text-center">{{ service.title }}</div>
 						<div class="h-2 bg-gray-200 w-64 mt-2 block mx-auto rounded-sm"></div>
 						<div class="flex justify-center mt-4">
-							<div class="rounded-sm h-8 w-20 px-4 bg-green-300">Discover</div>
+							<div class="rounded-sm px-4 bg-green-300">Discover</div>
 						</div>
 					</div>
 				</div>
@@ -227,22 +227,22 @@ export default{
 			},
 			services: [{
 				title: "Wellness Services",
-				image: "../../static/avatar.jpg"
+				image: "/avatar.jpg"
 			}, {
 				title: "Transportation",
-				image: "../../static/avatar.jpg"
+				image: "/avatar.jpg"
 			}, {
 				title: "Activities",
-				image: "../../static/avatar.jpg"
+				image: "/avatar.jpg"
 			}, {
 				title: "Gastronomy",
-				image: "../../static/avatar.jpg"
+				image: "/avatar.jpg"
 			}, {
 				title: "Home Services",
-				image: "../../static/avatar.jpg"
+				image: "/avatar.jpg"
 			}, {
 				title: "Local Booking",
-				image: "../../static/avatar.jpg"
+				image: "/avatar.jpg"
 			}]
 		}
 	},
