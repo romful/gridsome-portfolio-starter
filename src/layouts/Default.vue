@@ -1,28 +1,9 @@
 <template>
   <div class="content-wrapper bg-background-primary font-sans text-copy-primary leading-normal flex flex-col min-h-screen" :class="theme">
-    <header class="relative bg-cover flex flex-col justify-around items-center" style="background-image: url(/portals.png); min-height: 42.67578125vw">
-      <g-link class="relative mt-10" to="/"><img src="/logo.png" /></g-link>
-      <nav class="relative container mx-auto flex flex-wrap justify-between items-center py-8">
-        <div class="block lg:hidden">
-          <button @click="toggle" class="flex items-center px-3 py-2 border rounded border-gray-500 hover:text-gray-600 hover:border-gray-600">
-            <svg class="current-color h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" fill="gray" /></svg>
-          </button>
-        </div>
-        <ul
-          class="uppercase tracking-wide font-bold block flex-grow lg:flex lg:flex-initial absolute lg:static items-center mx-auto mt-16 lg:mt-0 px-8 py-4 lg:p-0 z-10 top-0 left-0 bg-background-primary lg:bg-transparent"
-          :class="isOpen ? 'block': 'hidden'"
-        >
-<!--                <li class="mr-8 mb-6 lg:mb-0">
-            <search-input />
-          </li>
-          <li class="mr-8 mb-6 lg:mb-0">
-            <theme-switcher :theme="theme" @themeChanged="updateTheme" />
-          </li>-->
-          <li class="mr-8 mb-6 lg:mb-0" v-for="category in $services.categories">
-            <span @click="$services.category=category; $scrollTo('#services');" class="cursor-pointer text-copy-primary lg:text-white hover:text-gray-600">{{ category }}</span>
-          </li>
-        </ul>
-      </nav>
+    <header class="relative flex flex-col justify-around items-center">
+      <g-link class="relative" to="/">CONCIERGE</g-link>
+      <g-link class="relative" to="/"><img src="/logo.png" /></g-link>
+      <g-link class="relative" to="/">My account</g-link>
     </header>
 
     <div class="flex-grow">
