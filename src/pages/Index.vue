@@ -21,7 +21,11 @@
 					</div>
 				</div>
 			</div>
-        			<div id="services" class="flex flex-wrap mb-4 max-w-5xl mx-auto">
+       			<div id="services" class="flex flex-wrap mb-4 -mt-16 pt-16 max-w-5xl mx-auto">
+       				<div v-if="$services.category" class="w-full">
+	       				<h2 class="text-center text-2xl font-bold">Choose a service</h2>
+       					<p class="text-center mb-4">Click on any services to get additional informations</p>
+				</div>
 				<div class="md:w-1/2 lg:w-1/3 w-full px-2" v-for="edge in $page.allGoogleSheet.edges" v-if="$services.category && edge.node.Category==$services.category">
 					<div @click="edge.node.Availability && init(edge.node)" class="mx-auto max-w-sm overflow-hiddenmx-auto cursor-pointer duration-500 transform hover:scale-110">
 						<div class="w-full rounded-xl service-image bg-no-repeat bg-cover bg-bottom" :style="{'background-image': 'url(' + edge.node.Img + ')' }"></div>
@@ -119,6 +123,14 @@
 				</form>
 			</div>
 		</div>
+		<div class="container mx-auto flex flex-wrap mb-8 justify-center">
+			<div class="mx-2 my-4 text-center">
+				<a href="https://wa.me/34649630930?text=Hello" target="_blank" class="py-2 px-8 rounded bg-green-400 hover:bg-green-300 text-white">Whatsapp Green Elements</a>
+			</div>
+			<div class="mx-2 my-4 text-center">
+				<a href="https://wa.me/34689345445?text=Hello" target="_blank" class="py-2 px-8 rounded bg-green-400 hover:bg-green-300 text-white">Whatsapp Portals Elements</a>
+			</div>
+		</div>
 		<div v-if="orderData.modal" class="modal fixed w-full h-full top-0 left-0 flex items-center justify-center">
 			<div @click="toggleModal" class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
 			<div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
@@ -167,7 +179,7 @@ export default{
 		Datepicker
 	},
 	metaInfo: {
-		title: 'Order'
+		title: 'Main'
 	},
 	mounted() {
 		this.user = this.$auth.user || {};
@@ -215,10 +227,6 @@ export default{
 				cost: 0
 			},
 			services: [{
-				title: "Wellness Services",
-				description: "Description goes here",
-				image: "/wellness.jpg"
-			}, {
 				title: "Transportation",
 				description: "Description goes here",
 				image: "/transportation.jpg"
@@ -226,6 +234,10 @@ export default{
 				title: "Activities",
 				description: "Description goes here",
 				image: "/activity.jpg"
+			}, {
+				title: "Wellness Services",
+				description: "Description goes here",
+				image: "/wellness.jpg"
 			}, {
 				title: "Gastronomy",
 				description: "Description goes here",
