@@ -4,6 +4,9 @@
 .rounded-xl{
 	border-radius: 1rem;
 }
+.logo{
+	max-width: 10rem;
+}
 header,
 footer{
 	background: #191919;

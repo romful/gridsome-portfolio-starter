@@ -1,7 +1,7 @@
 <template>
   <div class="content-wrapper bg-background-primary font-sans text-copy-primary leading-normal flex flex-col min-h-screen" :class="theme">
     <header class="relative flex justify-around items-center px-4 py-4 h-40 sm:h-auto flex-col sm:flex-row">
-      <g-link class="relative max-w-xs" to="/"><img src="/logo.png" /></g-link>
+      <g-link class="relative logo" to="/"><img src="/logo.png" /></g-link>
 <!--      <g-link class="relative text-white hover:text-gray-400" to="/profile">My account</g-link>-->
     </header>
 
