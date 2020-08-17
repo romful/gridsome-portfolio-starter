@@ -1,10 +1,16 @@
 .theme-light{
-	background: #f0fff4;
+	background: #63b6d836;
 }
 .rounded-xl{
 	border-radius: 1rem;
 }
 header,
 footer{
-	background: #000;
+	background: #191919;
+}
+.service-btn{
+	color: #36A3D6;
+}
+.service-title{
+	font-size: 25px;
 }

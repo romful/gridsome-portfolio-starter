@@ -7,24 +7,14 @@
 			<div class="mx-auto my-10 w-64 text-center uppercase font-bold">
 				{{ now }}
 			</div>
-		
-<!--			<div class="mx-auto my-10 relative w-64">
-				<select v-model="$services.category" class="block appearance-none w-full border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-					<option value="">-- Choose a service --</option>
-					<option v-for="category in $services.categories">{{ category }}</option>
-				</select>
-				<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-					<svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-				</div>
-			</div>-->
-			<div class="grid grid-cols-6 gap-4 items-start my-8 mx-auto px-8">
+			<div class="grid grid-cols-6 gap-4 items-start my-8 mx-auto sm:px-8">
 				<div v-for="service in services" class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2">
 					<div class="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-4">
-						<div class="mx-auto h-40 bg-no-repeat bg-contain bg-bottom rounded-md" :style="{'background-image': 'url(' + service.image + ')' }"></div>
-						<div class="w-40 mt-8 block mx-auto text-center font-bold">{{ service.title }}</div>
+						<div class="mx-auto h-40 sm:h-64 bg-no-repeat bg-contain bg-bottom rounded-md" :style="{'background-image': 'url(' + service.image + ')' }"></div>
+						<div class="w-40 mt-8 block mx-auto text-center font-bold service-title">{{ service.title }}</div>
 						<div class="w-64 mt-2 block mx-auto text-center">{{ service.description }}</div>
 						<div class="flex justify-center mt-4">
-							<button @click="$services.category=service.title; $scrollTo('#services');" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+							<button @click="$services.category=service.title; $scrollTo('#services');" class="text-white font-bold py-2 px-4 rounded service-btn">
 								Discover
 							</button>
 						</div>
