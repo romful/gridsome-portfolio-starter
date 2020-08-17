@@ -121,11 +121,11 @@
 				</form>
 			</div>
 		</div>
-		<div class="container flex mb-4 justify-center">
-			<div class="w-1/2 text-center">
+		<div class="container flex flex-wrap mb-8 justify-center">
+			<div class="m-2 text-center">
 				<a href="https://wa.me/34649630930?text=Hello" target="_blank" class="py-2 px-8 rounded bg-green-400 hover:bg-green-300 text-white">Whatsapp Green Elements</a>
 			</div>
-			<div class="w-1/2 text-center">
+			<div class="m-2 text-center">
 				<a href="https://wa.me/34689345445?text=Hello" target="_blank" class="py-2 px-8 rounded bg-green-400 hover:bg-green-300 text-white">Whatsapp Portals Elements</a>
 			</div>
 		</div>
