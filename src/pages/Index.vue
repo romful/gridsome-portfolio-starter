@@ -219,7 +219,7 @@ export default{
 			services: [{
 				title: "Transportation",
 				description: "Description goes here",
-				image: "/transportation.jpeg"
+				image: "/transportation.jpg"
 			}, {
 				title: "Activities",
 				description: "Description goes here",
