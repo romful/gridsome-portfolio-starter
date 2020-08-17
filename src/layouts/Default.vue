@@ -12,7 +12,7 @@
       <slot/>
     </div>
     <footer class="text-white">
-      <div class="container mx-auto py-8 text-center">
+      <div class="container mx-auto py-3 text-center">
         Copyright {{ new Date().getFullYear() }}. All rights reserved. - Built & Designed by VIP Services Mallorca </div>
     </footer>
 
