@@ -121,12 +121,12 @@
 				</form>
 			</div>
 		</div>
-		<div class="container">
-			<div class="w-1/2">
-				<button class="bg-green-400 hover:bg-green-300 text-white">Button 1</button>
+		<div class="container flex">
+			<div class="w-1/2 text-center">
+				<a href="https://wa.me/34649630930?text=Hello" target="_blank" class="py-2 px-8 rounded bg-green-400 hover:bg-green-300 text-white">Whatsapp Green Elements</a>
 			</div>
-			<div class="w-1/2">
-				<button class="bg-green-400 hover:bg-green-300 text-white">Button 2</button>
+			<div class="w-1/2 text-center">
+				<a href="https://wa.me/34689345445?text=Hello" target="_blank" class="py-2 px-8 rounded bg-green-400 hover:bg-green-300 text-white">Whatsapp Portals Elements</a>
 			</div>
 		</div>
 		<div v-if="orderData.modal" class="modal fixed w-full h-full top-0 left-0 flex items-center justify-center">
