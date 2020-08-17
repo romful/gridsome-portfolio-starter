@@ -1,6 +1,6 @@
 <template>
   <div class="content-wrapper bg-background-primary font-sans text-copy-primary leading-normal flex flex-col min-h-screen" :class="theme">
-    <header class="relative flex justify-around items-center py-4">
+    <header class="relative md:flex flex-wrap justify-around items-center py-4">
       <g-link class="relative text-white hover:text-gray-400" to="/">CONCIERGE</g-link>
       <g-link class="relative" to="/"><img src="/logo.png" /></g-link>
       <g-link class="relative text-white hover:text-gray-400" to="/profile">My account</g-link>
@@ -12,12 +12,9 @@
       </div>
       <slot/>
     </div>
-    <footer class="text-white text-center">
-      <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between py-8">
-        <div class="mb-8 lg:mb-0">
-          <div>Copyright {{ new Date().getFullYear() }}. All rights reserved. - Built & Designed by VIP Services Mallorca </div>
-        </div>
-      </div>
+    <footer class="text-white">
+      <div class="container mx-auto py-8 text-center">
+        Copyright {{ new Date().getFullYear() }}. All rights reserved. - Built & Designed by VIP Services Mallorca </div>
     </footer>
 
     <div style="display:none">
