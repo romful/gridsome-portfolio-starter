@@ -227,27 +227,27 @@ export default{
 			services: [{
 				title: "Wellness Services",
 				description: "Description goes here",
-				image: "/avatar.jpg"
+				image: "/wellness.jpg"
 			}, {
 				title: "Transportation",
 				description: "Description goes here",
-				image: "/avatar.jpg"
+				image: "/transporation.jpg"
 			}, {
 				title: "Activities",
 				description: "Description goes here",
-				image: "/avatar.jpg"
+				image: "/activity.jpg"
 			}, {
 				title: "Gastronomy",
 				description: "Description goes here",
-				image: "/avatar.jpg"
+				image: "/gastronomy.jpg"
 			}, {
 				title: "Home Services",
 				description: "Description goes here",
-				image: "/avatar.jpg"
+				image: "/homeservices.jpg"
 			}, {
 				title: "Local Booking",
 				description: "Description goes here",
-				image: "/avatar.jpg"
+				image: "/localbooking.jpg"
 			}]
 		}
 	},
