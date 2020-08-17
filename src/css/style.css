@@ -9,8 +9,11 @@ footer{
 	background: #191919;
 }
 .service-btn{
-	color: #36A3D6;
+	background: #36A3D6;
 }
 .service-title{
 	font-size: 25px;
+}
+.service-image{
+	padding-top: 66.667%;
 }

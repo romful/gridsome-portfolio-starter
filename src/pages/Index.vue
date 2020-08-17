@@ -10,7 +10,7 @@
 			<div class="grid grid-cols-6 gap-4 items-start my-8 mx-auto sm:px-8">
 				<div v-for="service in services" class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2">
 					<div class="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-4">
-						<div class="mx-auto h-40 sm:h-64 bg-no-repeat bg-contain bg-bottom rounded-md" :style="{'background-image': 'url(' + service.image + ')' }"></div>
+						<div class="service-image mx-auto bg-no-repeat bg-contain bg-bottom" :style="{'background-image': 'url(' + service.image + ')' }"></div>
 						<div class="w-40 mt-8 block mx-auto text-center font-bold service-title">{{ service.title }}</div>
 						<div class="w-64 mt-2 block mx-auto text-center">{{ service.description }}</div>
 						<div class="flex justify-center mt-4">
