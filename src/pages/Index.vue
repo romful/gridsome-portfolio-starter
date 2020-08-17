@@ -123,7 +123,7 @@
 				</form>
 			</div>
 		</div>
-		<div class="container flex flex-wrap mb-8 justify-center">
+		<div class="container mx-auto flex flex-wrap mb-8 justify-center">
 			<div class="mx-2 my-4 text-center">
 				<a href="https://wa.me/34649630930?text=Hello" target="_blank" class="py-2 px-8 rounded bg-green-400 hover:bg-green-300 text-white">Whatsapp Green Elements</a>
 			</div>
