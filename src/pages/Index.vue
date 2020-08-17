@@ -10,11 +10,11 @@
 			<div class="grid grid-cols-6 gap-4 items-start my-8 mx-auto sm:px-8">
 				<div v-for="service in services" class="col-span-6 sm:col-span-6 md:col-span-3 lg:col-span-2 xl:col-span-2">
 					<div class="bg-white shadow-lg rounded-lg px-4 py-6 mx-4 my-4">
-						<div class="service-image mx-auto bg-no-repeat bg-contain bg-bottom" :style="{'background-image': 'url(' + service.image + ')' }"></div>
-						<div class="w-40 mt-8 block mx-auto text-center font-bold service-title">{{ service.title }}</div>
-						<div class="w-64 mt-2 block mx-auto text-center">{{ service.description }}</div>
+						<div class="service-image mx-auto bg-no-repeat bg-cover bg-bottom" :style="{'background-image': 'url(' + service.image + ')' }"></div>
+						<div class="mt-8 block px-2 text-center font-bold service-title">{{ service.title }}</div>
+						<div class="mt-2 block px-2 text-center">{{ service.description }}</div>
 						<div class="flex justify-center mt-4">
-							<button @click="$services.category=service.title; $scrollTo('#services');" class="text-white font-bold py-2 px-4 rounded service-btn">
+							<button @click="$services.category=service.title; $scrollTo('#services');" class="service-btn text-white font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline">
 								Discover
 							</button>
 						</div>
@@ -24,7 +24,7 @@
         			<div id="services" class="flex flex-wrap mb-4 max-w-5xl mx-auto">
 				<div class="md:w-1/2 lg:w-1/3 w-full px-2" v-for="edge in $page.allGoogleSheet.edges" v-if="$services.category && edge.node.Category==$services.category">
 					<div @click="edge.node.Availability && init(edge.node)" class="mx-auto max-w-sm overflow-hiddenmx-auto cursor-pointer duration-500 transform hover:scale-110">
-						<div class="w-full rounded-xl h-64 bg-no-repeat bg-contain bg-bottom" :style="{'background-image': 'url(' + edge.node.Img + ')' }"></div>
+						<div class="w-full rounded-xl service-image bg-no-repeat bg-cover bg-bottom" :style="{'background-image': 'url(' + edge.node.Img + ')' }"></div>
 						<div class="px-6 pb-4 pt-8 mx-4 -mt-4 mb-4 relative rounded-xl bg-white opacity-75 hover:opacity-100" :class="{'opacity-100': edge.node.Title == orderData.title, 'border-2': edge.node.Title == orderData.title, 'border-blue-500': edge.node.Title == orderData.title}">
 							<div class="font-bold text-xl mb-2">{{ edge.node.Title }}</div>
 							<p class="text-gray-700 text-base">
@@ -112,7 +112,7 @@
 						Total price: <span class="font-bold">{{ orderData.cost }} &euro;</span>
 					</div>
 					<div class="text-center">
-						<button class="border-1 text-white border-green-700 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline" type="submit">
+						<button class="service-btn text-white font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline" type="submit">
 							Order
 						</button>
 					</div>
@@ -133,7 +133,7 @@
 					</div>
 					<div v-html="orderData.description"></div>
 					<div class="flex justify-end pt-2">
-						<button @click="showForm" class="border-1 text-white border-green-700 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline">Book now</button>
+						<button @click="showForm" class="service-btn text-white font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline">Book now</button>
 					</div>
 				</div>
 			</div>
@@ -152,7 +152,7 @@
 					</div>
 					<p>{{ alert }}</p>
 					<div class="flex justify-end pt-2">
-						<button @click="toggleAlert" class="border-1 text-white border-green-700 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline">Close</button>
+						<button @click="toggleAlert" class="service-btn text-white font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline">Close</button>
 					</div>
 				</div>
 			</div>
