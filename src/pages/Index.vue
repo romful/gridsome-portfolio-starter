@@ -4,9 +4,6 @@
 			<div class="mx-auto my-10 w-3/3 text-center text-xl font-serif font-bold italic">
 				Hello {{ user.given_name || user.name }}, How Can I help you today ?
 			</div>
-			<div class="mx-auto my-10 w-64 text-center font-bold">
-				<g-link to="/profile">My accounts</g-link>
-			</div>
 			<div class="mx-auto my-10 w-64 text-center uppercase font-bold">
 				{{ now }}
 			</div>
