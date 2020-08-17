@@ -228,27 +228,27 @@ export default{
 			},
 			services: [{
 				title: "Transportation",
-				description: "Description goes here",
+				description: "Airport transfers and pickups, Drivers at disposal, Private tours",
 				image: "/transportation.jpg"
 			}, {
 				title: "Activities",
-				description: "Description goes here",
+				description: "Yacht charters, Wine tasting, Helicopter tour",
 				image: "/activity.jpg"
 			}, {
 				title: "Wellness Services",
-				description: "Description goes here",
+				description: "Yoga, Personal Trainer, Massage, Meditation",
 				image: "/wellness.jpg"
 			}, {
 				title: "Gastronomy",
-				description: "Description goes here",
+				description: "Order a Paella, Executive private chefs, Breakfast delivery",
 				image: "/gastronomy.jpg"
 			}, {
 				title: "Home Services",
-				description: "Description goes here",
+				description: "Nannies, Housekeeping, Home provisioning",
 				image: "/homeservices.jpg"
 			}, {
 				title: "Local Booking",
-				description: "Description goes here",
+				description: "Book a beachclub, restaurant, spa, activity",
 				image: "/localbooking.jpg"
 			}]
 		}
