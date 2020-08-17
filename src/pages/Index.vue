@@ -21,9 +21,11 @@
 					</div>
 				</div>
 			</div>
-       			<div id="services" class="flex flex-wrap mb-4 -mt-16 pt-16 max-w-5xl mx-auto" v-if="$services.category">
-       				<h2 class="text-center w-full text-2xl font-bold">Choose a service</h2>
-       				<p class="text-center w-full mb-4">Click on any services to get additional informations</p>
+       			<div id="services" class="flex flex-wrap mb-4 -mt-16 pt-16 max-w-5xl mx-auto">
+       				<div v-if="$services.category" class="w-full">
+	       				<h2 class="text-center text-2xl font-bold">Choose a service</h2>
+       					<p class="text-center mb-4">Click on any services to get additional informations</p>
+				</div>
 				<div class="md:w-1/2 lg:w-1/3 w-full px-2" v-for="edge in $page.allGoogleSheet.edges" v-if="$services.category && edge.node.Category==$services.category">
 					<div @click="edge.node.Availability && init(edge.node)" class="mx-auto max-w-sm overflow-hiddenmx-auto cursor-pointer duration-500 transform hover:scale-110">
 						<div class="w-full rounded-xl service-image bg-no-repeat bg-cover bg-bottom" :style="{'background-image': 'url(' + edge.node.Img + ')' }"></div>
