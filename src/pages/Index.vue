@@ -21,7 +21,7 @@
 					</div>
 				</div>
 			</div>
-       			<div id="services" class="flex flex-wrap mb-4 max-w-5xl mx-auto" v-if="$services.category">
+       			<div id="services" class="flex flex-wrap mb-4 -mt-16 pt-16 max-w-5xl mx-auto" v-if="$services.category">
        				<h2 class="text-center w-full text-2xl font-bold">Choose a service</h2>
        				<p class="text-center w-full mb-4">Click on any services to get additional informations</p>
 				<div class="md:w-1/2 lg:w-1/3 w-full px-2" v-for="edge in $page.allGoogleSheet.edges" v-if="$services.category && edge.node.Category==$services.category">
@@ -122,10 +122,10 @@
 			</div>
 		</div>
 		<div class="container flex flex-wrap mb-8 justify-center">
-			<div class="m-2 text-center">
+			<div class="mx-2 my-4 text-center">
 				<a href="https://wa.me/34649630930?text=Hello" target="_blank" class="py-2 px-8 rounded bg-green-400 hover:bg-green-300 text-white">Whatsapp Green Elements</a>
 			</div>
-			<div class="m-2 text-center">
+			<div class="mx-2 my-4 text-center">
 				<a href="https://wa.me/34689345445?text=Hello" target="_blank" class="py-2 px-8 rounded bg-green-400 hover:bg-green-300 text-white">Whatsapp Portals Elements</a>
 			</div>
 		</div>
