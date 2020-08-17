@@ -121,7 +121,7 @@
 				</form>
 			</div>
 		</div>
-		<div class="container flex">
+		<div class="container flex mb-4 justify-center">
 			<div class="w-1/2 text-center">
 				<a href="https://wa.me/34649630930?text=Hello" target="_blank" class="py-2 px-8 rounded bg-green-400 hover:bg-green-300 text-white">Whatsapp Green Elements</a>
 			</div>

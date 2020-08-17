@@ -1,6 +1,6 @@
 <template>
-  <div class="content-wrapper bg-background-primary font-sans text-copy-primary leading-normal flex flex-col min-h-screen" :class="theme">
-    <header class="relative flex justify-around items-center px-4 py-4 flex-col sm:flex-row">
+  <div class="pt-16 content-wrapper bg-background-primary font-sans text-copy-primary leading-normal flex flex-col min-h-screen" :class="theme">
+    <header class="fixed top-0 left-0 right-0 h-16 flex justify-around items-center flex-col sm:flex-row">
       <g-link class="relative logo" to="/"><img src="/logo.png" /></g-link>
 <!--      <g-link class="relative text-white hover:text-gray-400" to="/profile">My account</g-link>-->
     </header>
