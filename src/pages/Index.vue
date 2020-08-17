@@ -231,7 +231,7 @@ export default{
 			}, {
 				title: "Transportation",
 				description: "Description goes here",
-				image: "/transporation.jpg"
+				image: "/transportation.jpeg"
 			}, {
 				title: "Activities",
 				description: "Description goes here",
