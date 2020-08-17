@@ -1,6 +1,6 @@
 <template>
   <div class="content-wrapper bg-background-primary font-sans text-copy-primary leading-normal flex flex-col min-h-screen" :class="theme">
-    <header class="relative flex justify-around items-center py-4 h-40 sm:h-auto sm:flex-col">
+    <header class="relative flex justify-around items-center py-4 h-40 sm:h-auto flex-col sm:flx-row">
       <g-link class="relative text-white hover:text-gray-400" to="/">CONCIERGE</g-link>
       <g-link class="relative" to="/"><img src="/logo.png" /></g-link>
       <g-link class="relative text-white hover:text-gray-400" to="/profile">My account</g-link>
