@@ -21,7 +21,7 @@
     "gridsome-source-google-sheets": "^0.4.1",
     "hubspot": "^2.3.12",
     "lodash.pick": "^4.4.0",
-    "luxon": "^1.23.0",
+    "luxon": "^1.28.1",
     "vue-datetime": "^1.0.0-beta.11",
     "vue-fuse": "^2.2.0",
     "vue-localstorage": "^0.6.2",
